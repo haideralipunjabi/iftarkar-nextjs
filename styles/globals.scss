@@ -1,0 +1,67 @@
+@import "./colors.scss";
+@import "bulma/bulma";
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+#__next {
+  height: 100%;
+}
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.ellipse {
+  text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.is-fullheight {
+  min-height: 100%;
+  height: 100%;
+}
+.hero.is-fullheight-with-navbar {
+  margin-top: $navbar-height;
+  scroll-margin-top: $navbar-height;
+}
+.navbar-margin-top {
+  margin-top: $navbar-height;
+  scroll-margin-top: $navbar-height;
+}
+.mt-a {
+  margin-top: auto;
+}
+.ml-a {
+  margin-left: auto;
+}
+.mr-a {
+  margin-right: auto;
+}
+.mb-a {
+  margin-bottom: auto;
+}
+.mx-a {
+  margin-left: auto;
+  margin-right: auto;
+}
+.my-a{
+  margin-top: auto;
+  margin-bottom: auto;
+}

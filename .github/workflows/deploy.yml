@@ -1,0 +1,28 @@
+name: Deploy
+
+on:
+  push:
+  workflow_dispatch:
+  # schedule:
+  #   - cron: '0 */2 * * *'
+
+jobs:
+  deploy:
+    name: 'Deploy'
+    runs-on: 'ubuntu-latest'
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - run: npm ci
+      - name: 'Build'
+        run: npm run build  
+      - name: Deploy production to Netlify
+        uses: South-Paw/action-netlify-deploy@v1.0.4
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          netlify-auth-token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          netlify-site-id: ${{ secrets.NETLIFY_SITE_ID }}
+          build-dir: 'out_publish'
+          functions-dir: 'out_functions'  
