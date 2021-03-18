@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Navbar() {
   return (
-    <footer className="footer">
+    <footer className="footer has-text-primary-light">
       <div className="content has-text-centered">
         <p className="is-size-6">
           Made with{" "}

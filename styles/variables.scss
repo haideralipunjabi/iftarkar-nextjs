@@ -1,7 +1,17 @@
 @charset "utf-8";
 
+$material-deep-purple-500: #673AB7;
+$material-deep-purple-900: #311B92;
+$material-deep-purple-a700: #6200EA;
+$material-indigo-500: #3F51B5;
+$material-indigo-900: #5967fd;
 $timer-title-font-size: 10rem;
 $timer-subtitle-font-size: 2.5rem;
 
 $footer-padding: 1rem 1.5rem;
-
+$dark: #131836;
+$light: #eceef8;
+$primary: $material-deep-purple-900;
+$navbar-item-hover-background-color: $dark;
+$navbar-dropdown-background-color: $primary;
+$footer-background-color: $primary;

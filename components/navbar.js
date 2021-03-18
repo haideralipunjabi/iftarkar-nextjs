@@ -13,7 +13,7 @@ export default function Navbar({setSettingsOpened}) {
         <span aria-hidden="true"></span>
       </a>
     </div>
-    <div id="navbarBasicExample" className={classNames("navbar-menu",{"is-active":menuOpened})}>
+    <div id="navbarBasicExample" className={classNames("navbar-menu has-background-primary",{"is-active":menuOpened})}>
       <div className="navbar-start ml-a">
         <a href="/" className="navbar-item">Home</a>
         <a onClick={()=>setSettingsOpened(true)} className="navbar-item">Settings</a>
