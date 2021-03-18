@@ -58,6 +58,21 @@ export default function Settings(props) {
                 </div>
               </div>
               }
+              <div className="field">
+                <label htmlFor="" className="label">Theme</label>
+                <div className="control">
+                  <div className="select">
+                    <select name="" id="theme" onChange={e=>{
+                      updateSettings("theme",e.target.selectedOptions[0].value)
+                    }}
+                    value={settings.theme}
+                    >
+                      <option value="light">Light</option>
+                      <option value="dark">Dark</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
             </form>
           </section>
       </div>

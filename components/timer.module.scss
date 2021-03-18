@@ -1,9 +1,18 @@
 @import "../styles/variables.scss";
 
-
 .timerTitle {
-    font-size: $timer-title-font-size;
+  font-size: $timer-title-font-size;
 }
 .timerSubtitle {
-    font-size: $timer-subtitle-font-size;
+  font-size: $timer-subtitle-font-size;
+}
+.progressValue {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  font-size: calc(1.5rem);
+  line-height: 1rem;
+  font-weight: bold;
+  color: white;
 }
