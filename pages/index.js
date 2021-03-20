@@ -37,9 +37,9 @@ export default function Home(props) {
       settings && 
       <>
           
-          <Timer settings={settings}/>
+          <Timer settings={settings} setSettingsOpened={setSettingsOpened}/>
         <Settings active={settingsOpened} setActive={setSettingsOpened} settings = {settings} updateSettings={updateSettings}/>
-        <Duas settings={settings}/>
+        <Duas settings={settings} />
       </>
     }
     <Footer/>

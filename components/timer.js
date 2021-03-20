@@ -3,11 +3,11 @@ import { DateTime } from "luxon";
 import { useEffect, useState } from "react";
 import Timings from "../data/timings.json";
 import classNames from "classnames";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Timer(props) {
-  const { settings } = props;
+  const { settings, setSettingsOpened } = props;
   const getTimes = () => {
-    console.log("Settings: ", settings);
     let timings = Timings[settings.timingIndex].timings;
     let dates = timings.map((timing) => timing.dates.gregorian);
     let now = DateTime.now();
@@ -82,13 +82,13 @@ export default function Timer(props) {
   const [percentDone, setPercentDone] = useState(getPercentDone());
   const setTimes = () => {
     const times = getTimes();
-    console.log(times);
     setTimeStart(times.timeStart);
     setTimeEnd(times.timeEnd);
     setHijri(times.hijri)
   };
   useEffect(() => {
     let interval = setInterval(() => {
+
       setTimeLeft(timeEnd.diffNow());
       setPercentDone(getPercentDone());
     }, 1000);
@@ -111,11 +111,24 @@ export default function Timer(props) {
         <>
         {
             hijri && (
-            <h1 className={classNames(
-              "is-size-2","has-text-weight-bold", "switchColor"
-            )}>{hijri} Ramadan 1442</h1>
+            <h2 className={classNames(
+              styles.timerSubtitle,"has-text-weight-bold", "switchColor"
+            )}>{hijri} Ramadan 1442</h2>
           )
         }
+        
+        <h2 className={classNames(styles.timerDetails,"switchColor")}>
+          {Timings[settings.timingIndex].name} {
+            Timings[settings.timingIndex].offsets.length > 0 && (
+              " - " + Timings[settings.timingIndex].offsets.filter(offset=>(offset.offset==settings.offset))[0]?.name
+            )
+          }
+          <FontAwesomeIcon
+            className={classNames("mx-4", {"has-text-primary": settings.theme === "light"},{"has-text-info": settings.theme==="dark"})}
+            icon={["fas", "cogs"]}
+            onClick={()=>setSettingsOpened(true)}
+          />
+          </h2>
           <div>
             <p
               className={classNames(
@@ -125,9 +138,9 @@ export default function Timer(props) {
             >
               {timeLeft.toFormat("hh:mm:ss")}
             </p>
-            <div className="container">
+            <div className={classNames("container",styles.progressContainer)}>
               <progress
-                className="progress is-large is-primary"
+                className={classNames("progress","is-primary",styles.progress)}
                 value={percentDone}
                 max="100"
               >

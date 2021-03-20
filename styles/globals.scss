@@ -1,14 +1,44 @@
 @import "variables.scss";
 // @import "../node_modules/bulma/bulma.sass";
 @import url("https://fonts.googleapis.com/css2?family=Amiri&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Oswald:wght@700&display=swap');
 @import "bulma/bulma";
+
+@media only screen and (max-width: 600px) {
+  :root {
+      --title-font: 2rem;
+      --clock-font: 5rem;
+      --progress-margin: 24px;
+      --progress-height: 1rem;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  :root {
+      --title-font: 3rem;
+      --clock-font: 8rem;
+      --progress-margin: 24px;
+      --progress-height: 1rem;
+
+  }
+}
+@media only screen and (min-width: 1200px) {
+  :root {
+      --title-font: 3rem;
+      --clock-font: 10rem;
+      --progress-margin: 0 auto;
+      --progress-height: 1.5rem;
+
+  }
+}
 
 html,
 body {
   padding: 0;
   margin: 0;
   height: 100%;
+  font-family: 'Open Sans';
+  overflow: auto;
 }
 #__next {
   height: 100%;
@@ -81,16 +111,21 @@ a {
   }
   a:hover {
     color: white;
-    border-bottom: 1px white solid i !important;
   }
-  
   .tabs {
-    a {
-      color: white;
+    a:hover {
+      border-bottom: 1px black solid !important;
     }
+
   }
 }
-
+.footer {
+  a:hover {
+    color: white;
+    border-bottom: 1px white solid !important;
+  }
+  
+}
 .has-background-light {
   .switchColor {
     color: black;
@@ -108,4 +143,10 @@ a {
       color: black;
     }
   }
+}
+
+.seperator {
+  height: 0;
+  border-top: 2px dashed whitesmoke;
+  background-color: transparent;
 }

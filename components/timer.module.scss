@@ -1,18 +1,33 @@
 @import "../styles/variables.scss";
 
+
+
 .timerTitle {
-  font-size: $timer-title-font-size;
+  font-size:  var(--clock-font);
+  font-family: 'Oswald';
 }
 .timerSubtitle {
-  font-size: $timer-subtitle-font-size;
+  font-size: var(--title-font);
+}
+.timerDetails {
+  font-size: calc(var(--title-font) - 0.5rem);
+  svg {
+    width:  calc(var(--title-font) - 1rem) !important;
+  }
 }
 .progressValue {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
-  font-size: calc(1.5rem);
+  font-size: var(--progress-height);
   line-height: 1rem;
   font-weight: bold;
-  color: white;
+  color: black;
+}
+.progress {
+  height: var(--progress-height);
+}
+.progressContainer {
+  margin: var(--progress-margin);
 }
