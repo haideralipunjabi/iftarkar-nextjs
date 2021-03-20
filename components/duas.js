@@ -2,63 +2,48 @@ import classNames from "classnames";
 import { useState } from "react";
 export default function Duas({settings}) {
     const [dua,setDua] = useState("");
+
+    const Duas = {
+      "sahar": {
+        "arabic": "وَبِصَوْمِ غَدٍ نَّوَيْتُ مِنْ شَهْرِ رَمَضَانَ",
+        "english":"I intend to keep the fast for tomorrow in the month of Ramadan",
+        "roman":"Wa bisawmi ghadinn nawaiytu min shahri ramadan",
+      },
+      "iftar": {
+        "arabic":"اللَّهُمَّ اِنِّى لَكَ صُمْتُ وَبِكَ امنْتُ وَعَليْكَ تَوَكّلتُ وَعَلى رِزْقِكَ اَفْطَرْتُ",
+        "english":"O Allah! I fasted for You and I believe in You and I put my trust in You and I break my fast with Your sustenance",
+        "roman":"Allahumma inni laka sumtu wa bika aamantu wa alayka tawakkaltu wa ala rizq-ika-aftartu"
+      }
+    }
   return (
     <>
-      <div className="tabs is-centered">
+     <div>
+     <div className="container tabs is-centered">
         <ul>
-          <li className={classNames(
-              {
-                "is-active": dua=="sahar"
-              }
-          )}>
-            <a data-target="sahar" onClick={()=>{
-                if(dua==="sahar") setDua();
-                else setDua("sahar");
-            }}>Dua Sahar</a>
-          </li>
-          <li className={classNames(
-              {
-                "is-active": dua=="iftar"
-              }
-          )}>
-            <a data-target="iftar" onClick={()=>{
-                if(dua==="iftar") setDua();
-                else setDua("iftar");
-            }}>Dua Iftar</a>
-          </li>
+          {
+            Object.keys(Duas).map(key=>(
+              <li key={key} className={classNames({"is-active": dua===key})}>
+                <a data-target={key} onClick={()=>{
+                  if(dua===key) setDua();
+                  else setDua(key);
+                }}>Dua {key}</a>
+              </li>
+            ))
+          }
         </ul>
       </div>
-      <div className={classNames(
-          "dua switchColor has-text-centered",
-          {"is-hidden": dua!="sahar"}
-      )} id="dua-sahar">
-        <h1 className="dua-arabic arabic is-size-3">
-          وَبِصَوْمِ غَدٍ نَّوَيْتُ مِنْ شَهْرِ رَمَضَانَ
-        </h1>
-        <h1 className="dua-roman  is-size-5">
-          Wa bisawmi ghadinn nawaiytu min shahri ramadan
-        </h1>
-        <h1 className="dua-english  is-size-5">
-          I intend to keep the fast for tomorrow in the month of Ramadan
-        </h1>
-      </div>
-      <div className={classNames(
-          "dua switchColor has-text-centered",
-          {"is-hidden": dua!="iftar"}
-      )} id="dua-iftar">
-        <h1 className="dua-arabic arabic is-size-3">
-          اللَّهُمَّ اِنِّى لَكَ صُمْتُ وَبِكَ امنْتُ وَعَليْكَ تَوَكّلتُ وَ
-          عَلى رِزْقِكَ اَفْطَرْتُ
-        </h1>
-        <h1 className="dua-roman  is-size-5">
-          Allahumma inni laka sumtu wa bika aamantu wa alayka tawakkaltu wa ala
-          rizq-ika-aftartu
-        </h1>
-        <h1 className="dua-english  is-size-5">
-          O Allah! I fasted for You and I believe in You and I put my trust in
-          You and I break my fast with Your sustenance
-        </h1>
-      </div>
+      {
+        Object.keys(Duas).map(key=>(
+          <div key={key} className={classNames("container","dua","switchColor","has-text-centered",{"is-hidden":dua!=key})}>
+            <h2 className="arabic is-size-2">{Duas[key]["arabic"]}</h2>
+            <hr className="seperator"/>
+            <h2 className="is-size-4">{Duas[key]["roman"]}</h2>
+            <hr className="seperator"/>
+            <h2 className="is-size-4">{Duas[key]["english"]}</h2>
+          </div>
+        ))
+      }
+     </div>
     </>
   );
 }

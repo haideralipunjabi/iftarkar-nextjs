@@ -2,6 +2,7 @@
   {
     "name": "Group A",
     "offsets": [
+      { "name": "Srinagar", "offset": 0 },
       { "name": "Pulwama,Kulgam,Harmukh", "offset": -1 },
       { "name": "Anantnag", "offset": -2 },
       { "name": "Pahalgam", "offset": -3 },
@@ -163,6 +164,7 @@
   {
     "name": "Group B",
     "offsets": [
+      { "name": "Srinagar", "offset": 0 },
       { "name": "Pulwama,Kulgam,Harmukh", "offset": -1 },
       { "name": "Anantnag", "offset": -2 }
     ],
