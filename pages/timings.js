@@ -1,6 +1,8 @@
 import TimingsData from "../data/timings.json";
 import { DateTime } from "luxon";
 import {translate} from "../utils/utils";
+import Languages from "../data/languages.json";
+
 export default function Timings(props) {
   const { settings, setSettings, settingsOpened, setSettingsOpened } = props;
   const getTimes = (timing) => {
@@ -21,7 +23,7 @@ export default function Timings(props) {
   return (
     <div className="my-6">
       <h1 className=" has-text-centered is-size-2 title switchColor">
-        Timings
+      {Languages[settings.language].timings}
       </h1>
       <h2 className="has-text-centered is-size-4 subitle switchColor">
         {TimingsData[settings.timingIndex].name[settings.language]}
@@ -38,18 +40,18 @@ export default function Timings(props) {
             <th className="switchColor">Islamic Date</th>
             <th className="switchColor">Gregorian Date</th>
             <th className="switchColor">Day</th>
-            <th className="switchColor">Sahar</th>
-            <th className="switchColor">Iftar</th>
+            <th className="switchColor">{Languages[settings.language].sahar}</th>
+            <th className="switchColor">{Languages[settings.language].iftar}</th>
           </tr>
         </thead>
         <tbody>
           {TimingsData[settings.timingIndex].timings.map((timing, idx) => {
             return (
               <tr key={idx}>
-                <td>{timing.dates.hijri}</td>
-                <td>{timing.dates.gregorian}</td>
-                <td>{getTimes(timing).day}</td>
-                <td>{translate("settings.language",getTimes(timing).sahar)}</td>
+                <td>{translate(settings.language,timing.dates.hijri)}</td>
+                <td>{translate(settings.language,timing.dates.gregorian)}</td>
+                <td>{translate(settings.language,getTimes(timing).day)}</td>
+                <td>{translate(settings.language,getTimes(timing).sahar)}</td>
                 <td>{translate(settings.language,getTimes(timing).iftar)}</td>
               </tr>
             );

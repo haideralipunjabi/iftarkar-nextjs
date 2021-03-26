@@ -74,7 +74,7 @@ export default function Timer(props) {
   const times = getTimes();
   const [timeStart, setTimeStart] = useState(times.timeStart);
   const [timeEnd, setTimeEnd] = useState(times.timeEnd);
-  const [timeLeft, setTimeLeft] = useState(timeEnd.diffNow());
+  const [timeLeft, setTimeLeft] = useState(timeEnd.diffNow(['hours','minutes','second']));
   const [hijri, setHijri] = useState(times.hijri);
   const getPercentDone = () =>
     ((DateTime.now().diff(timeStart) * 100) / timeEnd.diff(timeStart)).toFixed(
@@ -90,7 +90,7 @@ export default function Timer(props) {
   useEffect(() => {
     let interval = setInterval(() => {
 
-      setTimeLeft(timeEnd.diffNow());
+      setTimeLeft(timeEnd.diffNow(['hours','minutes','second']));
       setPercentDone(getPercentDone());
     }, 1000);
     return () => {
@@ -134,10 +134,22 @@ export default function Timer(props) {
             <p
               className={classNames(
                 styles.timerTitle,
-                "has-text-weight-semi-bold switchColor"
+                "my-2 has-text-weight-semi-bold switchColor"
               )}
             >
-              {translate(settings.language,timeLeft.toFormat("hh:mm:ss"))}
+              {/* {translate(settings.language,timeLeft.toFormat("hh:mm:ss"))} */}
+              <span className="timeContainer">
+                <span class="timeTitle">{translate(settings.language,timeLeft.toFormat("hh:mm:ss").split(":")[0])}</span>
+                <span className="timeSubtitle">{Languages[settings.language][(timeLeft.hours===1?"hour":"hours")]}</span>
+              </span>:
+              <span className="timeContainer">
+                <span class="timeTitle">{translate(settings.language,timeLeft.toFormat("hh:mm:ss").split(":")[1])}</span>
+                <span className="timeSubtitle">{Languages[settings.language][(timeLeft.minutes===1?"minute":"minutes")]}</span>
+              </span>:
+              <span className="timeContainer">
+                <span class="timeTitle">{translate(settings.language,timeLeft.toFormat("hh:mm:ss").split(":")[2])}</span>
+                <span className="timeSubtitle">{Languages[settings.language][(parseInt(timeLeft.seconds)===1?"second":"seconds")]}</span>
+              </span>
             </p>
             <div className={classNames("container",styles.progressContainer)}>
               <progress
