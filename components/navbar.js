@@ -1,7 +1,8 @@
 import classNames from "classnames/bind";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
-export default function Navbar({setSettingsOpened}) {
+import Languages from "../data/languages.json";
+export default function Navbar({settings,setSettingsOpened}) {
   const [menuOpened, setMenuOpened] = useState(false);
   return (
     <>
@@ -15,9 +16,10 @@ export default function Navbar({setSettingsOpened}) {
     </div>
     <div id="navbarBasicExample" className={classNames("navbar-menu has-background-primary",{"is-active":menuOpened})}>
       <div className="navbar-start ml-a">
-        <a href="/" className="navbar-item">Home</a>
-        <a onClick={()=>setSettingsOpened(true)} className="navbar-item">Settings</a>
-        <a href="/about" className="navbar-item">About</a>
+        <a href="/" className="navbar-item">{Languages[settings.language].home}</a>
+        <a href="/timings" className="navbar-item">{Languages[settings.language].timings}</a>
+        <a onClick={()=>setSettingsOpened(true)} className="navbar-item">{Languages[settings.language].settings}</a>
+        <a href="/about" className="navbar-item">{Languages[settings.language].about}</a>
       </div>
     </div>
   </nav>

@@ -1,12 +1,12 @@
 [
   {
-    "name": "Group A",
+    "name": {"en":"Group A", "ur": "Group A"},
     "offsets": [
-      { "name": "Srinagar", "offset": 0 },
-      { "name": "Pulwama,Kulgam,Harmukh", "offset": -1 },
-      { "name": "Anantnag", "offset": -2 },
-      { "name": "Pahalgam", "offset": -3 },
-      { "name": "Leh", "offset": -11 }
+      { "name": {"en": "Srinagar", "ur": "سرینگر"}, "offset": 0 },
+      { "name": {"en": "Pulwama,Kulgam,Harmukh", "ur":"پُلوٗوم، کولگام، ہرمکھ"}, "offset": -1 },
+      { "name": {"en": "Anantnag","ur": "اِسلام آباد"}, "offset": -2 },
+      { "name": {"en": "Pahalgam", "ur": "پہلگام"}, "offset": -3 },
+      { "name": {"en": "Leh", "ur": "لہہ"}, "offset": -11 }
     ],
     "timings": [
       {
@@ -162,11 +162,10 @@
     ]
   },
   {
-    "name": "Group B",
+    "name": {"en":"Group B", "ur": "Group B"},
     "offsets": [
-      { "name": "Srinagar", "offset": 0 },
-      { "name": "Pulwama,Kulgam,Harmukh", "offset": -1 },
-      { "name": "Anantnag", "offset": -2 }
+      { "name": {"en": "Srinagar", "ur": "سرینگر"}, "offset": 0 },
+      { "name": {"en": "Pulwama,Kulgam,Harmukh", "ur":"پُلوٗوم، کولگام، ہرمکھ"}, "offset": -1 }
     ],
     "timings": [
       {
@@ -324,7 +323,7 @@
     ]
   },
   {
-    "name": "Group C",
+    "name": {"en":"Group C","ur":"Group C"},
     "offsets": [
     ],
     "timings": [

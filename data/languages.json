@@ -1,0 +1,39 @@
+{
+    "en":{
+        "en":"English",
+        "ur":"Urdu",
+        "ramadan": "Ramadan",
+        "eidmubarak": "Eid Mubarak",
+        "dua":"Dua",
+        "sahar": "Sahar",
+        "iftar": "Iftar",
+        "home":"Home",
+        "settings":"Settings",
+        "timings":"Timings",
+        "about":"About",
+        "area": "Area",
+        "theme": "Theme",
+        "light": "Light",
+        "dark": "Dark",
+        "language": "Language"
+
+    },
+    "ur": {
+        "en":"انگریزی",
+        "ur":"اردو",
+        "ramadan": "رمضان",
+        "eidmubarak": "عيد مبارك",
+        "dua": "دعاِ",
+        "sahar": "سحر",
+        "iftar": "افطار",
+        "home":"Home",
+        "settings":"ترتیبات",
+        "timings":"ٹایم ٹیبٕل",
+        "about":"ہمارے بارے میں",
+        "area":"علاقہ",
+        "theme":"رنگ",
+        "light":"روشن",
+        "dark":"تاریک",
+        "language": "زبان"
+    }
+}
