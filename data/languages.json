@@ -15,7 +15,13 @@
         "theme": "Theme",
         "light": "Light",
         "dark": "Dark",
-        "language": "Language"
+        "language": "Language",
+        "hour": "Hour",
+        "hours": "Hours",
+        "minute": "Minute",
+        "minutes": "Minutes",
+        "second": "Second",
+        "seconds": "Seconds"
 
     },
     "ur": {
@@ -34,6 +40,12 @@
         "theme":"رنگ",
         "light":"روشن",
         "dark":"تاریک",
-        "language": "زبان"
+        "language": "زبان",
+        "hour":"گھنٹہ",
+        "hours": "گھنٹے",
+        "minute": "منٹ",
+        "minutes": "منٹ",
+        "second": "سیکنڈ",
+        "seconds": "سیکنڈ"
     }
 }

@@ -9,11 +9,26 @@ $material-grey-400: #BDBDBD;
 $timer-title-font-size: 12rem;
 $timer-subtitle-font-size: 2.5rem;
 
-$footer-padding: 1rem 1.5rem;
-$dark: #131836;
-$light: #eceef8;
 $primary: $material-deep-purple-900;
+$light: #eceef8;
+$dark: #131836;
+
+$footer-padding: 1rem 1.5rem;
 $navbar-item-hover-background-color: $dark;
 $navbar-dropdown-background-color: $primary;
 $footer-background-color: $primary;
 $progress-bar-background-color: $material-grey-400;
+
+$size-1: var(--size-1);
+$size-2: var(--size-2);
+$size-3: var(--size-3);
+$size-4: var(--size-4);
+$size-5: var(--size-5);
+$size-6: var(--size-6);
+$size-7: var(--size-7);
+
+$weight-light:	var(--weight-light);
+$weight-normal: var(--weight-normal);
+$weight-medium: var(--weight-medium);
+$weight-semibold: var(--weight-semibold);
+$weight-bold: var(--weight-bold);

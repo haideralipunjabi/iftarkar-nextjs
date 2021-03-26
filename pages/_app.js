@@ -97,7 +97,7 @@ function MyApp({ Component, pageProps }) {
     </>
   }
 
-  <Footer/>
+  <Footer settings={settings}/>
     </div>
   </>)
 }

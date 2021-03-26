@@ -4,7 +4,7 @@
 
 .timerTitle {
   font-size:  var(--clock-font);
-  font-family: 'Oswald';
+  font-family: var(--clock-font-family);
 }
 .timerSubtitle {
   font-size: var(--title-font);

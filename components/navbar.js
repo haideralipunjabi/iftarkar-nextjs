@@ -16,10 +16,10 @@ export default function Navbar({settings,setSettingsOpened}) {
     </div>
     <div id="navbarBasicExample" className={classNames("navbar-menu has-background-primary",{"is-active":menuOpened})}>
       <div className="navbar-start ml-a">
-        <a href="/" className="navbar-item">{Languages[settings.language].home}</a>
-        <a href="/timings" className="navbar-item">{Languages[settings.language].timings}</a>
-        <a onClick={()=>setSettingsOpened(true)} className="navbar-item">{Languages[settings.language].settings}</a>
-        <a href="/about" className="navbar-item">{Languages[settings.language].about}</a>
+        <a href="/" className="navbar-item is-size-6">{Languages[settings.language].home}</a>
+        <a href="/timings" className="navbar-item  is-size-6">{Languages[settings.language].timings}</a>
+        <a onClick={()=>setSettingsOpened(true)} className="navbar-item is-size-6">{Languages[settings.language].settings}</a>
+        <a href="/about" className="navbar-item is-size-6">{Languages[settings.language].about}</a>
       </div>
     </div>
   </nav>
