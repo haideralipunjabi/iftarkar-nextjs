@@ -1,4 +1,5 @@
 import Timings from "../data/timings.json";
+import Languages from "../data/languages.json";
 import classNames from "classnames";
 
 export default function Settings(props) {
@@ -12,7 +13,7 @@ export default function Settings(props) {
       <div className="modal-background"></div>
         <div className="modal-card">
           <header className="modal-card-head">
-            <p className="modal-card-title">Settings</p>
+            <p className="modal-card-title">{Languages[settings.language].settings}</p>
             <button
               onClick={() => setActive(false)}
               className="delete"
@@ -22,7 +23,7 @@ export default function Settings(props) {
           <section className="modal-card-body">
             <form>
               <div className="field">
-                <label htmlFor="" className="label">Timings</label>
+                <label htmlFor="" className="label">{Languages[settings.language].timings}</label>
                 <div className="control">
                   <div className="select">
                     <select id="timing" onChange={e=>{
@@ -33,7 +34,7 @@ export default function Settings(props) {
                     value={settings.timing}
                     > 
                       {
-                        Timings.map((timing,idx)=><option key={idx} value={timing.name}>{timing.name}</option>)
+                        Timings.map((timing,idx)=><option key={idx} value={timing.name.en}>{timing.name.en}</option>)
                       }
                     </select>
                   </div>
@@ -42,7 +43,7 @@ export default function Settings(props) {
               {
                 Timings[settings.timingIndex]["offsets"].length > 0 &&
                 <div className="field">
-                <label htmlFor="" className="label">Area</label>
+                <label htmlFor="" className="label">{Languages[settings.language].area}</label>
                 <div className="control">
                   <div className="select">
                     <select id="offset" onChange={e=>{
@@ -51,7 +52,7 @@ export default function Settings(props) {
                     value={settings.offset}
                     >
                       {
-                        Timings[settings.timingIndex]["offsets"].map(offset=><option value={offset.offset}>{offset.name}</option>)
+                        Timings[settings.timingIndex]["offsets"].map(offset=><option value={offset.offset}>{offset.name[settings.language]}</option>)
                       }
                     </select>
                   </div>
@@ -59,7 +60,7 @@ export default function Settings(props) {
               </div>
               }
               <div className="field">
-                <label htmlFor="" className="label">Theme</label>
+                <label htmlFor="" className="label">{Languages[settings.language].theme}</label>
                 <div className="control">
                   <div className="select">
                     <select name="" id="theme" onChange={e=>{
@@ -67,8 +68,23 @@ export default function Settings(props) {
                     }}
                     value={settings.theme}
                     >
-                      <option value="light">Light</option>
-                      <option value="dark">Dark</option>
+                      <option value="light">{Languages[settings.language].light}</option>
+                      <option value="dark">{Languages[settings.language].dark}</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div className="field">
+                <label htmlFor="" className="label">{Languages[settings.language].language}</label>
+                <div className="control">
+                  <div className="select">
+                    <select name="" id="language" onChange={e=>{
+                      updateSettings("language",e.target.selectedOptions[0].value)
+                    }}
+                    value={settings.language}>
+                      {
+                        Object.entries(Languages).map((entry)=><option value={entry[0]}>{Languages[settings.language][entry[0]]}</option>)
+                      }
                     </select>
                   </div>
                 </div>

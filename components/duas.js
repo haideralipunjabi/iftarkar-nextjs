@@ -1,5 +1,7 @@
 import classNames from "classnames";
 import { useState } from "react";
+import Languages from "../data/languages.json";
+
 export default function Duas({settings}) {
     const [dua,setDua] = useState("");
 
@@ -26,7 +28,7 @@ export default function Duas({settings}) {
                 <a data-target={key} onClick={()=>{
                   if(dua===key) setDua();
                   else setDua(key);
-                }}>Dua {key}</a>
+                }}>{Languages[settings.language].dua} {Languages[settings.language][key]}</a>
               </li>
             ))
           }
@@ -34,7 +36,7 @@ export default function Duas({settings}) {
       </div>
       {
         Object.keys(Duas).map(key=>(
-          <div key={key} className={classNames("container","dua","switchColor","has-text-centered",{"is-hidden":dua!=key})}>
+          <div key={key} className={classNames("container","dua","switchColor","has-text-centered","px-3",{"is-hidden":dua!=key})}>
             <h2 className="arabic is-size-2">{Duas[key]["arabic"]}</h2>
             <hr className="seperator"/>
             <h2 className="is-size-4">{Duas[key]["roman"]}</h2>

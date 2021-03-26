@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import Timings from "../data/timings.json";
 import classNames from "classnames";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import { translate } from "../utils/utils";
+import Languages from "../data/languages.json";
 export default function Timer(props) {
   const { settings, setSettingsOpened } = props;
   const getTimes = () => {
@@ -113,14 +114,14 @@ export default function Timer(props) {
             hijri && (
             <h2 className={classNames(
               styles.timerSubtitle,"has-text-weight-bold", "switchColor"
-            )}>{hijri} Ramadan 1442</h2>
+            )}>{translate(settings.language,hijri)} {Languages[settings.language].ramadan} {translate(settings.language,1441)}</h2>
           )
         }
         
         <h2 className={classNames(styles.timerDetails,"switchColor")}>
-          {Timings[settings.timingIndex].name} {
+          {Timings[settings.timingIndex].name[settings.language]} {
             Timings[settings.timingIndex].offsets.length > 0 && (
-              " - " + Timings[settings.timingIndex].offsets.filter(offset=>(offset.offset==settings.offset))[0]?.name
+              " - " + Timings[settings.timingIndex].offsets.filter(offset=>(offset.offset==settings.offset))[0]?.name[settings.language]
             )
           }
           <FontAwesomeIcon
@@ -136,7 +137,7 @@ export default function Timer(props) {
                 "has-text-weight-semi-bold switchColor"
               )}
             >
-              {timeLeft.toFormat("hh:mm:ss")}
+              {translate(settings.language,timeLeft.toFormat("hh:mm:ss"))}
             </p>
             <div className={classNames("container",styles.progressContainer)}>
               <progress
@@ -146,7 +147,7 @@ export default function Timer(props) {
               >
                 {percentDone}
               </progress>
-              <p className={styles.progressValue}>{percentDone}%</p>
+              <p className={styles.progressValue}>{translate(settings.language,percentDone)}%</p>
             </div>
           </div>
         </>

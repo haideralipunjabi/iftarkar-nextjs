@@ -7,10 +7,41 @@ import { fab } from "@fortawesome/free-brands-svg-icons";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { far } from "@fortawesome/free-regular-svg-icons";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
+import Navbar from "../components/navbar";
+import Footer from "../components/footer";
+import classNames from "classnames";
+import Settings from "../components/settings";
 
 function MyApp({ Component, pageProps }) {
+  const [settingsOpened,setSettingsOpened] = useState(false);
+  const [settings,setSettings] = useState({
+    "timing": "Group A",
+    "timingIndex": 0,
+    "offset": 0,
+    "theme":"light",
+    "language":"en"
+  });
+  useEffect(() => {
+    setSettings({
+    "timing": localStorage.getItem("settings-timing") ?? "Group A",
+    "timingIndex": parseInt(localStorage.getItem("settings-timingIndex") ?? 0),
+    "offset": parseInt(localStorage.getItem("settings-offset") ?? 0),
+    "theme": localStorage.getItem("settings-theme") ?? "light",
+    "language": localStorage.getItem("settings-language") ?? "en",
+  })
+  }, [])
+  useEffect(() => {
+    console.table("Settings have changed", settings)
+  }, [settings]);
+  const updateSettings = (key,value) =>{
+    localStorage.setItem("settings-"+key,value);
+    setSettings(settings=>({
+      ...settings,
+      [key]: value
+    }))
+  }
   library.add(fab, fas, far);
   const handlePrompt = (e) => {
     e.preventDefault();
@@ -21,6 +52,7 @@ function MyApp({ Component, pageProps }) {
       window.removeEventListener("beforeinstallprompt", handlePrompt);
     };
   })
+  pageProps = {...pageProps, "settings": settings,"setSettings":setSettings,'settingsOpened':settingsOpened,"setSettingsOpened":setSettingsOpened};
   return( 
     <>
     <Head>
@@ -52,7 +84,21 @@ function MyApp({ Component, pageProps }) {
       />
     </Head>
     <DefaultSeo {...SEO} />
+    <div
+    className={classNames("is-flex is-flex-direction-column is-justify-content-space-between","has-background-"+settings?.theme??"light",{"arabic":settings.language==="ur"})}
+    style={{ minHeight: "100%" }}
+  >
+  {
+    settings &&
+    <>
+    <Navbar settings={settings} setSettingsOpened={setSettingsOpened}/>
   <Component {...pageProps} />
+    <Settings active={settingsOpened} setActive={setSettingsOpened} settings = {settings} updateSettings={updateSettings}/>
+    </>
+  }
+
+  <Footer/>
+    </div>
   </>)
 }
 
