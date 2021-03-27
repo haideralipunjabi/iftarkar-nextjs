@@ -1,7 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Languages from "../data/languages.json";
+import {useSettingsContext} from "../context/settings";
 
-export default function About({ settings }) {
+export default function About() {
+  const {settings} = useSettingsContext();
   if (!settings) return <></>;
   return (
     <div className="container px-6 my-6 has-text-centered switchColor">

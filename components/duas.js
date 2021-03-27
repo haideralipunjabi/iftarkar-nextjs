@@ -1,10 +1,11 @@
 import classNames from "classnames";
 import { useState } from "react";
 import Languages from "../data/languages.json";
+import {useSettingsContext} from "../context/settings";
 
-export default function Duas({settings}) {
+export default function Duas() {
     const [dua,setDua] = useState("");
-
+    const {settings}= useSettingsContext();
     const Duas = {
       "sahar": {
         "arabic": "وَبِصَوْمِ غَدٍ نَّوَيْتُ مِنْ شَهْرِ رَمَضَانَ",

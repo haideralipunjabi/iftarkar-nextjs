@@ -6,8 +6,10 @@ import classNames from "classnames";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { translate } from "../utils/utils";
 import Languages from "../data/languages.json";
-export default function Timer(props) {
-  const { settings, setSettingsOpened } = props;
+import {useSettingsContext} from "../context/settings";
+
+export default function Timer() {
+  const { settings, setSettingsOpened } = useSettingsContext();
   const getTimes = () => {
     let timings = Timings[settings.timingIndex].timings;
     let dates = timings.map((timing) => timing.dates.gregorian);

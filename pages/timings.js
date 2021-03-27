@@ -2,9 +2,10 @@ import TimingsData from "../data/timings.json";
 import { DateTime } from "luxon";
 import {translate} from "../utils/utils";
 import Languages from "../data/languages.json";
+import { useSettingsContext } from "../context/settings";
 
-export default function Timings(props) {
-  const { settings, setSettings, settingsOpened, setSettingsOpened } = props;
+export default function Timings() {
+  const { settings, setSettings, settingsOpened, setSettingsOpened } = useSettingsContext();
   const getTimes = (timing) => {
     let offset = settings.offset;
     let iftarTime = DateTime.fromSeconds(timing.timestamps.iftar).plus({

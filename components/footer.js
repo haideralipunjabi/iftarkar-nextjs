@@ -1,7 +1,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { translate } from "../utils/utils";
-export default function Navbar({ settings }) {
+import {useSettingsContext} from "../context/settings";
+
+export default function Footer() {
+  const {settings} = useSettingsContext();
   return (
     <footer className="footer has-text-primary-light">
       <div className="content has-text-centered">
