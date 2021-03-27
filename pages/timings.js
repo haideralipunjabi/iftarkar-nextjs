@@ -37,9 +37,9 @@ export default function Timings(props) {
       <table className="table is-bordered has-text-centered switchColor mx-a my-2">
         <thead>
           <tr>
-            <th className="switchColor">Islamic Date</th>
-            <th className="switchColor">Gregorian Date</th>
-            <th className="switchColor">Day</th>
+            <th className="switchColor">{Languages[settings.language].islamicdate}</th>
+            <th className="switchColor">{Languages[settings.language].gregoriandate}</th>
+            <th className="switchColor">{Languages[settings.language].day}</th>
             <th className="switchColor">{Languages[settings.language].sahar}</th>
             <th className="switchColor">{Languages[settings.language].iftar}</th>
           </tr>
