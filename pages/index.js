@@ -8,20 +8,7 @@ import Footer from "../components/footer";
 import Settings from "../components/settings";
 
 export default function Home() {
-  const NUMDICT = {
-    0: "۰",
-    1: "	١",
-    2: "٢",
-    3: "٣",
-    4: "۴",
-    5: "٥",
-    6: "٦",
-    7: "٧",
-    8: "٨",
-    9: "٩",
-  };
   const { settings } = useSettingsContext();
-  if (!settings) return <></>;
   return (
     <div
       className={classNames(

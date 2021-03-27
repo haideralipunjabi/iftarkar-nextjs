@@ -1,4 +1,4 @@
-const NUMDICT = {
+const TRANSDICT = {
     "0":"۰",
     "1":"۱",
     "2":"۲",
@@ -17,14 +17,27 @@ const NUMDICT = {
     "wednesday":"بدھ",
     "thursday":"جمعرات",
     "friday":"جمعہ",
-    "saturday":"ہفتہ"
+    "saturday":"ہفتہ",
+    "january":"جنوری",
+    "february":"فروری",
+    "march":"مارچ",
+    "april":"اپریل",
+    "may":"مئی",
+    "june":"جون",
+    "july":"جولائی",
+    "august":"اگست",
+    "september":"ستمبر",
+    "october":"اکتوبر",
+    "november":"نومبر",
+    "december":"دسمبر",
+
 }
 export const translate = (lang,text) =>{
     if(typeof(text) !== String) {
         text = text.toString();
     }
     if(lang==="en") return text;
-    Object.entries(NUMDICT).forEach(i=>{
+    Object.entries(TRANSDICT).forEach(i=>{
         text=text.toLowerCase().replace(new RegExp(i[0],"g"),i[1])
     })
     return text;
