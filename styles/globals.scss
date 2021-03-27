@@ -1,12 +1,8 @@
 @import "variables.scss";
-@import url("https://fonts.googleapis.com/css2?family=Amiri&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Oswald:wght@700&display=swap');
 @import "bulma/bulma";
 
-@font-face {
-  font-family: Fajer;
-  src: url("/fonts/Fajer.ttf")
-}
+
 @font-face {
   font-family: Jameel;
   src: url("/fonts/Jameel.ttf")
@@ -154,7 +150,6 @@ a {
   .navbar {
     min-height: 5rem;
   }
-  // font-family: "Amiri" !important;
 }
 .has-background-dark {
   .switchColor, .switchColor>* {

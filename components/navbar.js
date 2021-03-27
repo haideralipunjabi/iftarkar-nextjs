@@ -4,15 +4,11 @@ import { useEffect, useState } from "react";
 import Languages from "../data/languages.json";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import {useSettingsContext} from "../context/settings";
+import { useSettingsContext } from "../context/settings";
 
 export default function Navbar() {
   const [menuOpened, setMenuOpened] = useState(false);
-  const router = useRouter();
-  const {settings,setSettingsOpened} = useSettingsContext();
-  console.log("TEST", settings);
-if(!settings) return <></>
-
+  const { settings, setSettingsOpened } = useSettingsContext();
   return (
     <>
       <nav
@@ -41,30 +37,40 @@ if(!settings) return <></>
           })}
         >
           <div className="navbar-start ml-a">
-            <Link href="/">
-              <a className={classNames("navbar-item is-size-6",{"is-active":router.pathname==="/"})}>
-                {Languages[settings.language].home}
-              </a>
-            </Link>
-            <Link href="/timings">
-              <a className={classNames("navbar-item is-size-6",{"is-active":router.pathname==="/timings"})}>
-                {Languages[settings.language].timings}
-              </a>
-            </Link>
+            <ActiveLink href="/">
+              {Languages[settings.language].home}
+            </ActiveLink>
+            <ActiveLink href="/timings">
+              {Languages[settings.language].timings}
+            </ActiveLink>
             <a
               onClick={() => setSettingsOpened(true)}
               className="navbar-item is-size-6"
             >
               {Languages[settings.language].settings}
             </a>
-            <Link href="/about">
-            <a className={classNames("navbar-item is-size-6",{"is-active":router.pathname==="/about"})}>
+            <ActiveLink href="/about">
               {Languages[settings.language].about}
-            </a>
-            </Link>
+            </ActiveLink>
           </div>
         </div>
       </nav>
     </>
+  );
+}
+
+function ActiveLink({ href, className, children }) { 
+
+  const router = useRouter();
+  return (
+    <Link href={href}>
+      <a
+        className={classNames("navbar-item", "is-size-6", {
+          "is-active": router.pathname === href,
+        })}
+      >
+        {children}
+      </a>
+    </Link>
   );
 }

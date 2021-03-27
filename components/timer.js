@@ -139,17 +139,16 @@ export default function Timer() {
                 "my-2 has-text-weight-semi-bold switchColor"
               )}
             >
-              {/* {translate(settings.language,timeLeft.toFormat("hh:mm:ss"))} */}
               <span className="timeContainer">
-                <span class="timeTitle">{translate(settings.language,timeLeft.toFormat("hh:mm:ss").split(":")[0])}</span>
+                <span className="timeTitle">{translate(settings.language,timeLeft.toFormat("hh:mm:ss").split(":")[0])}</span>
                 <span className="timeSubtitle">{Languages[settings.language][(timeLeft.hours===1?"hour":"hours")]}</span>
               </span>:
               <span className="timeContainer">
-                <span class="timeTitle">{translate(settings.language,timeLeft.toFormat("hh:mm:ss").split(":")[1])}</span>
+                <span className="timeTitle">{translate(settings.language,timeLeft.toFormat("hh:mm:ss").split(":")[1])}</span>
                 <span className="timeSubtitle">{Languages[settings.language][(timeLeft.minutes===1?"minute":"minutes")]}</span>
               </span>:
               <span className="timeContainer">
-                <span class="timeTitle">{translate(settings.language,timeLeft.toFormat("hh:mm:ss").split(":")[2])}</span>
+                <span className="timeTitle">{translate(settings.language,timeLeft.toFormat("hh:mm:ss").split(":")[2])}</span>
                 <span className="timeSubtitle">{Languages[settings.language][(parseInt(timeLeft.seconds)===1?"second":"seconds")]}</span>
               </span>
             </p>

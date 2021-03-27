@@ -52,7 +52,7 @@ export default function Settings(props) {
                     value={settings.offset}
                     >
                       {
-                        Timings[settings.timingIndex]["offsets"].map(offset=><option value={offset.offset}>{offset.name[settings.language]}</option>)
+                        Timings[settings.timingIndex]["offsets"].map((offset,key)=><option key={key} value={offset.offset}>{offset.name[settings.language]}</option>)
                       }
                     </select>
                   </div>
@@ -83,7 +83,7 @@ export default function Settings(props) {
                     }}
                     value={settings.language}>
                       {
-                        Object.entries(Languages).map((entry)=><option value={entry[0]}>{Languages[settings.language][entry[0]]}</option>)
+                        Object.entries(Languages).map((entry,key)=><option key={key} value={entry[0]}>{Languages[settings.language][entry[0]]}</option>)
                       }
                     </select>
                   </div>
