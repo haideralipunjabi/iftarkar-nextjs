@@ -6,7 +6,7 @@ import classNames from "classnames";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { translate } from "../utils/utils";
 import Languages from "../data/languages.json";
-import {useSettingsContext} from "../context/settings";
+import { useSettingsContext } from "../context/settings";
 
 export default function Timer() {
   const { settings, setSettingsOpened } = useSettingsContext();
@@ -60,7 +60,7 @@ export default function Timer() {
       return {
         timeStart: timeStart,
         timeEnd: timeEnd,
-        hijri: timings[idx].dates.hijri
+        hijri: timings[idx].dates.hijri,
       };
     } else if (now < firstSehri)
       return {
@@ -76,7 +76,9 @@ export default function Timer() {
   const times = getTimes();
   const [timeStart, setTimeStart] = useState(times.timeStart);
   const [timeEnd, setTimeEnd] = useState(times.timeEnd);
-  const [timeLeft, setTimeLeft] = useState(timeEnd.diffNow(['hours','minutes','second']));
+  const [timeLeft, setTimeLeft] = useState(
+    timeEnd.diffNow(["hours", "minutes", "second"])
+  );
   const [hijri, setHijri] = useState(times.hijri);
   const getPercentDone = () =>
     ((DateTime.now().diff(timeStart) * 100) / timeEnd.diff(timeStart)).toFixed(
@@ -87,12 +89,11 @@ export default function Timer() {
     const times = getTimes();
     setTimeStart(times.timeStart);
     setTimeEnd(times.timeEnd);
-    setHijri(times.hijri)
+    setHijri(times.hijri);
   };
   useEffect(() => {
     let interval = setInterval(() => {
-
-      setTimeLeft(timeEnd.diffNow(['hours','minutes','second']));
+      setTimeLeft(timeEnd.diffNow(["hours", "minutes", "second"]));
       setPercentDone(getPercentDone());
     }, 1000);
     return () => {
@@ -112,25 +113,43 @@ export default function Timer() {
     <div className="is-flex is-flex-direction-column is-justify-content-center has-text-centered">
       {timeEnd > DateTime.now() && (
         <>
-        {
-            hijri && (
-            <h2 className={classNames(
-              styles.timerSubtitle,"has-text-weight-bold", "switchColor"
-            )}>{translate(settings.language,hijri)} {Languages[settings.language].ramadan} {translate(settings.language,1441)}</h2>
-          )
-        }
-        
-        <h2 className={classNames(styles.timerDetails,"switchColor")}>
-          {Timings[settings.timingIndex].name[settings.language]} {
-            Timings[settings.timingIndex].offsets.length > 0 && (
-              " - " + Timings[settings.timingIndex].offsets.filter(offset=>(offset.offset==settings.offset))[0]?.name[settings.language]
-            )
-          }
-          <FontAwesomeIcon
-            className={classNames("mx-4", {"has-text-primary": settings.theme === "light"},{"has-text-info": settings.theme==="dark"})}
-            icon={["fas", "cogs"]}
-            onClick={()=>setSettingsOpened(true)}
-          />
+          {hijri && (
+            <h2
+              className={classNames(
+                styles.timerSubtitle,
+                "has-text-weight-bold",
+                "switchColor"
+              )}
+            >
+              {translate(settings.language, hijri)}{" "}
+              {Languages[settings.language].ramadan}{" "}
+              {translate(settings.language, 1441)}{" "}{Languages[settings.language].ah}
+              {<span className="mx-2">|</span>}
+              {translate(
+                settings.language,
+                DateTime.now().toFormat("dd LLLL y")
+              )}
+              {" "}
+              {Languages[settings.language].ce}
+            </h2>
+          )}
+
+          <h2 className={classNames(styles.timerDetails, "switchColor")}>
+            {Timings[settings.timingIndex].name[settings.language]}{" "}
+            {Timings[settings.timingIndex].offsets.length > 0 &&
+              " - " +
+                Timings[settings.timingIndex].offsets.filter(
+                  (offset) => offset.offset == settings.offset
+                )[0]?.name[settings.language]}
+            <FontAwesomeIcon
+              className={classNames(
+                "mx-4",
+                { "has-text-primary": settings.theme === "light" },
+                { "has-text-info": settings.theme === "dark" }
+              )}
+              icon={["fas", "cogs"]}
+              onClick={() => setSettingsOpened(true)}
+            />
           </h2>
           <div>
             <p
@@ -140,33 +159,74 @@ export default function Timer() {
               )}
             >
               <span className="timeContainer">
-                <span className="timeTitle">{translate(settings.language,timeLeft.toFormat("hh:mm:ss").split(":")[0])}</span>
-                <span className="timeSubtitle">{Languages[settings.language][(timeLeft.hours===1?"hour":"hours")]}</span>
-              </span>:
+                <span className="timeTitle">
+                  {translate(
+                    settings.language,
+                    timeLeft.toFormat("hh:mm:ss").split(":")[0]
+                  )}
+                </span>
+                <span className="timeSubtitle">
+                  {
+                    Languages[settings.language][
+                      timeLeft.hours === 1 ? "hour" : "hours"
+                    ]
+                  }
+                </span>
+              </span>
+              :
               <span className="timeContainer">
-                <span className="timeTitle">{translate(settings.language,timeLeft.toFormat("hh:mm:ss").split(":")[1])}</span>
-                <span className="timeSubtitle">{Languages[settings.language][(timeLeft.minutes===1?"minute":"minutes")]}</span>
-              </span>:
+                <span className="timeTitle">
+                  {translate(
+                    settings.language,
+                    timeLeft.toFormat("hh:mm:ss").split(":")[1]
+                  )}
+                </span>
+                <span className="timeSubtitle">
+                  {
+                    Languages[settings.language][
+                      timeLeft.minutes === 1 ? "minute" : "minutes"
+                    ]
+                  }
+                </span>
+              </span>
+              :
               <span className="timeContainer">
-                <span className="timeTitle">{translate(settings.language,timeLeft.toFormat("hh:mm:ss").split(":")[2])}</span>
-                <span className="timeSubtitle">{Languages[settings.language][(parseInt(timeLeft.seconds)===1?"second":"seconds")]}</span>
+                <span className="timeTitle">
+                  {translate(
+                    settings.language,
+                    timeLeft.toFormat("hh:mm:ss").split(":")[2]
+                  )}
+                </span>
+                <span className="timeSubtitle">
+                  {
+                    Languages[settings.language][
+                      parseInt(timeLeft.seconds) === 1 ? "second" : "seconds"
+                    ]
+                  }
+                </span>
               </span>
             </p>
-            <div className={classNames("container",styles.progressContainer)}>
+            <div className={classNames("container", styles.progressContainer)}>
               <progress
-                className={classNames("progress","is-primary",styles.progress)}
+                className={classNames(
+                  "progress",
+                  "is-primary",
+                  styles.progress
+                )}
                 value={percentDone}
                 max="100"
               >
                 {percentDone}
               </progress>
-              <p className={styles.progressValue}>{translate(settings.language,percentDone)}%</p>
+              <p className={styles.progressValue}>
+                {translate(settings.language, percentDone)}%
+              </p>
             </div>
           </div>
         </>
       )}
       {timeEnd < DateTime.now() && (
-        <h1 className={styles.timerTitle, "switchColor"}>Eid Mubarak</h1>
+        <h1 className={(styles.timerTitle, "switchColor")}>Eid Mubarak</h1>
       )}
     </div>
   );

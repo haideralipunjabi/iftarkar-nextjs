@@ -24,7 +24,9 @@
         "seconds": "Seconds",
         "gregoriandate": "Gregorian Date",
         "islamicdate":"Islamic Date",
-        "day": "Day"
+        "day": "Day",
+        "ah":"",
+        "ce":""
 
     },
     "ur": {
@@ -52,6 +54,8 @@
         "seconds": "سیکنڈ",
         "gregoriandate":"عیسوی تاریخ",
         "islamicdate": "اسلامی تاریخ",
-        "day":"دن"
+        "day":"دن",
+        "ah" :"ھ",
+        "ce": "ء"
     }
 }
