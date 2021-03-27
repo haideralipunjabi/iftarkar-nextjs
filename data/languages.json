@@ -21,7 +21,10 @@
         "minute": "Minute",
         "minutes": "Minutes",
         "second": "Second",
-        "seconds": "Seconds"
+        "seconds": "Seconds",
+        "gregoriandate": "Gregorian Date",
+        "islamicdate":"Islamic Date",
+        "day": "Day"
 
     },
     "ur": {
@@ -29,13 +32,13 @@
         "ur":"اردو",
         "ramadan": "رمضان",
         "eidmubarak": "عيد مبارك",
-        "dua": "دعاِ",
+        "dua": "دُعاِ",
         "sahar": "سحر",
-        "iftar": "افطار",
-        "home":"Home",
+        "iftar": "اِفطار",
+        "home":"صفحۂ اول",
         "settings":"ترتیبات",
         "timings":"ٹایم ٹیبٕل",
-        "about":"ہمارے بارے میں",
+        "about":"ہمارا تعارُف",
         "area":"علاقہ",
         "theme":"رنگ",
         "light":"روشن",
@@ -46,6 +49,9 @@
         "minute": "منٹ",
         "minutes": "منٹ",
         "second": "سیکنڈ",
-        "seconds": "سیکنڈ"
+        "seconds": "سیکنڈ",
+        "gregoriandate":"عیسوی تاریخ",
+        "islamicdate": "اسلامی تاریخ",
+        "day":"دن"
     }
 }

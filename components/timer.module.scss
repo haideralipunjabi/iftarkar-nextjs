@@ -5,6 +5,7 @@
 .timerTitle {
   font-size:  var(--clock-font);
   font-family: var(--clock-font-family);
+  direction: ltr !important;
 }
 .timerSubtitle {
   font-size: var(--title-font);
@@ -27,6 +28,7 @@
 }
 .progress {
   height: var(--progress-height);
+  direction: ltr !important;
 }
 .progressContainer {
   margin: var(--progress-margin);

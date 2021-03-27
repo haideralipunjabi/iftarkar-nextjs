@@ -163,8 +163,20 @@ a {
   a {
     color: white;
   }
+  .container,.footer {
+    .icons {
+      a {
+        border-bottom: none !important;
+      }
+    }
+    a {
+      border-bottom: 1px white solid !important;
+    }
+  }
   a:hover {
     color: white;
+    border-bottom: 1px white solid !important;
+
   }
   .tabs {
     a:hover {
@@ -173,13 +185,7 @@ a {
 
   }
 }
-.footer {
-  a:hover {
-    color: white;
-    border-bottom: 1px white solid !important;
-  }
-  
-}
+
 .has-background-light {
   .switchColor {
     color: black;
@@ -223,4 +229,13 @@ a {
   font-size: var(--size-4);
   position: relative;
   bottom: 0;
+}
+
+ul.icons {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  li {
+    margin: 0 10px;
+  }
 }
