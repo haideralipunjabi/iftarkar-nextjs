@@ -42,7 +42,7 @@ export default function Footer() {
               icon={["fas", "heart"]}
             />{" "}
             سے بنایاہے{" "}
-            | © {translate("ur",new Date().getFullYear())}
+            | © {translate(settings.language,new Date().getFullYear())}
           </p>
         )}
       </div>

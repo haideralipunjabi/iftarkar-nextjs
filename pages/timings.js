@@ -1,11 +1,21 @@
 import TimingsData from "../data/timings.json";
 import { DateTime } from "luxon";
-import {translate} from "../utils/utils";
+import { translate } from "../utils/utils";
 import Languages from "../data/languages.json";
 import { useSettingsContext } from "../context/settings";
+import Navbar from "../components/navbar";
+import Footer from "../components/footer";
+import Settings from "../components/settings";
+import classNames from "classnames";
 
 export default function Timings() {
-  const { settings, setSettings, settingsOpened, setSettingsOpened } = useSettingsContext();
+  const {
+    settings,
+    setSettings,
+    settingsOpened,
+    setSettingsOpened,
+  } = useSettingsContext();
+  const Language = Languages[settings.language];
   const getTimes = (timing) => {
     let offset = settings.offset;
     let iftarTime = DateTime.fromSeconds(timing.timestamps.iftar).plus({
@@ -20,46 +30,75 @@ export default function Timings() {
       iftar: iftarTime.toFormat("hh:mm a"),
     };
   };
-  if (!settings) return <></>;
   return (
-    <div className="my-6">
-      <h1 className=" has-text-centered is-size-2 title switchColor">
-      {Languages[settings.language].timings}
-      </h1>
-      <h2 className="has-text-centered is-size-4 subitle switchColor">
-        {TimingsData[settings.timingIndex].name[settings.language]}
-        {TimingsData[settings.timingIndex].offsets.length > 0 &&
-          " - " +
-          TimingsData[settings.timingIndex].offsets.filter(
-              (offset) => offset.offset == settings.offset
-            )[0]?.name[settings.language]}
-      </h2>
-      <div className="table-container">
-      <table className="table is-bordered has-text-centered switchColor mx-a my-2">
-        <thead>
-          <tr>
-            <th className="switchColor">{Languages[settings.language].islamicdate}</th>
-            <th className="switchColor">{Languages[settings.language].gregoriandate}</th>
-            <th className="switchColor">{Languages[settings.language].day}</th>
-            <th className="switchColor">{Languages[settings.language].sahar}</th>
-            <th className="switchColor">{Languages[settings.language].iftar}</th>
-          </tr>
-        </thead>
-        <tbody>
-          {TimingsData[settings.timingIndex].timings.map((timing, idx) => {
-            return (
-              <tr key={idx}>
-                <td>{translate(settings.language,timing.dates.hijri)}</td>
-                <td>{translate(settings.language,timing.dates.gregorian)}</td>
-                <td>{translate(settings.language,getTimes(timing).day)}</td>
-                <td>{translate(settings.language,getTimes(timing).sahar)}</td>
-                <td>{translate(settings.language,getTimes(timing).iftar)}</td>
+    <div
+      className={classNames(
+        "is-flex is-flex-direction-column is-justify-content-space-between",
+        "has-background-" + useSettingsContext().settings?.theme ?? "light",
+        { arabic: useSettingsContext().settings?.language === "ur" }
+      )}
+      style={{ minHeight: "100%" }}
+    >
+      <Navbar />
+      <div className="my-6">
+        <h1 className=" has-text-centered is-size-2 title switchColor">
+          {Language.timings}
+        </h1>
+        <h2 className="has-text-centered is-size-4 subitle switchColor">
+          {TimingsData[settings.timingIndex].name[settings.language]}
+          {TimingsData[settings.timingIndex].offsets.length > 0 &&
+            " - " +
+              TimingsData[settings.timingIndex].offsets.filter(
+                (offset) => offset.offset == settings.offset
+              )[0]?.name[settings.language]}
+        </h2>
+        <div className="table-container">
+          <table className="table is-bordered has-text-centered switchColor mx-a my-2">
+            <thead>
+              <tr>
+                <th className="switchColor">
+                  {Language.islamicdate}
+                </th>
+                <th className="switchColor">
+                  {Language.gregoriandate}
+                </th>
+                <th className="switchColor">
+                  {Language.day}
+                </th>
+                <th className="switchColor">
+                  {Language.sahar}
+                </th>
+                <th className="switchColor">
+                  {Language.iftar}
+                </th>
               </tr>
-            );
-          })}
-        </tbody>
-      </table>
+            </thead>
+            <tbody>
+              {TimingsData[settings.timingIndex].timings.map((timing, idx) => {
+                return (
+                  <tr key={idx}>
+                    <td>{translate(settings.language, timing.dates.hijri)}</td>
+                    <td>
+                      {translate(settings.language, timing.dates.gregorian)}
+                    </td>
+                    <td>
+                      {translate(settings.language, getTimes(timing).day)}
+                    </td>
+                    <td>
+                      {translate(settings.language, getTimes(timing).sahar)}
+                    </td>
+                    <td>
+                      {translate(settings.language, getTimes(timing).iftar)}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
       </div>
+      <Settings />
+      <Footer />
     </div>
   );
 }
