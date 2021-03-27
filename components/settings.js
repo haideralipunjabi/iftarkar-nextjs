@@ -1,21 +1,21 @@
 import Timings from "../data/timings.json";
 import Languages from "../data/languages.json";
 import classNames from "classnames";
+import {useSettingsContext} from "../context/settings";
 
 export default function Settings(props) {
-  const {active,setActive,settings,updateSettings} = props;
-
+  const {settingsOpened,setSettingsOpened,settings,updateSettings} = useSettingsContext();
   const handleOnChange = (e) => {
     updateSettings(e.target.id,e.target.selectedOptions[0].text);
   }
   return (
-    <div className={classNames("modal", { "is-active": active })}>
+    <div className={classNames("modal", { "is-active": settingsOpened })}>
       <div className="modal-background"></div>
         <div className="modal-card">
           <header className="modal-card-head">
             <p className="modal-card-title">{Languages[settings.language].settings}</p>
             <button
-              onClick={() => setActive(false)}
+              onClick={() => setSettingsOpened(false)}
               className="delete"
               aria-label="close"
             ></button>

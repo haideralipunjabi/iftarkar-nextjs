@@ -4,10 +4,15 @@ import { useEffect, useState } from "react";
 import Languages from "../data/languages.json";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import {useSettingsContext} from "../context/settings";
 
-export default function Navbar({ settings, setSettingsOpened }) {
+export default function Navbar() {
   const [menuOpened, setMenuOpened] = useState(false);
   const router = useRouter();
+  const {settings,setSettingsOpened} = useSettingsContext();
+  console.log("TEST", settings);
+if(!settings) return <></>
+
   return (
     <>
       <nav
