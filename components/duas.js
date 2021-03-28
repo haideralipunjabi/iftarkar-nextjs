@@ -40,7 +40,7 @@ export default function Duas() {
       {
         Object.keys(Duas).map(key=>(
           <div key={key} className={classNames("dua","has-text-centered","px-3",{"is-hidden":dua!=key})}>
-            <h2 className="arabic amiri is-size-2 is-size-4-mobile">{Duas[key]["arabic"]}</h2>
+            <h2 className="amiri is-size-2 is-size-4-mobile">{Duas[key]["arabic"]}</h2>
             <hr className={styles.seperator}/>
             <h2 className="is-size-4 is-size-6-mobile">{Duas[key]["roman"]}</h2>
             <hr className={styles.seperator}/>

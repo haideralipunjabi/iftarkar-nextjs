@@ -34,8 +34,7 @@ export default function Timings() {
     <div
       className={classNames(
         "is-flex is-flex-direction-column is-justify-content-space-between",
-        "has-background-" + useSettingsContext().settings?.theme ?? "light",
-        { arabic: useSettingsContext().settings?.language === "ur" }
+        "has-background-" + useSettingsContext().settings?.theme ?? "light"
       )}
       style={{ minHeight: "100%" }}
     >
