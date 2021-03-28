@@ -9,7 +9,7 @@ export default function Footer() {
     <footer className="footer has-text-primary-light">
       <div className="content has-text-centered">
         {settings.language == "en" && (
-          <p className="is-size-6">
+          <p className="is-size-5">
             Made with{" "}
             <FontAwesomeIcon
               style={{ color: "red" }}

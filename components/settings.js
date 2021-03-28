@@ -20,7 +20,7 @@ export default function Settings(props) {
               aria-label="close"
             ></button>
           </header>
-          <section className="modal-card-body">
+          <section className={classNames("modal-card-body")}>
             <form>
               <div className="field">
                 <label htmlFor="" className="label">{Languages[settings.language].timings}</label>

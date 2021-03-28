@@ -20,13 +20,16 @@ export function SettingsWrapper({ children }) {
         language: localStorage.getItem("settings-language") ?? "en",
       });
     }, []);
-  
+    useEffect(()=>{
+      document.getElementsByTagName("body")[0].dataset["theme"] = settings.theme;
+    },[settings])
     const updateSettings = (key, value) => {
       localStorage.setItem("settings-" + key, value);
       setSettings((settings) => ({
         ...settings,
         [key]: value,
       }));
+
     };
     return(
         <SettingsContext.Provider value={{

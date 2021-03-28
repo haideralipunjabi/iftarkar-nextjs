@@ -41,10 +41,10 @@ export default function Timings() {
     >
       <Navbar />
       <div className="my-6">
-        <h1 className=" has-text-centered is-size-2 title switchColor">
+        <h1 className=" has-text-centered is-size-2 title">
           {Language.timings}
         </h1>
-        <h2 className="has-text-centered is-size-4 subitle switchColor">
+        <h2 className="has-text-centered is-size-4 subitle">
           {TimingsData[settings.timingIndex].name[settings.language]}
           {TimingsData[settings.timingIndex].offsets.length > 0 &&
             " - " +
@@ -53,22 +53,22 @@ export default function Timings() {
               )[0]?.name[settings.language]}
         </h2>
         <div className="table-container">
-          <table className="table is-bordered has-text-centered switchColor mx-a my-2">
+          <table className="table is-bordered has-text-centered mx-a my-2">
             <thead>
               <tr>
-                <th className="switchColor">
+                <th>
                   {Language.islamicdate}
                 </th>
-                <th className="switchColor">
+                <th>
                   {Language.gregoriandate}
                 </th>
-                <th className="switchColor">
+                <th>
                   {Language.day}
                 </th>
-                <th className="switchColor">
+                <th>
                   {Language.sahar}
                 </th>
-                <th className="switchColor">
+                <th>
                   {Language.iftar}
                 </th>
               </tr>

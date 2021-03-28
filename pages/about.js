@@ -19,7 +19,7 @@ export default function About() {
       style={{ minHeight: "100%" }}
     >
       <Navbar />
-      <div className="container px-6 my-6 has-text-centered switchColor">
+      <div className="container px-6 my-6 has-text-centered">
         <h1 className="title">{Languages[settings.language].about}</h1>
         <p className="is-size-4 has-text-justified">
           {settings.language === "en" && (

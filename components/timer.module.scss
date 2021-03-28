@@ -17,7 +17,7 @@
   div {
     display: block;
     width: 1px;
-    background-color: white;
+    background-color: var(--text-color);
     margin: 0 20px;
   }
   
@@ -37,7 +37,7 @@
   font-size: var(--progress-height);
   line-height: 1rem;
   font-weight: bold;
-  color: black;
+  color: white;
 }
 .progress {
   height: var(--progress-height);
@@ -45,4 +45,20 @@
 }
 .progressContainer {
   margin: var(--progress-margin);
+}
+
+.timeContainer {
+  display: inline-flex;
+  flex-direction: column;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+.timeTitle {
+  font-family: var(--clock-font-family);
+  margin-bottom: 20px;
+}
+.timeSubtitle {
+  font-size: var(--size-4);
+  position: relative;
+  bottom: 0;
 }

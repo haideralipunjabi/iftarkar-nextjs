@@ -37,19 +37,20 @@ export default function Navbar() {
           })}
         >
           <div className="navbar-start ml-a">
-            <ActiveLink href="/">
+            <ActiveLink href="/" icon={["fas","home"]}>
               {Languages[settings.language].home}
             </ActiveLink>
-            <ActiveLink href="/timings">
+            <ActiveLink href="/timings" icon={["fas","calendar-alt"]}>
               {Languages[settings.language].timings}
             </ActiveLink>
             <a
               onClick={() => setSettingsOpened(true)}
-              className="navbar-item is-size-6"
+              className="navbar-item is-size-5"
             >
+              <FontAwesomeIcon className="is-size-7 mx-2" icon={["fas","cogs"]} />
               {Languages[settings.language].settings}
             </a>
-            <ActiveLink href="/about">
+            <ActiveLink href="/about" icon={["fas","info-circle"]}>
               {Languages[settings.language].about}
             </ActiveLink>
           </div>
@@ -59,16 +60,17 @@ export default function Navbar() {
   );
 }
 
-function ActiveLink({ href, className, children }) { 
+function ActiveLink({ href, className, icon, children }) { 
 
   const router = useRouter();
   return (
     <Link href={href}>
       <a
-        className={classNames("navbar-item", "is-size-6", {
+        className={classNames("navbar-item", "is-size-5", {
           "is-active": router.pathname === href,
         })}
       >
+        <FontAwesomeIcon className="is-size-7 mx-2" icon={icon}/>
         {children}
       </a>
     </Link>

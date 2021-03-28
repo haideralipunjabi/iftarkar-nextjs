@@ -2,10 +2,12 @@ import classNames from "classnames";
 import { useState } from "react";
 import Languages from "../data/languages.json";
 import {useSettingsContext} from "../context/settings";
+import styles from "./duas.module.scss";
 
 export default function Duas() {
     const [dua,setDua] = useState("");
     const {settings}= useSettingsContext();
+    
     const Duas = {
       "sahar": {
         "arabic": "وَبِصَوْمِ غَدٍ نَّوَيْتُ مِنْ شَهْرِ رَمَضَانَ",
@@ -20,8 +22,8 @@ export default function Duas() {
     }
   return (
     <>
-     <div>
-     <div className="container tabs is-centered">
+     <div className="container">
+     <div className={classNames("tabs is-centered")}>
         <ul>
           {
             Object.keys(Duas).map(key=>(
@@ -37,11 +39,11 @@ export default function Duas() {
       </div>
       {
         Object.keys(Duas).map(key=>(
-          <div key={key} className={classNames("container","dua","switchColor","has-text-centered","px-3",{"is-hidden":dua!=key})}>
+          <div key={key} className={classNames("dua","has-text-centered","px-3",{"is-hidden":dua!=key})}>
             <h2 className="arabic amiri is-size-2 is-size-4-mobile">{Duas[key]["arabic"]}</h2>
-            <hr className="seperator"/>
+            <hr className={styles.seperator}/>
             <h2 className="is-size-4 is-size-6-mobile">{Duas[key]["roman"]}</h2>
-            <hr className="seperator"/>
+            <hr className={styles.seperator}/>
             <h2 className="is-size-4 is-size-6-mobile">{Duas[key]["english"]}</h2>
           </div>
         ))
