@@ -117,20 +117,23 @@ export default function Timer() {
             <h2
               className={classNames(
                 styles.timerSubtitle,
-                "has-text-weight-bold",
-                "switchColor"
+                "switchColor",
               )}
             >
-              {translate(settings.language, hijri)}{" "}
-              {Languages[settings.language].ramadan}{" "}
-              {translate(settings.language, 1441)}{" "}{Languages[settings.language].ah}
-              {<span className="mx-2">|</span>}
-              {translate(
-                settings.language,
-                DateTime.now().toFormat("dd LLLL y")
-              )}
-              {" "}
-              {Languages[settings.language].ce}
+              <span>
+                {translate(settings.language, hijri)}{" "}
+                {Languages[settings.language].ramadan}{" "}
+                {translate(settings.language, 1441)}{" "}
+                {Languages[settings.language].ah}
+              </span>
+              <div></div>
+              <span>
+                {translate(
+                  settings.language,
+                  DateTime.now().toFormat("dd LLLL y")
+                )}{" "}
+                {Languages[settings.language].ce}
+              </span>
             </h2>
           )}
 
