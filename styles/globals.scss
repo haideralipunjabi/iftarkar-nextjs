@@ -1,5 +1,5 @@
 @import "variables.scss";
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Oswald:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Oswald:wght@700&family=Amiri:wght@400&display=swap');
 @import "bulma/bulma";
 
 
@@ -7,6 +7,7 @@
   font-family: Jameel;
   src: url("/fonts/Jameel.ttf")
 }
+
 :root {
   --font-family: "Open Sans";
   --clock-font-family: "Oswald";
@@ -131,7 +132,10 @@ a {
 .arabic,.arabic>* {
   --font-family: "Jameel";
   --clock-font-family: "Jameel";
-    font-weight: normal;
+  .amiri {
+    --font-family: "Amiri";
+  }
+    font-weight: normal !important;
   --font-factor: 1rem;
   --size-1: calc(3rem + var(--font-factor));
   --size-2: calc(2.5rem + var(--font-factor));
@@ -215,10 +219,11 @@ a {
   display: inline-flex;
   flex-direction: column;
   line-height: 1;
-  
+  margin-bottom: 20px;
 }
 .timeTitle {
   font-family: var(--clock-font-family);
+  margin-bottom: 20px;
 }
 .timeSubtitle {
   font-size: var(--size-4);

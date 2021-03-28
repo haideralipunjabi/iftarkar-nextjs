@@ -9,7 +9,20 @@
 }
 .timerSubtitle {
   font-size: var(--title-font);
+  font-weight: normal;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  margin-bottom: 20px;
+  div {
+    display: block;
+    width: 1px;
+    background-color: white;
+    margin: 0 20px;
+  }
+  
 }
+
 .timerDetails {
   font-size: calc(var(--title-font) - 0.5rem);
   svg {

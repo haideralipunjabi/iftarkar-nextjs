@@ -26,7 +26,7 @@ export default function Duas() {
           {
             Object.keys(Duas).map(key=>(
               <li key={key} className={classNames({"is-active": dua===key})}>
-                <a data-target={key} onClick={()=>{
+                <a className="is-size-3 is-size-5-mobile" data-target={key} onClick={()=>{
                   if(dua===key) setDua();
                   else setDua(key);
                 }}>{Languages[settings.language].dua} {Languages[settings.language][key]}</a>
@@ -38,11 +38,11 @@ export default function Duas() {
       {
         Object.keys(Duas).map(key=>(
           <div key={key} className={classNames("container","dua","switchColor","has-text-centered","px-3",{"is-hidden":dua!=key})}>
-            <h2 className="arabic is-size-2">{Duas[key]["arabic"]}</h2>
+            <h2 className="arabic amiri is-size-2 is-size-4-mobile">{Duas[key]["arabic"]}</h2>
             <hr className="seperator"/>
-            <h2 className="is-size-4">{Duas[key]["roman"]}</h2>
+            <h2 className="is-size-4 is-size-6-mobile">{Duas[key]["roman"]}</h2>
             <hr className="seperator"/>
-            <h2 className="is-size-4">{Duas[key]["english"]}</h2>
+            <h2 className="is-size-4 is-size-6-mobile">{Duas[key]["english"]}</h2>
           </div>
         ))
       }
