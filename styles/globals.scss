@@ -1,11 +1,10 @@
 @import "variables.scss";
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Oswald:wght@700&family=Amiri:wght@400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Oswald:wght@700&family=Amiri:wght@400&display=swap");
 @import "bulma/bulma";
-
 
 @font-face {
   font-family: Jameel;
-  src: url("/fonts/Jameel.ttf")
+  src: url("/fonts/Jameel.ttf");
 }
 
 :root {
@@ -19,49 +18,89 @@
   --size-5: calc(1.25rem + var(--font-factor));
   --size-6: calc(1rem + var(--font-factor));
   --size-7: calc(0.75rem + var(--font-factor));
-  --weight-light:	300;
+  --weight-light: 300;
   --weight-normal: 400;
   --weight-medium: 500;
   --weight-semibold: 600;
   --weight-bold: 700;
+  --text-color: #000000;
+  --text-invert: #ffffff;
+  --background: #eceef8;
 }
-select,.control, .select select,label.label {
+[data-theme="dark"] {
+  --text-color: #ffffff;
+  --text-invert: #000000;
+  --background: #131836;
+}
+.footer {
+  --text-color: #ffffff;
+  --text-invert: #ffffff;
+  a {
+    border-bottom: 1px solid white;
+  }
+}
+.container {
+  --text-invert: var(--text-color);
+  a {
+    border-bottom: 1px solid var(--text-color);
+  }
+  .tabs {
+    .is-active {
+      a {
+        border-bottom: 1px solid var(--text-color);
+      }
+    }
+    a {
+      border-bottom: none;
+      
+      &:hover {
+        border-bottom: 1px solid var(--text-color);
+      }
+    }
+  }
+}
+.select select {
+  color: black;
+}
+select,
+.control,
+.select select,
+label.label {
   font-family: inherit;
 }
+
 @media only screen and (max-width: 600px) {
   :root {
-      --title-font: 2rem;
-      --clock-font: 5rem;
-      .arabic {
-        --clock-font: 4.5rem;
-      }
-      --progress-margin: 24px;
-      --progress-height: 1rem;
+    --title-font: 2rem;
+    --clock-font: 5rem;
+    .arabic {
+      --clock-font: 4.5rem;
+    }
+    --progress-margin: 24px;
+    --progress-height: 1rem;
   }
 }
 
 @media only screen and (min-width: 600px) {
   :root {
-      --title-font: 3rem;
-      --clock-font: 8rem;
-      .arabic {
-        --clock-font: 10rem;
-      }
-      --progress-margin: 24px;
-      --progress-height: 1rem;
-
+    --title-font: 3rem;
+    --clock-font: 8rem;
+    .arabic {
+      --clock-font: 10rem;
+    }
+    --progress-margin: 24px;
+    --progress-height: 1rem;
   }
 }
 @media only screen and (min-width: 1200px) {
   :root {
-      --title-font: 3rem;
-      --clock-font: 10rem;
-      .arabic {
-        --clock-font: 12rem;
-      }
-      --progress-margin: 0 auto;
-      --progress-height: 1.5rem;
-
+    --title-font: 3rem;
+    --clock-font: 10rem;
+    .arabic {
+      --clock-font: 12rem;
+    }
+    --progress-margin: 0 auto;
+    --progress-height: 1.5rem;
   }
 }
 
@@ -87,7 +126,7 @@ body {
   scroll-behavior: smooth;
   font-family: var(--font-family);
 }
-*>* {
+* > * {
   font-family: var(--font-family);
 }
 a {
@@ -97,7 +136,9 @@ a {
 * {
   box-sizing: border-box;
 }
-
+hr {
+  background-color: var(--text-color);
+}
 .ellipse {
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -129,14 +170,16 @@ a {
   margin-bottom: auto;
 }
 
-.arabic,.arabic>* {
+.arabic,
+.arabic > * {
   --font-family: "Jameel";
   --clock-font-family: "Jameel";
-  .amiri {
+  &.amiri,
+  &.amiri > * {
     --font-family: "Amiri";
   }
-    font-weight: normal !important;
-  --font-factor: 1rem;
+  font-weight: normal !important;
+  --font-factor: 0.5rem;
   --size-1: calc(3rem + var(--font-factor));
   --size-2: calc(2.5rem + var(--font-factor));
   --size-3: calc(2rem + var(--font-factor));
@@ -144,91 +187,20 @@ a {
   --size-5: calc(1.25rem + var(--font-factor));
   --size-6: calc(1rem + var(--font-factor));
   --size-7: calc(0.75rem + var(--font-factor));
-  --weight-light:	400;
+  --weight-light: 400;
   --weight-normal: 400;
   --weight-medium: 400;
   --weight-semibold: 400;
   --weight-bold: 400;
-    font-size: var(--size-6);
+  font-size: var(--size-6);
   direction: rtl;
   .navbar {
     min-height: 5rem;
   }
 }
-.has-background-dark {
-  .switchColor, .switchColor>* {
-    color: white !important;
-  }
-  a {
-    color: white;
-  }
-  .container,.footer {
-    .icons {
-      a {
-        border-bottom: none !important;
-      }
-    }
-    a {
-      border-bottom: 1px white solid !important;
-    }
-  }
-  a:hover {
-    color: white;
-    border-bottom: 1px white solid !important;
-
-  }
-  .tabs {
-    a:hover {
-      border-bottom: 1px black solid !important;
-    }
-
-  }
-}
-
-.has-background-light {
-  .switchColor {
-    color: black;
-  }
-  a {
-    color: white;
-  }
-  a:hover {
-    color: white;
-    border-bottom: 1px white solid i !important;
-  }
-  
-  .tabs {
-    a {
-      color: black;
-    }
-  }
-}
-
-.seperator {
-  height: 0;
-  border-top: 2px dashed whitesmoke;
-  background-color: transparent;
-}
 
 .table {
   background-color: transparent;
-
-}
-
-.timeContainer {
-  display: inline-flex;
-  flex-direction: column;
-  line-height: 1;
-  margin-bottom: 20px;
-}
-.timeTitle {
-  font-family: var(--clock-font-family);
-  margin-bottom: 20px;
-}
-.timeSubtitle {
-  font-size: var(--size-4);
-  position: relative;
-  bottom: 0;
 }
 
 ul.icons {
@@ -237,5 +209,8 @@ ul.icons {
   margin-top: 10px;
   li {
     margin: 0 10px;
+  }
+  a {
+    border-bottom: none;
   }
 }

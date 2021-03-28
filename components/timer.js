@@ -115,10 +115,7 @@ export default function Timer() {
         <>
           {hijri && (
             <h2
-              className={classNames(
-                styles.timerSubtitle,
-                "switchColor",
-              )}
+              className={styles.timerSubtitle}
             >
               <span>
                 {translate(settings.language, hijri)}{" "}
@@ -137,7 +134,7 @@ export default function Timer() {
             </h2>
           )}
 
-          <h2 className={classNames(styles.timerDetails, "switchColor")}>
+          <h2 className={styles.timerDetails}>
             {Timings[settings.timingIndex].name[settings.language]}{" "}
             {Timings[settings.timingIndex].offsets.length > 0 &&
               " - " +
@@ -158,17 +155,17 @@ export default function Timer() {
             <p
               className={classNames(
                 styles.timerTitle,
-                "my-2 has-text-weight-semi-bold switchColor"
+                "my-2 has-text-weight-semi-bold"
               )}
             >
-              <span className="timeContainer">
-                <span className="timeTitle">
+              <span className={styles.timeContainer}>
+                <span className={styles.timeTitle}>
                   {translate(
                     settings.language,
                     timeLeft.toFormat("hh:mm:ss").split(":")[0]
                   )}
                 </span>
-                <span className="timeSubtitle">
+                <span className={styles.timeSubtitle}>
                   {
                     Languages[settings.language][
                       timeLeft.hours === 1 ? "hour" : "hours"
@@ -177,14 +174,14 @@ export default function Timer() {
                 </span>
               </span>
               :
-              <span className="timeContainer">
-                <span className="timeTitle">
+              <span className={styles.timeContainer}>
+                <span className={styles.timeTitle}>
                   {translate(
                     settings.language,
                     timeLeft.toFormat("hh:mm:ss").split(":")[1]
                   )}
                 </span>
-                <span className="timeSubtitle">
+                <span className={styles.timeSubtitle}>
                   {
                     Languages[settings.language][
                       timeLeft.minutes === 1 ? "minute" : "minutes"
@@ -193,14 +190,14 @@ export default function Timer() {
                 </span>
               </span>
               :
-              <span className="timeContainer">
-                <span className="timeTitle">
+              <span className={styles.timeContainer}>
+                <span className={styles.timeTitle}>
                   {translate(
                     settings.language,
                     timeLeft.toFormat("hh:mm:ss").split(":")[2]
                   )}
                 </span>
-                <span className="timeSubtitle">
+                <span className={styles.timeSubtitle}>
                   {
                     Languages[settings.language][
                       parseInt(timeLeft.seconds) === 1 ? "second" : "seconds"
@@ -229,7 +226,7 @@ export default function Timer() {
         </>
       )}
       {timeEnd < DateTime.now() && (
-        <h1 className={(styles.timerTitle, "switchColor")}>Eid Mubarak</h1>
+        <h1 className={styles.timerTitle}>Eid Mubarak</h1>
       )}
     </div>
   );

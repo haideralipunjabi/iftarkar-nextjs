@@ -17,7 +17,10 @@ $footer-padding: 1rem 1.5rem;
 $navbar-item-hover-background-color: $dark;
 $navbar-dropdown-background-color: $primary;
 $footer-background-color: $primary;
-$progress-bar-background-color: $material-grey-400;
+$progress-bar-background-color: #9575CD;
+$tabs-border-bottom-color: $primary;
+$modal-card-head-background-color: $primary;
+$modal-card-title-color: white;
 
 $size-1: var(--size-1);
 $size-2: var(--size-2);
@@ -32,3 +35,11 @@ $weight-normal: var(--weight-normal);
 $weight-medium: var(--weight-medium);
 $weight-semibold: var(--weight-semibold);
 $weight-bold: var(--weight-bold);
+
+$text: var(--text-color);
+$text-strong: var(--text-color);
+$link: var(--text-color);
+$link-hover: var(--text-invert);
+$link-active: var(--text-invert);
+
+$modal-card-body-background-color: var(--background);
