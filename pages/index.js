@@ -13,14 +13,12 @@ export default function Home() {
     <div
       className={classNames(
         "is-flex is-flex-direction-column is-justify-content-space-between",
-        "has-background-" + useSettingsContext().settings?.theme ?? "light",
-        { arabic: useSettingsContext().settings?.language === "ur" }
+        "has-background-" + useSettingsContext().settings?.theme ?? "light"
       )}
       style={{ minHeight: "100%" }}
     >
       <Navbar />
       <div className="my-6">
-        <h1 className="arabic"></h1>
         <Timer />
         <Duas />
       </div>

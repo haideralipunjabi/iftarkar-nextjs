@@ -3,8 +3,6 @@
 
 
 .timerTitle {
-  font-size:  var(--clock-font);
-  font-family: var(--clock-font-family);
   direction: ltr !important;
 }
 .timerSubtitle {
@@ -24,9 +22,9 @@
 }
 
 .timerDetails {
-  font-size: calc(var(--title-font) - 0.5rem);
+  font-size: calc(var(--title-font));
   svg {
-    width:  calc(var(--title-font) - 1rem) !important;
+    width:  calc(var(--title-font)) !important;
   }
 }
 .progressValue {
@@ -56,6 +54,8 @@
 .timeTitle {
   font-family: var(--clock-font-family);
   margin-bottom: 20px;
+  font-size:  var(--clock-font);
+
 }
 .timeSubtitle {
   font-size: var(--size-4);

@@ -22,6 +22,7 @@ export function SettingsWrapper({ children }) {
     }, []);
     useEffect(()=>{
       document.getElementsByTagName("body")[0].dataset["theme"] = settings.theme;
+      document.getElementsByTagName("body")[0].dataset["language"] = settings.language;
     },[settings])
     const updateSettings = (key, value) => {
       localStorage.setItem("settings-" + key, value);

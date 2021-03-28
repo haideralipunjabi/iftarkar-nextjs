@@ -114,9 +114,7 @@ export default function Timer() {
       {timeEnd > DateTime.now() && (
         <>
           {hijri && (
-            <h2
-              className={styles.timerSubtitle}
-            >
+            <h2 className={styles.timerSubtitle}>
               <span>
                 {translate(settings.language, hijri)}{" "}
                 {Languages[settings.language].ramadan}{" "}
@@ -151,6 +149,11 @@ export default function Timer() {
               onClick={() => setSettingsOpened(true)}
             />
           </h2>
+          <h2 className={styles.timerDetails}>
+            {
+            // TODO: Add Next Iftar / Sehr
+            }
+          </h2>
           <div>
             <p
               className={classNames(
@@ -173,7 +176,9 @@ export default function Timer() {
                   }
                 </span>
               </span>
-              :
+              <span className={styles.timeContainer}>
+                <span className={styles.timeTitle}>:</span>
+              </span>
               <span className={styles.timeContainer}>
                 <span className={styles.timeTitle}>
                   {translate(
@@ -189,7 +194,9 @@ export default function Timer() {
                   }
                 </span>
               </span>
-              :
+              <span className={styles.timeContainer}>
+                <span className={styles.timeTitle}>:</span>
+              </span>
               <span className={styles.timeContainer}>
                 <span className={styles.timeTitle}>
                   {translate(

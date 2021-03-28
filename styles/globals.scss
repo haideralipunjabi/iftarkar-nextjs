@@ -27,18 +27,47 @@
   --text-invert: #ffffff;
   --background: #eceef8;
 }
+[data-language="ur"] {
+  --font-family: "Jameel";
+  --clock-font-family: "Jameel";
+  font-weight: normal !important;
+  --font-factor: 0.5rem;
+  --size-1: calc(3rem + var(--font-factor));
+  --size-2: calc(2.5rem + var(--font-factor));
+  --size-3: calc(2rem + var(--font-factor));
+  --size-4: calc(1.5rem + var(--font-factor));
+  --size-5: calc(1.25rem + var(--font-factor));
+  --size-6: calc(1rem + var(--font-factor));
+  --size-7: calc(0.75rem + var(--font-factor));
+  --weight-light: 400;
+  --weight-normal: 400;
+  --weight-medium: 400;
+  --weight-semibold: 400;
+  --weight-bold: 400;
+  font-size: var(--size-6);
+  direction: rtl;
+  .navbar {
+    min-height: 5rem;
+  }
+}
+.amiri,
+  .amiri > * {
+    --font-family: "Amiri";
+  }
 [data-theme="dark"] {
   --text-color: #ffffff;
   --text-invert: #000000;
   --background: #131836;
 }
-.footer {
+.footer,
+.navbar {
   --text-color: #ffffff;
   --text-invert: #ffffff;
-  a {
-    border-bottom: 1px solid white;
-  }
 }
+.footer a {
+  border-bottom: 1px solid white;
+}
+
 .container {
   --text-invert: var(--text-color);
   a {
@@ -52,7 +81,7 @@
     }
     a {
       border-bottom: none;
-      
+
       &:hover {
         border-bottom: 1px solid var(--text-color);
       }
@@ -71,10 +100,10 @@ label.label {
 
 @media only screen and (max-width: 600px) {
   :root {
-    --title-font: 2rem;
-    --clock-font: 5rem;
-    .arabic {
-      --clock-font: 4.5rem;
+    --title-font: 1.5rem;
+    --clock-font: 6rem;
+    [data-language="ur"] {
+      --clock-font: 4rem;
     }
     --progress-margin: 24px;
     --progress-height: 1rem;
@@ -83,10 +112,10 @@ label.label {
 
 @media only screen and (min-width: 600px) {
   :root {
-    --title-font: 3rem;
-    --clock-font: 8rem;
-    .arabic {
-      --clock-font: 10rem;
+    --title-font: 2rem;
+    --clock-font: 10rem;
+    [data-language="ur"] {
+      --clock-font: 12rem;
     }
     --progress-margin: 24px;
     --progress-height: 1rem;
@@ -94,10 +123,10 @@ label.label {
 }
 @media only screen and (min-width: 1200px) {
   :root {
-    --title-font: 3rem;
-    --clock-font: 10rem;
-    .arabic {
-      --clock-font: 12rem;
+    --title-font: 2.5rem;
+    --clock-font: 14rem;
+    [data-language="ur"] {
+      --clock-font: 16rem;
     }
     --progress-margin: 0 auto;
     --progress-height: 1.5rem;
@@ -114,7 +143,6 @@ body {
 }
 #__next {
   height: 100%;
-  // min-height: 100%;
 }
 *,
 *::before,
@@ -126,27 +154,18 @@ body {
   scroll-behavior: smooth;
   font-family: var(--font-family);
 }
-* > * {
-  font-family: var(--font-family);
+* {
+  box-sizing: border-box;
+  margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
 }
 a {
   text-decoration: none;
 }
-
-* {
-  box-sizing: border-box;
-}
 hr {
   background-color: var(--text-color);
-}
-.ellipse {
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-.is-fullheight {
-  min-height: 100%;
-  height: 100%;
 }
 
 .mt-a {
@@ -170,39 +189,6 @@ hr {
   margin-bottom: auto;
 }
 
-.arabic,
-.arabic > * {
-  --font-family: "Jameel";
-  --clock-font-family: "Jameel";
-  &.amiri,
-  &.amiri > * {
-    --font-family: "Amiri";
-  }
-  font-weight: normal !important;
-  --font-factor: 0.5rem;
-  --size-1: calc(3rem + var(--font-factor));
-  --size-2: calc(2.5rem + var(--font-factor));
-  --size-3: calc(2rem + var(--font-factor));
-  --size-4: calc(1.5rem + var(--font-factor));
-  --size-5: calc(1.25rem + var(--font-factor));
-  --size-6: calc(1rem + var(--font-factor));
-  --size-7: calc(0.75rem + var(--font-factor));
-  --weight-light: 400;
-  --weight-normal: 400;
-  --weight-medium: 400;
-  --weight-semibold: 400;
-  --weight-bold: 400;
-  font-size: var(--size-6);
-  direction: rtl;
-  .navbar {
-    min-height: 5rem;
-  }
-}
-
-.table {
-  background-color: transparent;
-}
-
 ul.icons {
   display: flex;
   flex-direction: row;
@@ -213,4 +199,29 @@ ul.icons {
   a {
     border-bottom: none;
   }
+}
+
+/* Let's get this party started */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: var(--background);
+}
+::-webkit-scrollbar-track-piece {
+  background-color: var(--background);
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: $primary; 
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+background: $dark; 
 }
