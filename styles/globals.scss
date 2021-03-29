@@ -46,8 +46,10 @@
   --weight-bold: 400;
   font-size: var(--size-6);
   direction: rtl;
-  .navbar {
-    min-height: 5rem;
+  @media only screen and (min-width: 1024px) {
+    .navbar {
+      min-height: 5rem;
+    }
   }
 }
 .amiri,

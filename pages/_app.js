@@ -1,5 +1,7 @@
 import "../styles/globals.scss";
 import Head from "next/head";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 import { DefaultSeo } from "next-seo";
 import SEO from "../next-seo.config";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -7,14 +9,14 @@ import { fab } from "@fortawesome/free-brands-svg-icons";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { far } from "@fortawesome/free-regular-svg-icons";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import { useState, useEffect, createContext, useContext } from "react";
-import { useRouter } from "next/router";
-
-import classNames from "classnames";
 import { SettingsWrapper, useSettingsContext } from "../context/settings";
+import Navbar from "../components/navbar";
+import Footer from "../components/footer";
+import Settings from "../components/settings";
 
 function MyApp({ Component, pageProps }) {
   const { settings } = useSettingsContext();
+  const router = useRouter();
   library.add(fab, fas, far);
 
   const handlePrompt = (e) => {
@@ -58,8 +60,14 @@ function MyApp({ Component, pageProps }) {
         <meta name="theme-color" content="#ffffff" />
       </Head>
       <DefaultSeo {...SEO} />
-      <SettingsWrapper>
-        <Component {...pageProps} />
+      <SettingsWrapper langOverride={router.locale}>
+        <div id="rootDiv" className="is-flex is-flex-direction-column is-justify-content-space-between" style={{minHeight: "100%"}}>
+          <Navbar />
+
+          <Component {...pageProps} />
+          <Settings />
+          <Footer />
+        </div>
       </SettingsWrapper>
     </>
   );

@@ -1,29 +1,22 @@
+import Head from "next/head";
+import { useRouter } from "next/router";
 import Timer from "../components/timer";
-import { useEffect, useState } from "react";
-import classNames from "classnames";
 import Duas from "../components/duas";
 import { useSettingsContext } from "../context/settings";
-import Navbar from "../components/navbar";
-import Footer from "../components/footer";
-import Settings from "../components/settings";
+import Languages from "../data/languages.json";
 
 export default function Home() {
   const { settings } = useSettingsContext();
   return (
-    <div
-      className={classNames(
-        "is-flex is-flex-direction-column is-justify-content-space-between",
-        "has-background-" + useSettingsContext().settings?.theme ?? "light"
-      )}
-      style={{ minHeight: "100%" }}
-    >
-      <Navbar />
+    <>
+      <Head>
+        <title>{Languages[settings.language].iftarkar}</title>
+      </Head>
+
       <div className="my-6">
         <Timer />
         <Duas />
       </div>
-      <Settings />
-      <Footer />
-    </div>
+    </>
   );
 }

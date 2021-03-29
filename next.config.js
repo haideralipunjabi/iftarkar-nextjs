@@ -14,5 +14,10 @@ module.exports = withPlugins([
     },
   ],
 ],{
-  target: "serverless"
+  target: "serverless",
+  i18n: {
+    locales: ['en', 'ur'],
+    defaultLocale: 'en',
+    localeDetection: false,
+  }
 });

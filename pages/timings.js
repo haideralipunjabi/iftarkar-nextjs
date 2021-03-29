@@ -1,12 +1,9 @@
-import TimingsData from "../data/timings.json";
+import Head from "next/head";
 import { DateTime } from "luxon";
 import { translate } from "../utils/utils";
 import Languages from "../data/languages.json";
+import TimingsData from "../data/timings.json";
 import { useSettingsContext } from "../context/settings";
-import Navbar from "../components/navbar";
-import Footer from "../components/footer";
-import Settings from "../components/settings";
-import classNames from "classnames";
 
 export default function Timings() {
   const {
@@ -31,14 +28,10 @@ export default function Timings() {
     };
   };
   return (
-    <div
-      className={classNames(
-        "is-flex is-flex-direction-column is-justify-content-space-between",
-        "has-background-" + useSettingsContext().settings?.theme ?? "light"
-      )}
-      style={{ minHeight: "100%" }}
-    >
-      <Navbar />
+    <>
+    <Head>
+     <title>{Languages[settings.language].timings} | {Languages[settings.language].iftarkar}</title>
+   </Head>
       <div className="my-6">
         <h1 className=" has-text-centered is-size-2 title">
           {Language.timings}
@@ -96,8 +89,6 @@ export default function Timings() {
           </table>
         </div>
       </div>
-      <Settings />
-      <Footer />
-    </div>
+    </>
   );
 }

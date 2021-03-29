@@ -1,23 +1,17 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Languages from "../data/languages.json";
 import { useSettingsContext } from "../context/settings";
-import Navbar from "../components/navbar";
-import Footer from "../components/footer";
-import Settings from "../components/settings";
-import classNames from "classnames";
+import Head from "next/head";
 
 export default function About() {
   const { settings } = useSettingsContext();
   if (!settings) return <></>;
   return (
-    <div
-      className={classNames(
-        "is-flex is-flex-direction-column is-justify-content-space-between",
-        "has-background-" + useSettingsContext().settings?.theme ?? "light"
-      )}
-      style={{ minHeight: "100%" }}
-    >
-      <Navbar />
+   <>
+   <Head>
+     <title>{Languages[settings.language].about} | {Languages[settings.language].iftarkar}</title>
+   </Head>
+    
       <div className="container px-6 my-6 has-text-centered">
         <h1 className="title">{Languages[settings.language].about}</h1>
         <p className="is-size-4 has-text-justified">
@@ -147,9 +141,7 @@ export default function About() {
           </ul>
         </p>
       </div>
-      <Settings />
-      <Footer />
-    </div>
+   </>
   );
 }
 
