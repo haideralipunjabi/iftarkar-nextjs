@@ -1,9 +1,9 @@
-import classNames from "classnames/bind";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
-import Languages from "../data/languages.json";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import classNames from "classnames/bind";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Languages from "../data/languages.json";
 import { useSettingsContext } from "../context/settings";
 
 export default function Navbar() {

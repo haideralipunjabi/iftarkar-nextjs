@@ -26,6 +26,7 @@
   svg {
     width:  calc(var(--title-font)) !important;
   }
+  z-index: 2;
 }
 .progressValue {
   position: absolute;

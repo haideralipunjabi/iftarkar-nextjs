@@ -1,5 +1,5 @@
-import classNames from "classnames";
 import { useState } from "react";
+import classNames from "classnames";
 import Languages from "../data/languages.json";
 import {useSettingsContext} from "../context/settings";
 import styles from "./duas.module.scss";

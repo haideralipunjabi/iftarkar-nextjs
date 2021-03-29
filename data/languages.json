@@ -4,6 +4,7 @@
         "ur":"Urdu",
         "ramadan": "Ramadan",
         "eidmubarak": "Eid Mubarak",
+        "iftarkar":"Iftarkar",
         "dua":"Dua",
         "sahar": "Sahar",
         "iftar": "Iftar",
@@ -26,7 +27,8 @@
         "islamicdate":"Islamic Date",
         "day": "Day",
         "ah":"",
-        "ce":""
+        "ce":"",
+        "404":"404! Page not found"
 
     },
     "ur": {
@@ -34,6 +36,7 @@
         "ur":"اردو",
         "ramadan": "رمضان",
         "eidmubarak": "عيد مبارك",
+        "iftarkar": " اِفطار کر",
         "dua": "دُعاِ",
         "sahar": "سحر",
         "iftar": "اِفطار",
@@ -56,6 +59,7 @@
         "islamicdate": "اسلامی تاریخ",
         "day":"دن",
         "ah" :"ھ",
-        "ce": "ء"
+        "ce": "ء",
+        "404":"۴۰۴! صفحہ نہیں ملا"
     }
 }
