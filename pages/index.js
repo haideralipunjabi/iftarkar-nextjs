@@ -2,15 +2,15 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import Timer from "../components/timer";
 import Duas from "../components/duas";
-import { useSettingsContext } from "../context/settings";
 import Languages from "../data/languages.json";
 
 export default function Home() {
-  const { settings } = useSettingsContext();
+  const router = useRouter();
+  const Language = Languages[router.locale];
   return (
     <>
       <Head>
-        <title>{Languages[settings.language].iftarkar}</title>
+        <title>{Language.iftarkar}</title>
       </Head>
 
       <div className="my-6">

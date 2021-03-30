@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import Timings from "../data/timings.json";
 import Languages from "../data/languages.json";
 import classNames from "classnames";
@@ -5,6 +6,8 @@ import {useSettingsContext} from "../context/settings";
 
 export default function Settings(props) {
   const {settingsOpened,setSettingsOpened,settings,updateSettings} = useSettingsContext();
+  const router = useRouter();
+  const Language = Languages[router.locale];
   const handleOnChange = (e) => {
     updateSettings(e.target.id,e.target.selectedOptions[0].text);
   }
@@ -13,7 +16,7 @@ export default function Settings(props) {
       <div className="modal-background"></div>
         <div className="modal-card">
           <header className="modal-card-head">
-            <p className="modal-card-title">{Languages[settings.language].settings}</p>
+            <p className="modal-card-title">{Language.settings}</p>
             <button
               onClick={() => setSettingsOpened(false)}
               className="delete"
@@ -23,7 +26,7 @@ export default function Settings(props) {
           <section className={classNames("modal-card-body")}>
             <form>
               <div className="field">
-                <label htmlFor="" className="label">{Languages[settings.language].timings}</label>
+                <label htmlFor="" className="label">{Language.timings}</label>
                 <div className="control">
                   <div className="select">
                     <select id="timing" onChange={e=>{
@@ -43,7 +46,7 @@ export default function Settings(props) {
               {
                 Timings[settings.timingIndex]["offsets"].length > 0 &&
                 <div className="field">
-                <label htmlFor="" className="label">{Languages[settings.language].area}</label>
+                <label htmlFor="" className="label">{Language.area}</label>
                 <div className="control">
                   <div className="select">
                     <select id="offset" onChange={e=>{
@@ -52,7 +55,7 @@ export default function Settings(props) {
                     value={settings.offset}
                     >
                       {
-                        Timings[settings.timingIndex]["offsets"].map((offset,key)=><option key={key} value={offset.offset}>{offset.name[settings.language]}</option>)
+                        Timings[settings.timingIndex]["offsets"].map((offset,key)=><option key={key} value={offset.offset}>{offset.name[router.locale]}</option>)
                       }
                     </select>
                   </div>
@@ -60,7 +63,7 @@ export default function Settings(props) {
               </div>
               }
               <div className="field">
-                <label htmlFor="" className="label">{Languages[settings.language].theme}</label>
+                <label htmlFor="" className="label">{Language.theme}</label>
                 <div className="control">
                   <div className="select">
                     <select name="" id="theme" onChange={e=>{
@@ -68,23 +71,8 @@ export default function Settings(props) {
                     }}
                     value={settings.theme}
                     >
-                      <option value="light">{Languages[settings.language].light}</option>
-                      <option value="dark">{Languages[settings.language].dark}</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <div className="field">
-                <label htmlFor="" className="label">{Languages[settings.language].language}</label>
-                <div className="control">
-                  <div className="select">
-                    <select name="" id="language" onChange={e=>{
-                      updateSettings("language",e.target.selectedOptions[0].value)
-                    }}
-                    value={settings.language}>
-                      {
-                        Object.entries(Languages).map((entry,key)=><option key={key} value={entry[0]}>{Languages[settings.language][entry[0]]}</option>)
-                      }
+                      <option value="light">{Language.light}</option>
+                      <option value="dark">{Language.dark}</option>
                     </select>
                   </div>
                 </div>

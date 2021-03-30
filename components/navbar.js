@@ -8,7 +8,9 @@ import { useSettingsContext } from "../context/settings";
 
 export default function Navbar() {
   const [menuOpened, setMenuOpened] = useState(false);
-  const { settings, setSettingsOpened } = useSettingsContext();
+  const { setSettingsOpened } = useSettingsContext();
+  const router = useRouter();
+  const Language = Languages[router.locale];
   return (
     <>
       <nav
@@ -38,20 +40,20 @@ export default function Navbar() {
         >
           <div className="navbar-start ml-a">
             <ActiveLink href="/" icon={["fas","home"]}>
-              {Languages[settings.language].home}
+              {Language.home}
             </ActiveLink>
             <ActiveLink href="/timings" icon={["fas","calendar-alt"]}>
-              {Languages[settings.language].timings}
+              {Language.timings}
             </ActiveLink>
             <a
               onClick={() => setSettingsOpened(true)}
               className="navbar-item is-size-5"
             >
               <FontAwesomeIcon className="is-size-7 mx-2" icon={["fas","cogs"]} />
-              {Languages[settings.language].settings}
+              {Language.settings}
             </a>
             <ActiveLink href="/about" icon={["fas","info-circle"]}>
-              {Languages[settings.language].about}
+              {Language.about}
             </ActiveLink>
           </div>
         </div>

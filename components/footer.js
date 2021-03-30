@@ -1,14 +1,13 @@
+import { useRouter } from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 import { translate } from "../utils/utils";
-import {useSettingsContext} from "../context/settings";
 
 export default function Footer() {
-  const {settings} = useSettingsContext();
+  const router = useRouter();
   return (
     <footer className="footer has-text-primary-light">
       <div className="content has-text-centered">
-        {settings.language == "en" && (
+        {router.locale == "en" && (
           <p className="is-size-5">
             Made with{" "}
             <FontAwesomeIcon
@@ -27,7 +26,7 @@ export default function Footer() {
             | © {new Date().getFullYear()}
           </p>
         )}
-        {settings.language == "ur" && (
+        {router.locale == "ur" && (
           <p className="is-size-6">
             <a
               href="https://haideralipunjabi.com"
@@ -42,7 +41,7 @@ export default function Footer() {
               icon={["fas", "heart"]}
             />{" "}
             سے بنایاہے{" "}
-            | © {translate(settings.language,new Date().getFullYear())}
+            | © {translate(router.locale,new Date().getFullYear())}
           </p>
         )}
       </div>

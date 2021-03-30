@@ -10,6 +10,7 @@
 :root {
   --font-family: "Open Sans";
   --clock-font-family: "Oswald";
+  --clock-font: 14rem;
   --font-factor: 0rem;
   --size-1: calc(3rem + var(--font-factor));
   --size-2: calc(2.5rem + var(--font-factor));
@@ -27,7 +28,33 @@
   --text-invert: #ffffff;
   --background: #eceef8;
 }
-[data-language="ur"] {
+
+@media only screen and (max-width: 600px) {
+  :root {
+    --title-font: 1.5rem;
+    --clock-font: 6rem;
+    --progress-margin: 24px;
+    --progress-height: 1rem;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  :root {
+    --title-font: 2rem;
+    --clock-font: 10rem;
+    --progress-margin: 24px;
+    --progress-height: 1rem;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  :root {
+    --title-font: 2.5rem;
+    --clock-font: 14rem;
+    --progress-margin: 0 auto;
+    --progress-height: 1.5rem;
+  }
+}
+[lang="ur"] {
   --font-family: "Jameel";
   --clock-font-family: "Jameel";
   font-weight: normal !important;
@@ -46,6 +73,19 @@
   --weight-bold: 400;
   font-size: var(--size-6);
   direction: rtl;
+  @media only screen and (max-width: 600px) {
+    --title-font: 1rem;
+    --clock-font: 4rem;
+  }
+  @media only screen and (min-width: 600px) {
+    --title-font: 1.5rem;
+    --clock-font: 8rem;
+    
+  }
+  @media only screen and (min-width: 1200px) {
+    --title-font: 2rem;
+    --clock-font: 10rem;
+  }
   @media only screen and (min-width: 1024px) {
     .navbar {
       min-height: 5rem;
@@ -100,40 +140,6 @@ label.label {
   font-family: inherit;
 }
 
-@media only screen and (max-width: 600px) {
-  :root {
-    --title-font: 1.5rem;
-    --clock-font: 6rem;
-    [data-language="ur"] {
-      --clock-font: 4rem;
-    }
-    --progress-margin: 24px;
-    --progress-height: 1rem;
-  }
-}
-
-@media only screen and (min-width: 600px) {
-  :root {
-    --title-font: 2rem;
-    --clock-font: 10rem;
-    [data-language="ur"] {
-      --clock-font: 12rem;
-    }
-    --progress-margin: 24px;
-    --progress-height: 1rem;
-  }
-}
-@media only screen and (min-width: 1200px) {
-  :root {
-    --title-font: 2.5rem;
-    --clock-font: 14rem;
-    [data-language="ur"] {
-      --clock-font: 16rem;
-    }
-    --progress-margin: 0 auto;
-    --progress-height: 1.5rem;
-  }
-}
 
 html,
 body {

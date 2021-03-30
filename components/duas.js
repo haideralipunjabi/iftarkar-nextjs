@@ -1,13 +1,13 @@
 import { useState } from "react";
+import { useRouter } from "next/router";
 import classNames from "classnames";
 import Languages from "../data/languages.json";
-import {useSettingsContext} from "../context/settings";
 import styles from "./duas.module.scss";
 
 export default function Duas() {
     const [dua,setDua] = useState("");
-    const {settings}= useSettingsContext();
-    
+    const router = useRouter();
+    const Language = Languages[router.locale];
     const Duas = {
       "sahar": {
         "arabic": "وَبِصَوْمِ غَدٍ نَّوَيْتُ مِنْ شَهْرِ رَمَضَانَ",
@@ -31,7 +31,7 @@ export default function Duas() {
                 <a className="is-size-3 is-size-5-mobile" data-target={key} onClick={()=>{
                   if(dua===key) setDua();
                   else setDua(key);
-                }}>{Languages[settings.language].dua} {Languages[settings.language][key]}</a>
+                }}>{Language.dua} {Language[key]}</a>
               </li>
             ))
           }

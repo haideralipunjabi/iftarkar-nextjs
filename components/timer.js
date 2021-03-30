@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import styles from "./timer.module.scss";
 import { DateTime } from "luxon";
 import { useEffect, useState } from "react";
@@ -10,6 +11,8 @@ import { useSettingsContext } from "../context/settings";
 
 export default function Timer() {
   const { settings, setSettingsOpened } = useSettingsContext();
+  const router = useRouter();
+  const Language = Languages[router.locale];
   const getTimes = () => {
     let timings = Timings[settings.timingIndex].timings;
     let dates = timings.map((timing) => timing.dates.gregorian);
@@ -116,29 +119,29 @@ export default function Timer() {
           {hijri && (
             <h2 className={styles.timerSubtitle}>
               <span>
-                {translate(settings.language, hijri)}{" "}
-                {Languages[settings.language].ramadan}{" "}
-                {translate(settings.language, 1441)}{" "}
-                {Languages[settings.language].ah}
+                {translate(router.locale, hijri)}{" "}
+                {Language.ramadan}{" "}
+                {translate(router.locale, 1441)}{" "}
+                {Language.ah}
               </span>
               <div></div>
               <span>
                 {translate(
-                  settings.language,
+                  router.locale,
                   DateTime.now().toFormat("dd LLLL y")
                 )}{" "}
-                {Languages[settings.language].ce}
+                {Language.ce}
               </span>
             </h2>
           )}
 
           <h2 className={styles.timerDetails}>
-            {Timings[settings.timingIndex].name[settings.language]}{" "}
+            {Timings[settings.timingIndex].name[router.locale]}{" "}
             {Timings[settings.timingIndex].offsets.length > 0 &&
               " - " +
                 Timings[settings.timingIndex].offsets.filter(
                   (offset) => offset.offset == settings.offset
-                )[0]?.name[settings.language]}
+                )[0]?.name[router.locale]}
             <FontAwesomeIcon
               className={classNames(
                 "mx-4",
@@ -164,13 +167,13 @@ export default function Timer() {
               <span className={styles.timeContainer}>
                 <span className={styles.timeTitle}>
                   {translate(
-                    settings.language,
+                    router.locale,
                     timeLeft.toFormat("hh:mm:ss").split(":")[0]
                   )}
                 </span>
                 <span className={styles.timeSubtitle}>
                   {
-                    Languages[settings.language][
+                    Language[
                       timeLeft.hours === 1 ? "hour" : "hours"
                     ]
                   }
@@ -182,13 +185,13 @@ export default function Timer() {
               <span className={styles.timeContainer}>
                 <span className={styles.timeTitle}>
                   {translate(
-                    settings.language,
+                    router.locale,
                     timeLeft.toFormat("hh:mm:ss").split(":")[1]
                   )}
                 </span>
                 <span className={styles.timeSubtitle}>
                   {
-                    Languages[settings.language][
+                    Language[
                       timeLeft.minutes === 1 ? "minute" : "minutes"
                     ]
                   }
@@ -200,13 +203,13 @@ export default function Timer() {
               <span className={styles.timeContainer}>
                 <span className={styles.timeTitle}>
                   {translate(
-                    settings.language,
+                    router.locale,
                     timeLeft.toFormat("hh:mm:ss").split(":")[2]
                   )}
                 </span>
                 <span className={styles.timeSubtitle}>
                   {
-                    Languages[settings.language][
+                    Language[
                       parseInt(timeLeft.seconds) === 1 ? "second" : "seconds"
                     ]
                   }
@@ -226,7 +229,7 @@ export default function Timer() {
                 {percentDone}
               </progress>
               <p className={styles.progressValue}>
-                {translate(settings.language, percentDone)}%
+                {translate(router.locale, percentDone)}%
               </p>
             </div>
           </div>

@@ -1,21 +1,21 @@
+import { useRouter } from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Languages from "../data/languages.json";
-import { useSettingsContext } from "../context/settings";
 import Head from "next/head";
 
 export default function About() {
-  const { settings } = useSettingsContext();
-  if (!settings) return <></>;
+  const router = useRouter();
+  const Language = Languages[router.locale];
   return (
    <>
    <Head>
-     <title>{Languages[settings.language].about} | {Languages[settings.language].iftarkar}</title>
+     <title>{Language.about} | {Language.iftarkar}</title>
    </Head>
     
       <div className="container px-6 my-6 has-text-centered">
-        <h1 className="title">{Languages[settings.language].about}</h1>
+        <h1 className="title">{Language.about}</h1>
         <p className="is-size-4 has-text-justified">
-          {settings.language === "en" && (
+          {router.locale === "en" && (
             <>
               Iftarkar is a Web App which provides Iftar and Sahar timings
               during the Holy month of Ramadan for the regions of Jammu,
@@ -55,7 +55,7 @@ export default function About() {
               </a>
             </>
           )}
-          {settings.language === "ur" && (
+          {router.locale === "ur" && (
             <>
               افطارکر ایک ویب ایپ ہے جو رمضان کے مقّدس مہینے کے دوران جموں و
               کشمیر، لداخ اور کرگل کے علاقوں میں افطار اور سحری کے اوقات مہیا
