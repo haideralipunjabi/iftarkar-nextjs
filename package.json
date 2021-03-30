@@ -15,7 +15,11 @@
     "@fortawesome/react-fontawesome": "^0.1.14",
     "classnames": "^2.2.6",
     "luxon": "^1.26.0",
+<<<<<<< HEAD
     "next": "^10.1.1",
+=======
+    "next": "10.0.4",
+>>>>>>> 8389ec64fce96ddd9840a58a63af0217eaf4f459
     "next-compose-plugins": "^2.2.1",
     "next-pwa": "^5.0.6",
     "next-seo": "^4.23.0",
@@ -25,7 +29,13 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.2.5",
+<<<<<<< HEAD
     "bulma": "^0.9.2",
     "postcss": "^8.2.8"
+=======
+    "bulma": "^0.9.1",
+    "postcss": "^8.2.8",
+    "tailwindcss": "^2.0.4"
+>>>>>>> 8389ec64fce96ddd9840a58a63af0217eaf4f459
   }
 }
