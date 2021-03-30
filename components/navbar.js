@@ -39,22 +39,33 @@ export default function Navbar() {
           })}
         >
           <div className="navbar-start ml-a">
-            <ActiveLink href="/" icon={["fas","home"]}>
+            <ActiveLink href="/" icon={["fas", "home"]}>
               {Language.home}
             </ActiveLink>
-            <ActiveLink href="/timings" icon={["fas","calendar-alt"]}>
+            <ActiveLink href="/timings" icon={["fas", "calendar-alt"]}>
               {Language.timings}
             </ActiveLink>
             <a
               onClick={() => setSettingsOpened(true)}
               className="navbar-item is-size-5"
             >
-              <FontAwesomeIcon className="is-size-7 mx-2" icon={["fas","cogs"]} />
+              <FontAwesomeIcon
+                className="is-size-7 mx-2"
+                icon={["fas", "cogs"]}
+              />
               {Language.settings}
             </a>
-            <ActiveLink href="/about" icon={["fas","info-circle"]}>
+            <ActiveLink href="/about" icon={["fas", "info-circle"]}>
               {Language.about}
             </ActiveLink>
+            <div className="navbar-item has-dropdown is-hoverable">
+              <div className="navbar-link is-size-5">{Language.language}</div>
+              <div className="navbar-dropdown">
+                {
+                  Object.keys(Languages).map(lang=><Link href={router.pathname} locale={lang}><a className="navbar-item is-size-5">{Language[lang]}</a></Link>)
+                }
+              </div>
+            </div>
           </div>
         </div>
       </nav>
@@ -62,8 +73,7 @@ export default function Navbar() {
   );
 }
 
-function ActiveLink({ href, className, icon, children }) { 
-
+function ActiveLink({ href, className, icon, children }) {
   const router = useRouter();
   return (
     <Link href={href}>
@@ -72,7 +82,7 @@ function ActiveLink({ href, className, icon, children }) {
           "is-active": router.pathname === href,
         })}
       >
-        <FontAwesomeIcon className="is-size-7 mx-2" icon={icon}/>
+        <FontAwesomeIcon className="is-size-7 mx-2" icon={icon} />
         {children}
       </a>
     </Link>

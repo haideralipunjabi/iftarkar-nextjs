@@ -32,7 +32,7 @@
 @media only screen and (max-width: 600px) {
   :root {
     --title-font: 1.5rem;
-    --clock-font: 6rem;
+    --clock-font: 5rem;
     --progress-margin: 24px;
     --progress-height: 1rem;
   }
@@ -58,7 +58,7 @@
   --font-family: "Jameel";
   --clock-font-family: "Jameel";
   font-weight: normal !important;
-  --font-factor: 0.5rem;
+  --font-factor: 0.25rem;
   --size-1: calc(3rem + var(--font-factor));
   --size-2: calc(2.5rem + var(--font-factor));
   --size-3: calc(2rem + var(--font-factor));
@@ -86,11 +86,11 @@
     --title-font: 2rem;
     --clock-font: 10rem;
   }
-  @media only screen and (min-width: 1024px) {
-    .navbar {
-      min-height: 5rem;
-    }
-  }
+  // @media only screen and (min-width: 1024px) {
+  //   .navbar {
+  //     min-height: 5rem;
+  //   }
+  // }
 }
 .amiri,
   .amiri > * {

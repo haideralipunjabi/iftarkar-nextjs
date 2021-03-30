@@ -12,7 +12,7 @@ export default function About() {
      <title>{Language.about} | {Language.iftarkar}</title>
    </Head>
     
-      <div className="container px-6 my-6 has-text-centered">
+      <div className="container px-2 my-6 has-text-centered">
         <h1 className="title">{Language.about}</h1>
         <p className="is-size-4 has-text-justified">
           {router.locale === "en" && (
