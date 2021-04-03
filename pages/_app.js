@@ -60,7 +60,7 @@ function MyApp({ Component, pageProps }) {
         <meta name="theme-color" content="#ffffff" />
       </Head>
       <DefaultSeo {...SEO} />
-      <SettingsWrapper langOverride={router.locale}>
+      <SettingsWrapper>
         <div id="rootDiv" className="is-flex is-flex-direction-column is-justify-content-space-between" style={{minHeight: "100%"}}>
           <Navbar />
 

@@ -26,7 +26,7 @@ export default function Timer() {
       timings[timings.length - 1].timestamps.iftar
     ).plus({ minutes: offset });
     if (idx !== -1) {
-      let timeStart, timeEnd;
+      let timeStart, timeEnd, timeType;
       let iftarTime = DateTime.fromSeconds(timings[idx].timestamps.iftar).plus({
         minutes: offset,
       });
@@ -47,38 +47,47 @@ export default function Timer() {
       if (!prevIftar) {
         timeStart = sehriTime;
         timeEnd = sehriTime;
+        timeType = null;
       } else if (!nextSehri) {
         timeStart = lastIftar;
         timeEnd = lastIftar;
+        timeType = null;
       } else if (now < sehriTime) {
         timeStart = prevIftar;
         timeEnd = sehriTime;
+        timeType = "sehri"
       } else if (now > sehriTime && now < iftarTime) {
         timeStart = sehriTime;
         timeEnd = iftarTime;
+        timeType = "iftar"
       } else if (now > iftarTime && nextSehri) {
         timeStart = iftarTime;
         timeEnd = nextSehri;
+        timeType = "sehri"
       }
       return {
         timeStart: timeStart,
         timeEnd: timeEnd,
+        timeType: timeType,
         hijri: timings[idx].dates.hijri,
       };
     } else if (now < firstSehri)
       return {
         timeStart: firstSehri,
         timeEnd: firstSehri,
+        timeType: null,
       };
     else if (now > lastIftar)
       return {
         timeStart: lastIftar,
         timeEnd: lastIftar,
+        timeType: null,
       };
   };
   const times = getTimes();
   const [timeStart, setTimeStart] = useState(times.timeStart);
   const [timeEnd, setTimeEnd] = useState(times.timeEnd);
+  const [timeType,setTimeType] = useState(times.timeType);
   const [timeLeft, setTimeLeft] = useState(
     timeEnd.diffNow(["hours", "minutes", "second"])
   );
@@ -92,6 +101,7 @@ export default function Timer() {
     const times = getTimes();
     setTimeStart(times.timeStart);
     setTimeEnd(times.timeEnd);
+    setTimeType(times.timeType)
     setHijri(times.hijri);
   };
   useEffect(() => {
@@ -153,9 +163,7 @@ export default function Timer() {
             />
           </h2>
           <h2 className={styles.timerDetails}>
-            {
-            // TODO: Add Next Iftar / Sehr
-            }
+            {Language["next"][timeType]}: {translate(router.locale,timeEnd.toFormat("hh:mm a"))}
           </h2>
           <div>
             <p
