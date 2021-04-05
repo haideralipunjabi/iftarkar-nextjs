@@ -7,11 +7,13 @@ export default function About() {
   const router = useRouter();
   const Language = Languages[router.locale];
   return (
-   <>
-   <Head>
-     <title>{Language.about} | {Language.iftarkar}</title>
-   </Head>
-    
+    <>
+      <Head>
+        <title>
+          {Language.about} | {Language.iftarkar}
+        </title>
+      </Head>
+
       <div className="container px-2 my-6 has-text-centered">
         <h1 className="title">{Language.about}</h1>
         <p className="is-size-4 has-text-justified">
@@ -95,6 +97,44 @@ export default function About() {
               کی تیار کردہ
             </>
           )}
+          {router.locale === "kmr" && (
+            <>
+              اِفطار کَر چھُ اکھ ویب ایپ یُس رمضانس منٛزٕ چھُ جموں و کشمیر، لداخ
+              تہٕ کرگِل خأطرہ سحری تہٕ اِفطارِچ اوقات فراهم کران. یہ چھُ اکھ{" "}
+              <a
+                href="https://iftarkar.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                ویب سایٹ
+              </a>{" "}
+              کِس صورتس منٛزٕ دستیاب یُس توہی هر کنہ پلیٹ فارمس پیٹھ ہیکو انسٹال
+              کرتھ. یہ چھُ{" "}
+              <a
+                href="https://play.google.com/store/apps/details?id=org.hackesta.iftarkar"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                گوگل پلے اسٹورس
+              </a>{" "}
+              پیٹھ تہِ دستیاب. <hr />
+              أسی چھِ مختلف اوقاتن خأطرہ یم وسایل استعمال کران:
+              <ul>
+                <li>Group 1: </li>
+                <li>Group 2: </li>
+                <li>Group 3: </li>
+              </ul>
+              <hr />
+              <a
+                href="https://haideralipunjabi.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                حیدر علی پنجابین{" "}
+              </a>{" "}
+              پیش کش{" "}
+            </>
+          )}
           <br />
           <ul className="icons">
             <li>
@@ -141,7 +181,6 @@ export default function About() {
           </ul>
         </p>
       </div>
-   </>
+    </>
   );
 }
-

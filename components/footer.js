@@ -44,6 +44,24 @@ export default function Footer() {
             | © {translate(router.locale,new Date().getFullYear())}
           </p>
         )}
+        {router.locale == "kmr" && (
+          <p className="is-size-6">
+            <a
+              href="https://haideralipunjabi.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              حیدر علی پنجابین 
+            </a>{" "}چھُ
+            <FontAwesomeIcon
+              style={{ color: "red" }}
+              className="mx-2"
+              icon={["fas", "heart"]}
+            />{" "}
+            سأتی بنۄمُت{" "}
+            | © {translate(router.locale,new Date().getFullYear())}
+          </p>
+        )}
       </div>
     </footer>
   );

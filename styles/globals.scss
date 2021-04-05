@@ -6,7 +6,14 @@
   font-family: Jameel;
   src: url("/fonts/Jameel.ttf");
 }
-
+@font-face {
+  font-family: "Gulmarg Nastaleeq";
+  src: url("/fonts/GulNastaleeq.ttf");
+}
+@font-face {
+  font-family: "Gulmarg Narqalam";
+  src: url("/fonts/Narqalam.ttf");
+}
 :root {
   --font-family: "Open Sans";
   --clock-font-family: "Oswald";
@@ -54,7 +61,7 @@
     --progress-height: 1.5rem;
   }
 }
-[lang="ur"] {
+[lang="ur"],[lang="kmr"] {
   --font-family: "Jameel";
   --clock-font-family: "Jameel";
   font-weight: normal !important;
@@ -91,6 +98,9 @@
   //     min-height: 5rem;
   //   }
   // }
+}
+[lang="kmr"] {
+  --font-family: "Gulmarg Narqalam";
 }
 .amiri,
   .amiri > * {

@@ -16,7 +16,7 @@ module.exports = withPlugins([
 ],{
   target: "serverless",
   i18n: {
-    locales: ['en', 'ur'],
+    locales: ['en', 'ur','kmr'],
     defaultLocale: 'en',
     localeDetection: false,
   }

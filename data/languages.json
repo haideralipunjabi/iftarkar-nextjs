@@ -2,6 +2,7 @@
     "en":{
         "en":"English",
         "ur":"Urdu",
+        "kmr": "Kashmiri",
         "ramadan": "Ramadan",
         "eidmubarak": "Eid Mubarak",
         "iftarkar":"Iftarkar",
@@ -37,6 +38,8 @@
     "ur": {
         "en":"انگریزی",
         "ur":"اردو",
+        "kmr": "Kashmiri",
+
         "ramadan": "رمضان",
         "eidmubarak": "عيد مبارك",
         "iftarkar": " اِفطار کر",
@@ -72,25 +75,26 @@
     "kmr": {
         "en":"انگریزی",
         "ur":"اردو",
+        "kmr": "Kashmiri",
         "ramadan": "رمضان",
         "eidmubarak": "عيد مبارك",
         "iftarkar": " اِفطار کر",
         "dua": "دُعاِ",
         "sahar": "سحر",
         "iftar": "اِفطار",
-        "home":"صفحۂ اول",
+        "home":"گۄڈنیک صفح",
         "settings":"ترتیبات",
         "timings":"ٹایم ٹیبٕل",
-        "about":"ہمارا تعارُف",
+        "about":"سوٛن تعارُف",
         "area":"علاقہ",
-        "theme":"رنگ",
+        "theme":"رنٛگ",
         "light":"روشن",
         "dark":"تاریک",
         "language": "زبان",
         "hour":"گھنٹہ",
-        "hours": "گھنٹے",
-        "minute": "منٹ",
-        "minutes": "منٹ",
+        "hours": "گھنٹہ",
+        "minute": "مِنٹہ",
+        "minutes": "مِنٹہ",
         "second": "سیکنڈ",
         "seconds": "سیکنڈ",
         "gregoriandate":"عیسوی تاریخ",
@@ -98,10 +102,10 @@
         "day":"دن",
         "ah" :"ھ",
         "ce": "ء",
-        "404":"۴۰۴! صفحہ نہیں ملا",
+        "404":"۴۰۴! یہ صفح چھُ نہ مۄجود",
         "next": {
-            "iftar": "آنے والا اِفطار",
-            "sehri": "آنے والی سحری"
+            "iftar": "ینی وول اِفطار",
+            "sehri": "ینی وول سحر"
         }
     }
 }
