@@ -31,7 +31,7 @@ module.exports = [
   },
   {
     urlPattern: /\.(?:eot|otf|ttc|ttf|woff|woff2|font.css)$/i,
-    handler: 'StaleWhileRevalidate',
+    handler: 'CacheFirst',
     options: {
       cacheName: 'static-font-assets',
       expiration: {

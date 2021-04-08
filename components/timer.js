@@ -13,6 +13,8 @@ export default function Timer() {
   const { settings, setSettingsOpened } = useSettingsContext();
   const router = useRouter();
   const Language = Languages[router.locale];
+
+  // Get timeStart, timeEnd & timeType
   const getTimes = () => {
     let timings = Timings[settings.timingIndex].timings;
     let dates = timings.map((timing) => timing.dates.gregorian);
@@ -25,71 +27,84 @@ export default function Timer() {
     let lastIftar = DateTime.fromSeconds(
       timings[timings.length - 1].timestamps.iftar
     ).plus({ minutes: offset });
-    if (idx !== -1) {
-      let timeStart, timeEnd, timeType;
-      let iftarTime = DateTime.fromSeconds(timings[idx].timestamps.iftar).plus({
-        minutes: offset,
-      });
-      let sehriTime = DateTime.fromSeconds(timings[idx].timestamps.sehri).plus({
-        minutes: offset,
-      });
-      let prevIftar, nextSehri;
-      if (idx !== 0) {
-        prevIftar = DateTime.fromSeconds(
-          timings[idx - 1].timestamps.iftar
-        ).plus({ minutes: offset });
-      }
-      if (idx + 1 < dates.length) {
-        nextSehri = DateTime.fromSeconds(
-          timings[idx + 1].timestamps.sehri
-        ).plus({ minutes: offset });
-      }
-      if (now < sehriTime && prevIftar) {
-        timeStart = prevIftar;
-        timeEnd = sehriTime;
-        timeType = "sehri";
-      } else if (now > sehriTime && now < iftarTime) {
-        timeStart = sehriTime;
-        timeEnd = iftarTime;
-        timeType = "iftar";
-      } else if (now > iftarTime && nextSehri) {
-        timeStart = iftarTime;
-        timeEnd = nextSehri;
-        timeType = "sehri";
-      } else if (!prevIftar) {
-        timeStart = null;
-        timeEnd = firstSehri;
-        timeType = "sehri";
-      } else if (!nextSehri) {
-        timeStart = null;
-        timeEnd = null;
-        timeType = "EM";
-      }
-      return {
-        timeStart: timeStart,
-        timeEnd: timeEnd,
-        timeType: timeType,
-        hijri: timings[idx].dates.hijri,
-      };
-    } else if (now < firstSehri)
-      return {
-        timeStart: null,
-        timeEnd: firstSehri,
-        timeType: "sehri",
-      };
-    else if (now > lastIftar)
-      return {
-        timeStart: null,
-        timeEnd: null,
-        timeType: "EM",
-      };
+    if (idx === -1) {   // We are not in the month of Ramzan
+      if (now < firstSehri)   // Before Ramzan Starts, 
+        return {
+          timeStart: null,
+          timeEnd: firstSehri,
+          timeType: "sehri",
+          hijri: null,
+        };
+      else if (now > lastIftar)   // After Ramzan Ends
+        return {
+          timeStart: null,
+          timeEnd: null,
+          timeType: "EM",
+          hijri: null,
+        };
+    }
+    let timeStart, timeEnd, timeType;
+    let iftarTime = DateTime.fromSeconds(timings[idx].timestamps.iftar).plus({    // Today's Iftar Time
+      minutes: offset,
+    });
+    let sehriTime = DateTime.fromSeconds(timings[idx].timestamps.sehri).plus({    // Today's Sehri Time
+      minutes: offset,
+    });
+    let prevIftar, nextSehri;   // Yesterday's Iftar time, Tommorow's Sehri Time
+    if (idx !== 0) {
+      prevIftar = DateTime.fromSeconds(
+        timings[idx - 1].timestamps.iftar
+      ).plus({ minutes: offset });
+    }
+    if (idx + 1 < dates.length) {
+      nextSehri = DateTime.fromSeconds(
+        timings[idx + 1].timestamps.sehri
+      ).plus({ minutes: offset });
+    }
+    // 00:00 - sehriTime & we had a Iftar yesterday, return time from yesterday's Iftar to today's Sehri
+    if (now < sehriTime && prevIftar) {
+      timeStart = prevIftar;
+      timeEnd = sehriTime;
+      timeType = "sehri";
+    } 
+    // sehriTime - IftarTime, during day return from today's Sehri to today's Iftar
+    else if (now > sehriTime && now < iftarTime) {
+      timeStart = sehriTime;
+      timeEnd = iftarTime;
+      timeType = "iftar";
+    } 
+    // IftarTime - 00:00, post Iftar, return time from Iftar to tomorrow's Sehri
+    else if (now > iftarTime && nextSehri) {
+      timeStart = iftarTime;
+      timeEnd = nextSehri;
+      timeType = "sehri";
+    } 
+    // Today is sehri (i.e, first Sehri) return only the Sehri Time
+    else if (!prevIftar) {
+      timeStart = null;
+      timeEnd = firstSehri;
+      timeType = "sehri";
+    }
+    // Today was last iftar 
+    else if (!nextSehri) {
+      timeStart = null;
+      timeEnd = null;
+      timeType = "EM";
+    }
+    return {
+      timeStart: timeStart,
+      timeEnd: timeEnd,
+      timeType: timeType,
+      hijri: timings[idx].dates.hijri,
+    };
+    
   };
   const times = getTimes();
   const [timeStart, setTimeStart] = useState(times.timeStart);
   const [timeEnd, setTimeEnd] = useState(times.timeEnd);
   const [timeType, setTimeType] = useState(times.timeType);
   const [timeLeft, setTimeLeft] = useState(
-    timeEnd.diffNow(["days","hours", "minutes", "second"])
+    timeEnd.diffNow(["days", "hours", "minutes", "second"])
   );
   const [hijri, setHijri] = useState(times.hijri);
   const getPercentDone = () => {
@@ -107,30 +122,34 @@ export default function Timer() {
     setTimeType(times.timeType);
     setHijri(times.hijri);
   };
+
+  // Main Clock Timer
   useEffect(() => {
     let interval = setInterval(() => {
-      setTimeLeft(timeEnd.diffNow(["days","hours", "minutes", "second"]));
+      setTimeLeft(timeEnd.diffNow(["days", "hours", "minutes", "second"]));
       setPercentDone(getPercentDone());
     }, 1000);
     return () => {
       clearInterval(interval);
     };
   }, [timeEnd]);
+
+  // Get new times when time ends
   useEffect(() => {
     if (timeLeft.values.milliseconds <= 0) {
       setTimes();
     }
   }, [timeLeft]);
 
-  useEffect(() => {
-    setTimes();
-  }, [settings]);
+// Eid Mubarak
   if (timeType === "EM")
     return (
       <div className="is-flex is-flex-direction-column is-justify-content-center has-text-centered">
         <h2 className={styles.timeTitle}>{Language.eidmubarak}</h2>
       </div>
     );
+
+
   return (
     <div className="is-flex is-flex-direction-column is-justify-content-center has-text-centered">
       {
@@ -146,7 +165,7 @@ export default function Timer() {
                   <div></div>
                 </>
               )}
-              <span>
+              <span className="time">
                 {translate(router.locale, DateTime.now().toFormat("dd LLLL y"))}{" "}
                 {Language.ce}
               </span>
@@ -172,7 +191,9 @@ export default function Timer() {
           </h2>
           <h2 className={styles.timerDetails}>
             {Language["next"][timeType]}:{" "}
+            <span className="time">
             {translate(router.locale, timeEnd.toFormat("hh:mm a"))}
+            </span>
           </h2>
           <div>
             <p
@@ -181,24 +202,24 @@ export default function Timer() {
                 "my-2 has-text-weight-semi-bold"
               )}
             >
-              { (timeLeft.days>0) &&
-              <>
-                <span className={styles.timeContainer}>
-                <span className={styles.timeTitle}>
-                  {translate(
-                    router.locale,
-                    timeLeft.toFormat("dd:hh:mm:ss").split(":")[0]
-                  )}
-                </span>
-                <span className={styles.timeSubtitle}>
-                  {Language[timeLeft.days === 1 ? "day" : "days"]}
-                </span>
-              </span>
-              <span className={styles.timeContainer}>
-              <span className={styles.timeTitle}>:</span>
-            </span>
-            </>
-              }
+              {timeLeft.days > 0 && (
+                <>
+                  <span className={styles.timeContainer}>
+                    <span className={styles.timeTitle}>
+                      {translate(
+                        router.locale,
+                        timeLeft.toFormat("dd:hh:mm:ss").split(":")[0]
+                      )}
+                    </span>
+                    <span className={styles.timeSubtitle}>
+                      {Language[timeLeft.days === 1 ? "day" : "days"]}
+                    </span>
+                  </span>
+                  <span className={styles.timeContainer}>
+                    <span className={styles.timeTitle}>:</span>
+                  </span>
+                </>
+              )}
               <span className={styles.timeContainer}>
                 <span className={styles.timeTitle}>
                   {translate(
@@ -224,26 +245,30 @@ export default function Timer() {
                   {Language[timeLeft.minutes === 1 ? "minute" : "minutes"]}
                 </span>
               </span>
-              {
-                timeLeft.days < 1 &&
-                <><span className={styles.timeContainer}>
-                <span className={styles.timeTitle}>:</span>
-              </span>
-              <span className={styles.timeContainer}>
-                <span className={styles.timeTitle}>
-                  {translate(
-                    router.locale,
-                    timeLeft.toFormat("dd:hh:mm:ss").split(":")[3]
-                  )}
-                </span>
-                <span className={styles.timeSubtitle}>
-                  {
-                    Language[
-                      parseInt(timeLeft.seconds) === 1 ? "second" : "seconds"
-                    ]
-                  }
-                </span>
-              </span></>}
+              {timeLeft.days < 1 && (
+                <>
+                  <span className={styles.timeContainer}>
+                    <span className={styles.timeTitle}>:</span>
+                  </span>
+                  <span className={styles.timeContainer}>
+                    <span className={styles.timeTitle}>
+                      {translate(
+                        router.locale,
+                        timeLeft.toFormat("dd:hh:mm:ss").split(":")[3]
+                      )}
+                    </span>
+                    <span className={styles.timeSubtitle}>
+                      {
+                        Language[
+                          parseInt(timeLeft.seconds) === 1
+                            ? "second"
+                            : "seconds"
+                        ]
+                      }
+                    </span>
+                  </span>
+                </>
+              )}
             </p>
             {timeStart && (
               <div

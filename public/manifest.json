@@ -1,13 +1,13 @@
 {
-    "short_name": "",
-    "url": "",
-    "description": "",
-    "background_color": "",
+    "short_name": "Iftarkar",
+    "url": "iftarkar.com",
+    "description": "Iftarkar is your companion app for 2021's Ramzan. Daily Countdown Timer, Iftar and Sehri Timings for Jammu, Kashmir, Kargil and Ladakh.",
+    "background_color": "#eceef8",
     "display": "standalone",
     "scope": "/",
     "start_url": "/?utm_source=pwa",
-    "theme_color": "",
-    "name": "",
+    "theme_color": "#131836",
+    "name": "Iftarkar",
     "icons": [
       {
         "src": "/favicons/android-chrome-192x192.png",

@@ -2,10 +2,11 @@ import { useRouter } from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Languages from "../data/languages.json";
 import Head from "next/head";
-
+import Timings from "../data/timings.json";
 export default function About() {
   const router = useRouter();
   const Language = Languages[router.locale];
+  //ؠ
   return (
     <>
       <Head>
@@ -42,11 +43,17 @@ export default function About() {
               <hr />
               We use the following sources for the different timings:
               <ul>
-                <li>Group 1: </li>
-                <li>Group 2: </li>
-                <li>Group 3: </li>
+                {
+                  Timings.map((calendar,idx)=>
+                    <li key={idx}><b>{calendar.name["en"]}:</b> {calendar.source["en"]}</li>
+                  )
+                }
               </ul>
               <hr />
+              Special Thanks: <br/>
+              <a href="https://muhammadfaysal.com/" target="_blank" rel="noopener noreferrer">Muhammad Faysal</a>
+              <br/>
+              <br/>
               Developed By: <br />
               <a
                 href="https://haideralipunjabi.com"
@@ -60,7 +67,7 @@ export default function About() {
           {router.locale === "ur" && (
             <>
               افطارکر ایک ویب ایپ ہے جو رمضان کے مقّدس مہینے کے دوران جموں و
-              کشمیر، لداخ اور کرگل کے علاقوں میں افطار اور سحری کے اوقات مہیا
+              کشمیر، لداخ اور کرگل کے علاقوں میں افطار اور سحری کے اوقات فراہم
               کرتی ہے۔ ویب ایپ ایک{" "}
               <a
                 href="https://iftarkar.com"
@@ -82,57 +89,69 @@ export default function About() {
               <hr />
               ہم مختلف اوقات کے لئے درج ذیل ذرائع کا استعمال کرتے ہیں۔
               <ul>
-                <li>Group 1: </li>
-                <li>Group 2: </li>
-                <li>Group 3: </li>
+              {
+                  Timings.map((calendar,idx)=>
+                    <li key={idx}>{calendar.name["ur"]}: {calendar.source["ur"]}</li>
+                  )
+                }
               </ul>
               <hr />
+             {" "}
+              خصوصی شکریہ:
+              <a href="https://muhammadfaysal.com/" target="_blank" rel="noopener noreferrer">محمد فیصل</a>
+              <br/>
+              تیار کردہ:
               <a
                 href="https://haideralipunjabi.com"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 حیدر علی پنجابی
-              </a>{" "}
-              کی تیار کردہ
+              </a>
             </>
           )}
           {router.locale === "kmr" && (
             <>
-              اِفطار کَر چھُ اکھ ویب ایپ یُس رمضانس منٛزٕ چھُ جموں و کشمیر، لداخ
-              تہٕ کرگِل باپتھ سحری تہٕ اِفطارِچ اوقات فراہم کران. یہ چھُ اکھ{" "}
+              اِفطار کَر چھُ اکھ ویٚب ایپ یُس رَمضانَس منٛزٕ چھُ جموں و کشمیر، لداخ
+              تہٕ کرگِل باپتھ سَحر تہٕ اِفطارِچ اوٚقات فراہم کران. یہ چھِ اکھ{" "}
               <a
                 href="https://iftarkar.com"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                ویب سایٹ
+                ویٚب سایٹ
               </a>{" "}
-              کِس صورتس منٛزٕ دستیاب یُس تۄہیہِ ہر کنہ پلیٹ فارمس پیٹھ ہیکو انسٹال
-              کرتھ. یہ چھُ{" "}
+              کِس صورتس منٛزٕ دستیاب یُس تۄہیہِ ہر کنٛہـ پلیٹ فارمس پیٛٹھ ہیکو اِنسٹال
+              کرِتھ. یِہ چھِ{" "}
               <a
                 href="https://play.google.com/store/apps/details?id=org.hackesta.iftarkar"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                گوگل پلے اسٹورس
+                گوٗگل پلے اِسٹورس
               </a>{" "}
-              پیٹھ تہِ دستیاب. <hr />
-              أسی چھِ مختلف اوقاتن باپتھ یم وسایل استعمال کران:
+              پیٛٹھ تہِ دستیاب. <hr />
+              أسؠ چھِ مُختَلِف اوٚقاتن باپتھ یِم وسٲیٔل استعمال کران:
               <ul>
-                <li>Group 1: </li>
-                <li>Group 2: </li>
-                <li>Group 3: </li>
+              {
+                  Timings.map((calendar,idx)=>
+                    <li key={idx}>{calendar.name["kmr"]}: {calendar.source["kmr"]}</li>
+                  )
+                }
               </ul>
               <hr />
+              خصوصی شُکریہ:
+              <a href="https://muhammadfaysal.com/" target="_blank" rel="noopener noreferrer">محمد فیصل</a>
+              <br/>
+              پیش کش:
               <a
                 href="https://haideralipunjabi.com"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                حیدر علی پنجابین{" "}
+                حیدر علی پنجابی{" "}
               </a>{" "}
-              پیش کش{" "}
+              {" "}
             </>
           )}
           <br />

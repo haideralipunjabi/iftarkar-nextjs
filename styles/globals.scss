@@ -7,10 +7,6 @@
   src: url("/fonts/Jameel.ttf");
 }
 @font-face {
-  font-family: "Gulmarg Nastaleeq";
-  src: url("/fonts/GulNastaleeq.ttf");
-}
-@font-face {
   font-family: "Gulmarg Narqalam";
   src: url("/fonts/Narqalam.ttf");
 }
@@ -242,4 +238,8 @@ ul.icons {
 }
 ::-webkit-scrollbar-thumb:window-inactive {
 background: $dark; 
+}
+
+.time {
+  font-family: var(--clock-font-family);
 }

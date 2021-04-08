@@ -5,6 +5,7 @@ import { translate } from "../utils/utils";
 import Languages from "../data/languages.json";
 import TimingsData from "../data/timings.json";
 import { useSettingsContext } from "../context/settings";
+import classNames from "classnames";
 
 export default function Timings() {
   const {
@@ -71,17 +72,17 @@ export default function Timings() {
               {TimingsData[settings.timingIndex].timings.map((timing, idx) => {
                 return (
                   <tr key={idx}>
-                    <td>{translate(router.locale, timing.dates.hijri)}</td>
-                    <td>
+                    <td className={classNames({"time":router.locale!=="en"})}>{translate(router.locale, timing.dates.hijri)}</td>
+                    <td className={classNames({"time":router.locale!=="en"})}>
                       {translate(router.locale, timing.dates.gregorian)}
                     </td>
                     <td>
                       {translate(router.locale, getTimes(timing).day)}
                     </td>
-                    <td>
+                    <td className={classNames({"time":router.locale!=="en"})}>
                       {translate(router.locale, getTimes(timing).sahar)}
                     </td>
-                    <td>
+                    <td className={classNames({"time":router.locale!=="en"})}>
                       {translate(router.locale, getTimes(timing).iftar)}
                     </td>
                   </tr>

@@ -5,6 +5,7 @@ import classNames from "classnames/bind";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Languages from "../data/languages.json";
 import { useSettingsContext } from "../context/settings";
+import Image from "next/image";
 
 export default function Navbar() {
   const [menuOpened, setMenuOpened] = useState(false);
@@ -39,9 +40,11 @@ export default function Navbar() {
           })}
         >
           <div className="navbar-start ml-a">
-            <ActiveLink href="/" icon={["fas", "home"]}>
-              {Language.home}
-            </ActiveLink>
+            <Link href="/">
+              <a className={classNames("navbar-item", "is-size-5")}>
+                <Image src={`/logo_horizontal${(router.locale!=="en")?"_urdu":""}.svg`} width={395} height={100} />
+              </a>
+            </Link>
             <ActiveLink href="/timings" icon={["fas", "calendar-alt"]}>
               {Language.timings}
             </ActiveLink>
@@ -61,9 +64,11 @@ export default function Navbar() {
             <div className="navbar-item has-dropdown is-hoverable">
               <div className="navbar-link is-size-5">{Language.language}</div>
               <div className="navbar-dropdown">
-                {
-                  Object.keys(Languages).map(lang=><Link href={router.pathname} locale={lang}><a className="navbar-item is-size-5">{Language[lang]}</a></Link>)
-                }
+                {Object.keys(Languages).map((lang,key) => (
+                  <Link key={key} href={router.pathname} locale={lang}>
+                    <a  className="navbar-item is-size-5">{Language[lang]}</a>
+                  </Link>
+                ))}
               </div>
             </div>
           </div>
