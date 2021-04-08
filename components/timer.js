@@ -44,26 +44,26 @@ export default function Timer() {
           timings[idx + 1].timestamps.sehri
         ).plus({ minutes: offset });
       }
-      if (!prevIftar) {
-        timeStart = sehriTime;
-        timeEnd = sehriTime;
-        timeType = null;
-      } else if (!nextSehri) {
-        timeStart = lastIftar;
-        timeEnd = lastIftar;
-        timeType = null;
-      } else if (now < sehriTime) {
+      if (now < sehriTime && prevIftar) {
         timeStart = prevIftar;
         timeEnd = sehriTime;
-        timeType = "sehri"
+        timeType = "sehri";
       } else if (now > sehriTime && now < iftarTime) {
         timeStart = sehriTime;
         timeEnd = iftarTime;
-        timeType = "iftar"
+        timeType = "iftar";
       } else if (now > iftarTime && nextSehri) {
         timeStart = iftarTime;
         timeEnd = nextSehri;
-        timeType = "sehri"
+        timeType = "sehri";
+      } else if (!prevIftar) {
+        timeStart = null;
+        timeEnd = firstSehri;
+        timeType = "sehri";
+      } else if (!nextSehri) {
+        timeStart = null;
+        timeEnd = null;
+        timeType = "EM";
       }
       return {
         timeStart: timeStart,
@@ -73,40 +73,43 @@ export default function Timer() {
       };
     } else if (now < firstSehri)
       return {
-        timeStart: firstSehri,
+        timeStart: null,
         timeEnd: firstSehri,
-        timeType: null,
+        timeType: "sehri",
       };
     else if (now > lastIftar)
       return {
-        timeStart: lastIftar,
-        timeEnd: lastIftar,
-        timeType: null,
+        timeStart: null,
+        timeEnd: null,
+        timeType: "EM",
       };
   };
   const times = getTimes();
   const [timeStart, setTimeStart] = useState(times.timeStart);
   const [timeEnd, setTimeEnd] = useState(times.timeEnd);
-  const [timeType,setTimeType] = useState(times.timeType);
+  const [timeType, setTimeType] = useState(times.timeType);
   const [timeLeft, setTimeLeft] = useState(
-    timeEnd.diffNow(["hours", "minutes", "second"])
+    timeEnd.diffNow(["days","hours", "minutes", "second"])
   );
   const [hijri, setHijri] = useState(times.hijri);
-  const getPercentDone = () =>
-    ((DateTime.now().diff(timeStart) * 100) / timeEnd.diff(timeStart)).toFixed(
-      2
-    );
+  const getPercentDone = () => {
+    if (!timeStart) return 0.0;
+    return (
+      (DateTime.now().diff(timeStart) * 100) /
+      timeEnd.diff(timeStart)
+    ).toFixed(2);
+  };
   const [percentDone, setPercentDone] = useState(getPercentDone());
   const setTimes = () => {
     const times = getTimes();
     setTimeStart(times.timeStart);
     setTimeEnd(times.timeEnd);
-    setTimeType(times.timeType)
+    setTimeType(times.timeType);
     setHijri(times.hijri);
   };
   useEffect(() => {
     let interval = setInterval(() => {
-      setTimeLeft(timeEnd.diffNow(["hours", "minutes", "second"]));
+      setTimeLeft(timeEnd.diffNow(["days","hours", "minutes", "second"]));
       setPercentDone(getPercentDone());
     }, 1000);
     return () => {
@@ -122,28 +125,33 @@ export default function Timer() {
   useEffect(() => {
     setTimes();
   }, [settings]);
+  if (timeType === "EM")
+    return (
+      <div className="is-flex is-flex-direction-column is-justify-content-center has-text-centered">
+        <h2 className={styles.timeTitle}>{Language.eidmubarak}</h2>
+      </div>
+    );
   return (
     <div className="is-flex is-flex-direction-column is-justify-content-center has-text-centered">
-      {timeEnd > DateTime.now() && (
+      {
         <>
-          {hijri && (
+          {
             <h2 className={styles.timerSubtitle}>
+              {hijri && (
+                <>
+                  <span>
+                    {translate(router.locale, hijri)} {Language.ramadan}{" "}
+                    {translate(router.locale, 1441)} {Language.ah}
+                  </span>
+                  <div></div>
+                </>
+              )}
               <span>
-                {translate(router.locale, hijri)}{" "}
-                {Language.ramadan}{" "}
-                {translate(router.locale, 1441)}{" "}
-                {Language.ah}
-              </span>
-              <div></div>
-              <span>
-                {translate(
-                  router.locale,
-                  DateTime.now().toFormat("dd LLLL y")
-                )}{" "}
+                {translate(router.locale, DateTime.now().toFormat("dd LLLL y"))}{" "}
                 {Language.ce}
               </span>
             </h2>
-          )}
+          }
 
           <h2 className={styles.timerDetails}>
             {Timings[settings.timingIndex].name[router.locale]}{" "}
@@ -163,7 +171,8 @@ export default function Timer() {
             />
           </h2>
           <h2 className={styles.timerDetails}>
-            {Language["next"][timeType]}: {translate(router.locale,timeEnd.toFormat("hh:mm a"))}
+            {Language["next"][timeType]}:{" "}
+            {translate(router.locale, timeEnd.toFormat("hh:mm a"))}
           </h2>
           <div>
             <p
@@ -172,19 +181,33 @@ export default function Timer() {
                 "my-2 has-text-weight-semi-bold"
               )}
             >
+              { (timeLeft.days>0) &&
+              <>
+                <span className={styles.timeContainer}>
+                <span className={styles.timeTitle}>
+                  {translate(
+                    router.locale,
+                    timeLeft.toFormat("dd:hh:mm:ss").split(":")[0]
+                  )}
+                </span>
+                <span className={styles.timeSubtitle}>
+                  {Language[timeLeft.days === 1 ? "day" : "days"]}
+                </span>
+              </span>
+              <span className={styles.timeContainer}>
+              <span className={styles.timeTitle}>:</span>
+            </span>
+            </>
+              }
               <span className={styles.timeContainer}>
                 <span className={styles.timeTitle}>
                   {translate(
                     router.locale,
-                    timeLeft.toFormat("hh:mm:ss").split(":")[0]
+                    timeLeft.toFormat("dd:hh:mm:ss").split(":")[1]
                   )}
                 </span>
                 <span className={styles.timeSubtitle}>
-                  {
-                    Language[
-                      timeLeft.hours === 1 ? "hour" : "hours"
-                    ]
-                  }
+                  {Language[timeLeft.hours === 1 ? "hour" : "hours"]}
                 </span>
               </span>
               <span className={styles.timeContainer}>
@@ -194,25 +217,23 @@ export default function Timer() {
                 <span className={styles.timeTitle}>
                   {translate(
                     router.locale,
-                    timeLeft.toFormat("hh:mm:ss").split(":")[1]
+                    timeLeft.toFormat("dd:hh:mm:ss").split(":")[2]
                   )}
                 </span>
                 <span className={styles.timeSubtitle}>
-                  {
-                    Language[
-                      timeLeft.minutes === 1 ? "minute" : "minutes"
-                    ]
-                  }
+                  {Language[timeLeft.minutes === 1 ? "minute" : "minutes"]}
                 </span>
               </span>
-              <span className={styles.timeContainer}>
+              {
+                timeLeft.days < 1 &&
+                <><span className={styles.timeContainer}>
                 <span className={styles.timeTitle}>:</span>
               </span>
               <span className={styles.timeContainer}>
                 <span className={styles.timeTitle}>
                   {translate(
                     router.locale,
-                    timeLeft.toFormat("hh:mm:ss").split(":")[2]
+                    timeLeft.toFormat("dd:hh:mm:ss").split(":")[3]
                   )}
                 </span>
                 <span className={styles.timeSubtitle}>
@@ -222,30 +243,31 @@ export default function Timer() {
                     ]
                   }
                 </span>
-              </span>
+              </span></>}
             </p>
-            <div className={classNames("container", styles.progressContainer)}>
-              <progress
-                className={classNames(
-                  "progress",
-                  "is-primary",
-                  styles.progress
-                )}
-                value={percentDone}
-                max="100"
+            {timeStart && (
+              <div
+                className={classNames("container", styles.progressContainer)}
               >
-                {percentDone}
-              </progress>
-              <p className={styles.progressValue}>
-                {translate(router.locale, percentDone)}%
-              </p>
-            </div>
+                <progress
+                  className={classNames(
+                    "progress",
+                    "is-primary",
+                    styles.progress
+                  )}
+                  value={percentDone}
+                  max="100"
+                >
+                  {percentDone}
+                </progress>
+                <p className={styles.progressValue}>
+                  {translate(router.locale, percentDone)}%
+                </p>
+              </div>
+            )}
           </div>
         </>
-      )}
-      {timeEnd < DateTime.now() && (
-        <h1 className={styles.timerTitle}>Eid Mubarak</h1>
-      )}
+      }
     </div>
   );
 }

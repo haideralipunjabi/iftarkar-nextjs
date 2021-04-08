@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
     <Head>
-      <title>{translate(router.language,404) } | {Language.iftarkar}</title>
+      <title>{translate(router.locale,404) } | {Language.iftarkar}</title>
     </Head>
 
       <div>
