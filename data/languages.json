@@ -34,7 +34,8 @@
         "next": {
             "iftar": "Upcoming Iftar",
             "sehri": "Upcoming Sehri"
-        }
+        },
+        "download":"Download"
     },
     "ur": {
         "en":"انگریزی",
@@ -71,7 +72,8 @@
         "next": {
             "iftar": "آنے والا اِفطار",
             "sehri": "آنے والی سحری"
-        }
+        },
+        "download":""
     },
     "kmr": {
         "en":"انگریزی",
@@ -108,6 +110,7 @@
         "next": {
             "iftar": "یِنہٕ وول اِفطار",
             "sehri": "یِنہٕ وول سحر"
-        }
+        },
+        "download":""
     }
 }

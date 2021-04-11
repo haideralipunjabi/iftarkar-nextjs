@@ -6,10 +6,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Languages from "../data/languages.json";
 import { useSettingsContext } from "../context/settings";
 import Image from "next/image";
+import AppleModal from "./appleModal";
+import {isApple, isInstallable} from "./hooks";
 
 export default function Navbar() {
   const [menuOpened, setMenuOpened] = useState(false);
   const { setSettingsOpened } = useSettingsContext();
+  const [isAppleShown,setIsAppleShown] = useState(false);
+  const installPWA = isInstallable()
+  const isAppleDevice = isApple();
+
   const router = useRouter();
   const Language = Languages[router.locale];
   return (
@@ -71,9 +77,18 @@ export default function Navbar() {
                 ))}
               </div>
             </div>
+            <a className={classNames("navbar-item is-size-5",{"is-hidden":(!isAppleDevice && !installPWA)})} onClick={
+              ()=>{
+                if(isAppleDevice) setIsAppleShown(true);
+                else installPWA.prompt();
+              }
+            }>
+                <FontAwesomeIcon className="is-size-7 mx-2" icon={"fas","arrow-down"}/> {Language.download}
+            </a>
           </div>
         </div>
       </nav>
+      <AppleModal isActive={isAppleShown} handleClose={()=>{setIsAppleShown(false)}}/>
     </>
   );
 }

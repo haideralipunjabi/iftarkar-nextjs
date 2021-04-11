@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { translate } from "../utils/utils";
 import Languages from "../data/languages.json";
 import { useSettingsContext } from "../context/settings";
+import { route } from "next/dist/next-server/server/router";
 
 export default function Timer() {
   const { settings, setSettingsOpened } = useSettingsContext();
@@ -123,6 +124,10 @@ export default function Timer() {
     setHijri(times.hijri);
   };
 
+  const isAndroidApp = () => router.query["utm_source"]==="androidapp";
+  const setAlarm = (hour,minute) => {
+    window.location =`intent://iftarkar.com?hour=${hour}&minute=${minute}&message=Sahar#Intent;scheme=myscheme;package=org.hackesta.iftarkar;action=alarmaction;end`
+  }
   // Main Clock Timer
   useEffect(() => {
     let interval = setInterval(() => {
@@ -194,6 +199,19 @@ export default function Timer() {
             <span className="time">
             {translate(router.locale, timeEnd.toFormat("hh:mm a"))}
             </span>
+            <FontAwesomeIcon
+              className={classNames(
+                "mx-4",
+                { "has-text-primary": settings.theme === "light" },
+                { "has-text-info": settings.theme === "dark" },
+                {"is-hidden": !isAndroidApp()}
+              )}
+              icon={["fas", "bell"]}
+              onClick={() => {
+                const [hour,minute] = timeEnd.toFormat("HH:mm").split(":")
+                setAlarm(hour,minute)
+              }}
+            />
           </h2>
           <div>
             <p
