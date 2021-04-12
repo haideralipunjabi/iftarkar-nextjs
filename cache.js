@@ -13,8 +13,7 @@ module.exports = [
       // don't change cache name
       cacheName: 'start-url',
       expiration: {
-        maxEntries: 1,
-        maxAgeSeconds: 24 * 60 * 60 // 24 hours
+        maxEntries: 100,
       }
     }
   },
@@ -24,7 +23,7 @@ module.exports = [
     options: {
       cacheName: 'google-fonts',
       expiration: {
-        maxEntries: 4,
+        maxEntries: 100,
         maxAgeSeconds: 365 * 24 * 60 * 60 // 365 days
       }
     }
@@ -35,8 +34,8 @@ module.exports = [
     options: {
       cacheName: 'static-font-assets',
       expiration: {
-        maxEntries: 4,
-        maxAgeSeconds: 7 * 24 * 60 * 60 // 7 days
+        maxEntries: 100,
+        maxAgeSeconds: 365 * 24 * 60 * 60 // 7 days
       }
     }
   },
@@ -46,8 +45,8 @@ module.exports = [
     options: {
       cacheName: 'static-image-assets',
       expiration: {
-        maxEntries: 64,
-        maxAgeSeconds: 24 * 60 * 60 // 24 hours
+        maxEntries: 100,
+        maxAgeSeconds: 365 * 60 * 60 // 24 hours
       }
     }
   },
@@ -57,8 +56,8 @@ module.exports = [
     options: {
       cacheName: 'static-js-assets',
       expiration: {
-        maxEntries: 32,
-        maxAgeSeconds: 24 * 60 * 60 // 24 hours
+        maxEntries: 100,
+        maxAgeSeconds: 365 * 60 * 60 // 24 hours
       }
     }
   },
@@ -68,19 +67,19 @@ module.exports = [
     options: {
       cacheName: 'static-style-assets',
       expiration: {
-        maxEntries: 32,
-        maxAgeSeconds: 24 * 60 * 60 // 24 hours
+        maxEntries: 100,
+        maxAgeSeconds: 365 * 60 * 60 // 24 hours
       }
     }
   },
   {
     urlPattern: /\.(?:json|xml|csv)$/i,
-    handler: 'NetworkFirst',
+    handler: 'StaleWhileRevalidate',
     options: {
       cacheName: 'static-data-assets',
       expiration: {
-        maxEntries: 32,
-        maxAgeSeconds: 24 * 60 * 60 // 24 hours
+        maxEntries: 100,
+        maxAgeSeconds: 365 * 60 * 60 // 24 hours
       }
     }
   },
@@ -96,5 +95,17 @@ module.exports = [
       },
       networkTimeoutSeconds: 10 // fall back to cache if api does not response within 10 seconds
     }
+  },
+  {
+    urlPattern: new RegExp('/*'),
+    handler: 'StaleWhileRevalidate',
+    options: {
+      // don't change cache name
+      cacheName: 'extra',
+      expiration: {
+        maxEntries: 100,
+      }
+    }
+     
   }
 ]

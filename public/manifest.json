@@ -59,5 +59,35 @@
         "type":"image/png"
       }
     ],
-    "categories":["utilities"]
+    "categories":["utilities"],
+    "shortcuts": [
+      {
+        "name": "Iftarkar English",
+        "shortname": "English",
+        "description": "Opens the App in English",
+        "url": "/?utm_source=pwa_shortcut",
+        "icons": [{"src":"/favicons/android-chrome-192x192.png", "sizes":"192x192"}]
+      },
+      {
+        "name": "Iftarkar Urdu",
+        "shortname": "Urdu",
+        "description": "Opens the App in Urdu",
+        "url": "/ur?utm_source=pwa_shortcut",
+        "icons": [{"src":"/favicons/android-chrome-192x192.png", "sizes":"192x192"}]
+      },
+      {
+        "name": "Iftarkar Kashmir",
+        "shortname": "Kashmir",
+        "description": "Opens the App in Kashmir",
+        "url": "/kmr?utm_source=pwa_shortcut",
+        "icons": [{"src":"/favicons/android-chrome-192x192.png", "sizes":"192x192"}]
+      },
+      {
+        "name": "Timings",
+        "shortname": "Timings",
+        "description": "Opens the Timings View",
+        "url": "/timings?utm_source=pwa_shortcut",
+        "icons": [{"src":"/favicons/android-chrome-192x192.png", "sizes":"192x192"}]
+      }
+    ]
   }
