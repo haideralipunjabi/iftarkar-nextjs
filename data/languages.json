@@ -36,7 +36,8 @@
             "sehri": "Upcoming Sehri"
         },
         "download":"Download",
-        "contactus":"Contact Us"
+        "contactus":"Contact Us",
+        "downloadpdf": "Download PDF"
     },
     "ur": {
         "en":"انگریزی",
@@ -75,7 +76,8 @@
             "sehri": "آنے والی سحری"
         },
         "download":"ڈاؤن لوڈ",
-        "contactus":"رابطہ کریں"
+        "contactus":"رابطہ کریں",
+        "downloadpdf": "پی ڈی ایف ڈاؤن لوڈ کریں"
     },
     "kmr": {
         "en":"انگریزی",
@@ -114,7 +116,7 @@
             "sehri": "یِنہٕ وول سحر"
         },
         "download":"ڈاؤن لوڈ",
-        "contactus":"رابطہ کَرِو"
-
+        "contactus":"رابطہ کَرِو",
+        "downloadpdf": "پی ڈی ایف ڈاؤن لوڈ کَرِو"
     }
 }

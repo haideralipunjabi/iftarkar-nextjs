@@ -11,6 +11,7 @@
 @import "../node_modules/bulma/sass/elements/table.sass";
 @import "../node_modules/bulma/sass/elements/title.sass";
 @import "../node_modules/bulma/sass/helpers/_all.sass";
+@import "../node_modules/bulma/sass/grid/columns.sass";
 @import "../node_modules/bulma/sass/layout/footer.sass";
 @import "../node_modules/bulma/sass/layout/section.sass";
 @import "../node_modules/bulma/sass/utilities/_all.sass";
@@ -120,7 +121,7 @@
   }
 [data-theme="dark"] {
   --text-color: #ffffff;
-  --text-invert: #000000;
+  --text-invert: #ffffff;
   --background: #131836;
 }
 .footer,.footer > * {
@@ -135,7 +136,6 @@
 .footer a {
   border-bottom: 1px solid white;
 }
-
 .container {
   --text-invert: var(--text-color);
   a {
@@ -262,4 +262,8 @@ background: $dark;
 
 .time {
   font-family: var(--clock-font-family);
+}
+
+.border-white {
+  border: 1px solid white !important;
 }

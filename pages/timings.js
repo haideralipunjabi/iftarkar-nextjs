@@ -6,6 +6,9 @@ import Languages from "../data/languages.json";
 import TimingsData from "../data/timings.json";
 import { useSettingsContext } from "../context/settings";
 import classNames from "classnames";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState } from "react";
+import FilesModal from "../components/filesModal";
 
 export default function Timings() {
   const {
@@ -14,6 +17,7 @@ export default function Timings() {
     settingsOpened,
     setSettingsOpened,
   } = useSettingsContext();
+  const [filesModal, setFilesModal] = useState(false);
   const router = useRouter();
   const Language = Languages[router.locale];
   const getTimes = (timing) => {
@@ -42,10 +46,11 @@ export default function Timings() {
     <Head>
      <title>{Language.timings} | {Language.iftarkar}</title>
    </Head>
-      <div className="my-6">
+      <div className="my-6 has-text-centered">
         <h1 className=" has-text-centered is-size-2 title">
           {Language.timings}
         </h1>
+        <div  className="mb-3 has-text-centered button is-primary"onClick={()=>{setFilesModal(true)}}><FontAwesomeIcon className="mx-3" icon={["fas","file-pdf"]} />{Language.downloadpdf}</div>
         <h2 className="has-text-centered is-size-4 subitle">
           {TimingsData[settings.timingIndex].name[router.locale]}
           {TimingsData[settings.timingIndex].offsets.length > 0 &&
@@ -99,6 +104,7 @@ export default function Timings() {
           </table>
         </div>
       </div>
+      <FilesModal isActive={filesModal} handleClose={()=>{setFilesModal(false)}} />
     </>
   );
 }
