@@ -211,7 +211,7 @@ export default function Timer() {
               icon={["fas", "cogs"]}
               onClick={() => setSettingsOpened(true)}
             /> */}
-            <a className="mx-2 is-size-6 is-primary underline" onClick={() => setSettingsOpened(true)}>(Switch)</a>
+            <a className="mx-2 is-size-6 is-primary underline" onClick={() => setSettingsOpened(true)}>(Change)</a>
           </h2>
           <h2 className={styles.timerDetails}>
             {Language["next"][timeType]}:{" "}
