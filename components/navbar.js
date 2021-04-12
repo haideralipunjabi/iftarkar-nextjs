@@ -47,11 +47,11 @@ export default function Navbar() {
         >
           <div className="navbar-start ml-a">
             <Link href="/">
-              <a className={classNames("navbar-item", "is-size-5")}>
+              <a onClick={()=>{setMenuOpened(false)}} className={classNames("navbar-item", "is-size-5")}>
                 <Image src={`/logo_horizontal${(router.locale!=="en")?"_urdu":""}.svg`} width={395} height={100} />
               </a>
             </Link>
-            <ActiveLink href="/timings" icon={["fas", "calendar-alt"]}>
+            <ActiveLink href="/timings" icon={["fas", "calendar-alt"]} onClick={()=>{setMenuOpened(false)}}>
               {Language.timings}
             </ActiveLink>
             <a
@@ -64,7 +64,7 @@ export default function Navbar() {
               />
               {Language.settings}
             </a>
-            <ActiveLink href="/about" icon={["fas", "info-circle"]}>
+            <ActiveLink onClick={()=>{setMenuOpened(false)}} href="/about" icon={["fas", "info-circle"]}>
               {Language.about}
             </ActiveLink>
             <div className="navbar-item has-dropdown is-hoverable">
@@ -72,12 +72,12 @@ export default function Navbar() {
               <div className="navbar-dropdown">
                 {Object.keys(Languages).map((lang,key) => (
                   <Link key={key} href={router.pathname} locale={lang}>
-                    <a  className="navbar-item is-size-5">{Language[lang]}</a>
+                    <a onClick={()=>{setMenuOpened(false)}}  className="navbar-item is-size-5">{Language[lang]}</a>
                   </Link>
                 ))}
               </div>
             </div>
-            <ActiveLink href="mailto:contact@iftarkar.com" icon={["fas","envelope"]}>
+            <ActiveLink onClick={()=>{setMenuOpened(false)}} href="mailto:contact@iftarkar.com" icon={["fas","envelope"]}>
               {Language.contactus}
             </ActiveLink>
             <a className={classNames("navbar-item is-size-5",{"is-hidden":(!isAppleDevice && !installPWA)})} onClick={
@@ -96,11 +96,12 @@ export default function Navbar() {
   );
 }
 
-function ActiveLink({ href, className, icon,newtab, children }) {
+function ActiveLink({ href, className, onClick, icon,newtab, children }) {
   const router = useRouter();
   return (
     <Link href={href}>
       <a
+       onClick={onClick} 
         className={classNames("navbar-item", "is-size-5", {
           "is-active": router.pathname === href,
         })}
