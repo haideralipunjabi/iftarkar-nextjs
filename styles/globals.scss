@@ -267,3 +267,10 @@ background: $dark;
 .border-white {
   border: 1px solid white !important;
 }
+
+a.primary {
+  color: $primary;
+}
+a.underline {
+  text-decoration: underline;
+}

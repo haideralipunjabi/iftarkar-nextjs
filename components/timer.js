@@ -202,7 +202,7 @@ export default function Timer() {
                 Timings[settings.timingIndex].offsets.filter(
                   (offset) => offset.offset == settings.offset
                 )[0]?.name[router.locale]}
-            <FontAwesomeIcon
+            {/* <FontAwesomeIcon
               className={classNames(
                 "mx-4",
                 { "has-text-primary": settings.theme === "light" },
@@ -210,7 +210,8 @@ export default function Timer() {
               )}
               icon={["fas", "cogs"]}
               onClick={() => setSettingsOpened(true)}
-            />
+            /> */}
+            <a className="mx-2 is-size-6 is-primary underline" onClick={() => setSettingsOpened(true)}>(Switch)</a>
           </h2>
           <h2 className={styles.timerDetails}>
             {Language["next"][timeType]}:{" "}
