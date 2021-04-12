@@ -35,7 +35,8 @@
             "iftar": "Upcoming Iftar",
             "sehri": "Upcoming Sehri"
         },
-        "download":"Download"
+        "download":"Download",
+        "contactus":"Contact Us"
     },
     "ur": {
         "en":"انگریزی",
@@ -62,8 +63,8 @@
         "minutes": "منٹ",
         "second": "سیکنڈ",
         "seconds": "سیکنڈ",
-        "gregoriandate":"عیسوی تاریخ",
-        "islamicdate": "اسلامی تاریخ",
+        "gregoriandate":"تاریخ شمسی",
+        "islamicdate": "تاریخ قمری",
         "day":"دن",
         "days":"دن",
         "ah" :"ھ",
@@ -73,7 +74,8 @@
             "iftar": "آنے والا اِفطار",
             "sehri": "آنے والی سحری"
         },
-        "download":""
+        "download":"ڈاؤن لوڈ",
+        "contactus":"رابطہ کریں"
     },
     "kmr": {
         "en":"انگریزی",
@@ -100,8 +102,8 @@
         "minutes": "مِنٹہ",
         "second": "سیکنڈ",
         "seconds": "سیکنڈ",
-        "gregoriandate":"عیسوی تٲریخ",
-        "islamicdate": "اسلٲمی تٲریخ",
+        "gregoriandate":"تٲریخ شمسی",
+        "islamicdate": "تٲریخ قمری",
         "day":"دۅہ",
         "days":"دۅہ",
         "ah" :"ھ",
@@ -111,6 +113,8 @@
             "iftar": "یِنہٕ وول اِفطار",
             "sehri": "یِنہٕ وول سحر"
         },
-        "download":""
+        "download":"ڈاؤن لوڈ",
+        "contactus":"رابطہ کَرِو"
+
     }
 }

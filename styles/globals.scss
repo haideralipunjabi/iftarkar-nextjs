@@ -123,6 +123,10 @@
   --text-invert: #000000;
   --background: #131836;
 }
+.footer,.footer > * {
+  font-size: 1rem !important;
+
+}
 .footer,
 .navbar {
   --text-color: #ffffff;

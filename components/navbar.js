@@ -77,6 +77,9 @@ export default function Navbar() {
                 ))}
               </div>
             </div>
+            <ActiveLink href="mailto:contact@iftarkar.com" icon={["fas","envelope"]}>
+              {Language.contactus}
+            </ActiveLink>
             <a className={classNames("navbar-item is-size-5",{"is-hidden":(!isAppleDevice && !installPWA)})} onClick={
               ()=>{
                 if(isAppleDevice) setIsAppleShown(true);
@@ -93,7 +96,7 @@ export default function Navbar() {
   );
 }
 
-function ActiveLink({ href, className, icon, children }) {
+function ActiveLink({ href, className, icon,newtab, children }) {
   const router = useRouter();
   return (
     <Link href={href}>

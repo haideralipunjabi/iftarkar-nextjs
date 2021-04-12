@@ -28,15 +28,18 @@ export default function Timer() {
     let lastIftar = DateTime.fromSeconds(
       timings[timings.length - 1].timestamps.iftar
     ).plus({ minutes: offset });
-    if (idx === -1) {   // We are not in the month of Ramzan
-      if (now < firstSehri)   // Before Ramzan Starts, 
+    if (idx === -1) {
+      // We are not in the month of Ramzan
+      if (now < firstSehri)
+        // Before Ramzan Starts,
         return {
           timeStart: null,
           timeEnd: firstSehri,
           timeType: "sehri",
           hijri: null,
         };
-      else if (now > lastIftar)   // After Ramzan Ends
+      else if (now > lastIftar)
+        // After Ramzan Ends
         return {
           timeStart: null,
           timeEnd: null,
@@ -45,48 +48,50 @@ export default function Timer() {
         };
     }
     let timeStart, timeEnd, timeType;
-    let iftarTime = DateTime.fromSeconds(timings[idx].timestamps.iftar).plus({    // Today's Iftar Time
+    let iftarTime = DateTime.fromSeconds(timings[idx].timestamps.iftar).plus({
+      // Today's Iftar Time
       minutes: offset,
     });
-    let sehriTime = DateTime.fromSeconds(timings[idx].timestamps.sehri).plus({    // Today's Sehri Time
+    let sehriTime = DateTime.fromSeconds(timings[idx].timestamps.sehri).plus({
+      // Today's Sehri Time
       minutes: offset,
     });
-    let prevIftar, nextSehri;   // Yesterday's Iftar time, Tommorow's Sehri Time
+    let prevIftar, nextSehri; // Yesterday's Iftar time, Tommorow's Sehri Time
     if (idx !== 0) {
-      prevIftar = DateTime.fromSeconds(
-        timings[idx - 1].timestamps.iftar
-      ).plus({ minutes: offset });
+      prevIftar = DateTime.fromSeconds(timings[idx - 1].timestamps.iftar).plus({
+        minutes: offset,
+      });
     }
     if (idx + 1 < dates.length) {
-      nextSehri = DateTime.fromSeconds(
-        timings[idx + 1].timestamps.sehri
-      ).plus({ minutes: offset });
+      nextSehri = DateTime.fromSeconds(timings[idx + 1].timestamps.sehri).plus({
+        minutes: offset,
+      });
     }
     // 00:00 - sehriTime & we had a Iftar yesterday, return time from yesterday's Iftar to today's Sehri
     if (now < sehriTime && prevIftar) {
       timeStart = prevIftar;
       timeEnd = sehriTime;
       timeType = "sehri";
-    } 
+    }
     // sehriTime - IftarTime, during day return from today's Sehri to today's Iftar
     else if (now > sehriTime && now < iftarTime) {
       timeStart = sehriTime;
       timeEnd = iftarTime;
       timeType = "iftar";
-    } 
+    }
     // IftarTime - 00:00, post Iftar, return time from Iftar to tomorrow's Sehri
     else if (now > iftarTime && nextSehri) {
       timeStart = iftarTime;
       timeEnd = nextSehri;
       timeType = "sehri";
-    } 
+    }
     // Today is sehri (i.e, first Sehri) return only the Sehri Time
     else if (!prevIftar) {
       timeStart = null;
       timeEnd = firstSehri;
       timeType = "sehri";
     }
-    // Today was last iftar 
+    // Today was last iftar
     else if (!nextSehri) {
       timeStart = null;
       timeEnd = null;
@@ -98,14 +103,20 @@ export default function Timer() {
       timeType: timeType,
       hijri: timings[idx].dates.hijri,
     };
-    
   };
   const times = getTimes();
+  if (times.timeType === "EM")
+    return (
+      <div className="is-flex is-flex-direction-column is-justify-content-center has-text-centered">
+        <h2 className={styles.timeTitle}>{Language.eidmubarak}</h2>
+      </div>
+    );
+
   const [timeStart, setTimeStart] = useState(times.timeStart);
   const [timeEnd, setTimeEnd] = useState(times.timeEnd);
   const [timeType, setTimeType] = useState(times.timeType);
   const [timeLeft, setTimeLeft] = useState(
-    timeEnd.diffNow(["days", "hours", "minutes", "second"])
+    timeEnd?.diffNow(["days", "hours", "minutes", "second"])
   );
   const [hijri, setHijri] = useState(times.hijri);
   const getPercentDone = () => {
@@ -122,12 +133,13 @@ export default function Timer() {
     setTimeEnd(times.timeEnd);
     setTimeType(times.timeType);
     setHijri(times.hijri);
+    1;
   };
 
-  const isAndroidApp = () => router.query["utm_source"]==="androidapp";
-  const setAlarm = (hour,minute) => {
-    window.location =`intent://iftarkar.com?hour=${hour}&minute=${minute}&message=Sahar#Intent;scheme=myscheme;package=org.hackesta.iftarkar;action=alarmaction;end`
-  }
+  const isAndroidApp = () => router.query["utm_source"] === "androidapp";
+  const setAlarm = (hour, minute) => {
+    window.location = `intent://iftarkar.com?hour=${hour}&minute=${minute}&message=Sahar#Intent;scheme=myscheme;package=org.hackesta.iftarkar;action=alarmaction;end`;
+  };
   // Main Clock Timer
   useEffect(() => {
     let interval = setInterval(() => {
@@ -141,20 +153,26 @@ export default function Timer() {
 
   // Get new times when time ends
   useEffect(() => {
-    if (timeLeft.values.milliseconds <= 0) {
+    if (timeLeft.values.seconds <= 0) {
       setTimes();
+      setTimeLeft(timeEnd.diffNow(["days", "hours", "minutes", "second"]));
+      setPercentDone(getPercentDone());
     }
   }, [timeLeft]);
 
-// Eid Mubarak
-  if (timeType === "EM")
+  useEffect(() => {
+    setTimes();
+    setTimeLeft(timeEnd.diffNow(["days", "hours", "minutes", "second"]));
+    setPercentDone(getPercentDone());
+  }, [settings]);
+  // Eid Mubarak
+  if (timeType === "EM") {
     return (
       <div className="is-flex is-flex-direction-column is-justify-content-center has-text-centered">
         <h2 className={styles.timeTitle}>{Language.eidmubarak}</h2>
       </div>
     );
-
-
+  }
   return (
     <div className="is-flex is-flex-direction-column is-justify-content-center has-text-centered">
       {
@@ -197,19 +215,20 @@ export default function Timer() {
           <h2 className={styles.timerDetails}>
             {Language["next"][timeType]}:{" "}
             <span className="time">
-            {translate(router.locale, timeEnd.toFormat("hh:mm a"))}
+              {translate(router.locale, timeEnd.toFormat("hh:mm a"))}
             </span>
             <FontAwesomeIcon
               className={classNames(
                 "mx-4",
                 { "has-text-primary": settings.theme === "light" },
                 { "has-text-info": settings.theme === "dark" },
-                {"is-hidden": !isAndroidApp()}
+                // { "is-hidden": !isAndroidApp() }
+                  "is-hidden"
               )}
               icon={["fas", "bell"]}
               onClick={() => {
-                const [hour,minute] = timeEnd.toFormat("HH:mm").split(":")
-                setAlarm(hour,minute)
+                const [hour, minute] = timeEnd.toFormat("HH:mm").split(":");
+                setAlarm(hour, minute);
               }}
             />
           </h2>

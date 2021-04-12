@@ -3,10 +3,12 @@ import { useRouter } from "next/router";
 import Timer from "../components/timer";
 import Duas from "../components/duas";
 import Languages from "../data/languages.json";
+import { useSettingsContext } from "../context/settings";
 
 export default function Home() {
   const router = useRouter();
   const Language = Languages[router.locale];
+  const { settings, setSettingsOpened } = useSettingsContext();
   return (
     <>
       <Head>
@@ -14,7 +16,7 @@ export default function Home() {
       </Head>
 
       <div className="my-6">
-        <Timer />
+        {settings && <Timer />}
         <Duas />
       </div>
     </>

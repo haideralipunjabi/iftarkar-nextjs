@@ -30,6 +30,13 @@ export default function Timings() {
       iftar: iftarTime.toFormat("hh:mm a"),
     };
   };
+  if (!settings) {
+    return (
+      <Head>
+     <title>{Language.timings} | {Language.iftarkar}</title>
+   </Head>
+    )
+  }
   return (
     <>
     <Head>

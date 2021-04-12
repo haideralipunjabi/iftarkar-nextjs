@@ -4,13 +4,7 @@ import {useContext,createContext, useState, useEffect} from "react";
 const SettingsContext = createContext({});
 export function SettingsWrapper({ children }) {
     const [settingsOpened, setSettingsOpened] = useState(false);
-    const [settings, setSettings] = useState({
-      timing: "Group A",
-      timingIndex: 0,
-      offset: 0,
-      theme: "light",
-      // language: langOverride,
-    });
+    const [settings, setSettings] = useState();
     useEffect(() => {
       setSettings({
         timing: localStorage.getItem("settings-timing") ?? "Group A",
@@ -21,12 +15,12 @@ export function SettingsWrapper({ children }) {
       });
     }, []);
     useEffect(()=>{
-      document.getElementsByTagName("body")[0].dataset["theme"] = settings.theme;
-      // document.getElementsByTagName("body")[0].dataset["language"] = settings.language;
-      // document.getElementsByTagName("html")[0].lang = settings.language;
-      document.getElementById("rootDiv").classList.remove("has-background-dark");
-      document.getElementById("rootDiv").classList.remove("has-background-light");
-      document.getElementById("rootDiv").classList.add("has-background-"+settings.theme)
+      if(settings){
+        document.getElementsByTagName("body")[0].dataset["theme"] = settings.theme;
+        document.getElementById("rootDiv").classList.remove("has-background-dark");
+        document.getElementById("rootDiv").classList.remove("has-background-light");
+        document.getElementById("rootDiv").classList.add("has-background-"+settings.theme)
+      }
     },[settings])
     const updateSettings = (key, value) => {
       localStorage.setItem("settings-" + key, value);
