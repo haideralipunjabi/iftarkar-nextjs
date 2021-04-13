@@ -198,6 +198,8 @@ export default function About() {
               </a>
             </li>
           </ul>
+          <br/>
+          <a href="https://instagram.com/iftarkardotcom" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={["fab","instagram"]}/> iftarkardotcom</a>
         </p>
       </div>
     </>
