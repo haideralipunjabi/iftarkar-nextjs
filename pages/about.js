@@ -121,7 +121,7 @@ export default function About() {
               >
                 ویٚب سایٹ
               </a>{" "}
-              کِس صورتس منٛزٕ دستیاب یُس تۄہیہِ ہر کنٛہـ پلیٹ فارمس پیٛٹھ ہیکو اِنسٹال
+              کِس صورتس منٛزٕ دستیاب یُس تۄہیہِ ہر کنٛہـ پلیٹ فارمس پیٛٹھ ہیکِو اِنسٹال
               کرِتھ. یِہ چھِ{" "}
               <a
                 href="https://play.google.com/store/apps/details?id=org.hackesta.iftarkar"

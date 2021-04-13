@@ -37,7 +37,8 @@
         },
         "download":"Download",
         "contactus":"Contact Us",
-        "downloadpdf": "Download PDF"
+        "downloadpdf": "Download PDF",
+        "change":"Change"
     },
     "ur": {
         "en":"انگریزی",
@@ -77,7 +78,8 @@
         },
         "download":"ڈاؤن لوڈ",
         "contactus":"رابطہ کریں",
-        "downloadpdf": "پی ڈی ایف ڈاؤن لوڈ کریں"
+        "downloadpdf": "پی ڈی ایف ڈاؤن لوڈ کریں",
+        "change":"بدلیں"
     },
     "kmr": {
         "en":"انگریزی",
@@ -117,6 +119,7 @@
         },
         "download":"ڈاؤن لوڈ",
         "contactus":"رابطہ کَرِو",
-        "downloadpdf": "پی ڈی ایف ڈاؤن لوڈ کَرِو"
+        "downloadpdf": "پی ڈی ایف ڈاؤن لوڈ کَرِو",
+        "change":"بدلٲؠو"
     }
 }
