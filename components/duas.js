@@ -48,7 +48,7 @@ export default function Duas() {
           {
             Duas.map((dua,key)=>(
               <li key={key} className={classNames({"is-active": duaIdx===key})}>
-                <a className="is-size-3 is-size-5-mobile" data-target={key} onClick={()=>{
+                <a className="is-size-4 is-size-5-mobile" data-target={key} onClick={()=>{
                   if(duaIdx===key) setDuaIdx();
                   else setDuaIdx(key);
                 }}>
