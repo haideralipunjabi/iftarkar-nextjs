@@ -222,8 +222,7 @@ export default function Timer() {
                 "mx-4",
                 { "has-text-primary": settings.theme === "light" },
                 { "has-text-info": settings.theme === "dark" },
-                // { "is-hidden": !isAndroidApp() }
-                  "is-hidden"
+                { "is-hidden": !isAndroidApp() }
               )}
               icon={["fas", "bell"]}
               onClick={() => {
