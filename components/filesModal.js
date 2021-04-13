@@ -42,6 +42,24 @@ export default function FilesModal(props) {
             },
             "url":"https://drive.google.com/file/d/1qik6Xktj74hAo2JrF7KTHu0I0EvBLouu/view?usp=sharing",
             "thumb": "pdf-4.png"
+        },
+        {
+            "names":{
+                "en":"Kargil - English",
+                "ur":"کرگل - انگریزی",
+                "kmr":"کرگل - انگریزی",
+            },
+            "url":"https://drive.google.com/file/d/1y2DpJqsId22gMgrlAYOn_m6ZdbOz-YNv/view?usp=sharing",
+            "thumb":"pdf-5.png"
+        },
+        {
+            "names":{
+                "en":"Kargil - Urdu",
+                "ur":"کرگل - اردو",
+                "kmr":"کرگل - اردو",
+            },
+            "url":"https://drive.google.com/file/d/1werVooZsj-fC5b3Rk2Sz30ykZ0GEgkny/view?usp=sharing",
+            "thumb":"pdf-6.png"
         }
     ]
     return (
