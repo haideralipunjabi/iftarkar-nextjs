@@ -32,8 +32,8 @@
         "ce":"",
         "404":"404! Page not found",
         "next": {
-            "iftar": "Upcoming Iftar",
-            "sehri": "Upcoming Sehri"
+            "iftar": "Iftar will begin at",
+            "sehri": "Sehri will end at"
         },
         "download":"Download",
         "contactus":"Contact Us",
@@ -73,8 +73,8 @@
         "ce": "ء",
         "404":"۴۰۴! صفحہ نہیں ملا",
         "next": {
-            "iftar": "آنے والا اِفطار",
-            "sehri": "آنے والی سحری"
+            "iftar": "وقتِ اِفطار",
+            "sehri": "ختم سحری"
         },
         "download":"ڈاؤن لوڈ",
         "contactus":"رابطہ کریں",
@@ -114,8 +114,8 @@
         "ce": "ء",
         "404":"۴۰۴! یہ صفح چھُ نہ مۄجود",
         "next": {
-            "iftar": "یِنہٕ وول اِفطار",
-            "sehri": "یِنہٕ وول سحر"
+            "iftar": "وقتِ اِفطار",
+            "sehri": "ختم سحری"
         },
         "download":"ڈاؤن لوڈ",
         "contactus":"رابطہ کَرِو",
