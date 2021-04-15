@@ -137,8 +137,8 @@ export default function Timer() {
   };
 
   const isAndroidApp = () => router.query["utm_source"] === "androidapp";
-  const setAlarm = (hour, minute) => {
-    window.location = `intent://iftarkar.com?hour=${hour}&minute=${minute}&message=Sahar#Intent;scheme=myscheme;package=org.hackesta.iftarkar;action=alarmaction;end`;
+  const setAlarm = (hour, minute, message) => {
+    window.location = `intent://iftarkar.com?hour=${hour}&minute=${minute}&message=${message}#Intent;scheme=myscheme;package=org.hackesta.iftarkar;action=alarmaction;end`;
   };
   // Main Clock Timer
   useEffect(() => {
@@ -227,7 +227,7 @@ export default function Timer() {
               icon={["fas", "bell"]}
               onClick={() => {
                 const [hour, minute] = timeEnd.toFormat("HH:mm").split(":");
-                setAlarm(hour, minute);
+                setAlarm(hour, minute,timeType[0].toUpperCase() + timeType.slice(1));
               }}
             />
           </h2>
