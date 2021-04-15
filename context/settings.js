@@ -6,11 +6,13 @@ export function SettingsWrapper({ children }) {
     const [settingsOpened, setSettingsOpened] = useState(false);
     const [settings, setSettings] = useState();
     useEffect(() => {
+      const preferDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
       setSettings({
         timing: localStorage.getItem("settings-timing") ?? "Group A",
         timingIndex: parseInt(localStorage.getItem("settings-timingIndex") ?? 0),
         offset: parseInt(localStorage.getItem("settings-offset") ?? 0),
-        theme: localStorage.getItem("settings-theme") ?? "light",
+        theme: localStorage.getItem("settings-theme") ?? (preferDarkMode ? "dark":"light"),
         // language: langOverride==="ur" ? "ur": (localStorage.getItem("settings-language") ?? "en"),
       });
     }, []);
