@@ -50,7 +50,16 @@ export default function Timings() {
         <h1 className=" has-text-centered is-size-2 title">
           {Language.timings}
         </h1>
-        <div  className="mb-3 has-text-centered button is-primary"onClick={()=>{setFilesModal(true)}}><FontAwesomeIcon className="mx-3" icon={["fas","file-pdf"]} />{Language.downloadpdf}</div>
+        <div className="buttons is-centered">
+        <button  className="mb-3 has-text-centered button is-primary" onClick={()=>{setFilesModal(true)}}>
+          <span className="icon"><FontAwesomeIcon icon={["fas","file-pdf"]} /></span>
+          <span>{Language.downloadpdf}</span>
+        </button>
+        <a href={`/calendars/${TimingsData[settings.timingIndex].name["en"]}-${settings.offset}.ics`} className="mb-3 has-text-centered button is-primary">
+          <span className="icon"><FontAwesomeIcon icon={["fas","calendar-alt"]} /></span>
+          <span>{Language.addToCalendar}</span>
+        </a>
+        </div>
         <h2 className="has-text-centered is-size-4 subitle">
           {TimingsData[settings.timingIndex].name[router.locale]}
           {TimingsData[settings.timingIndex].offsets.length > 0 &&
