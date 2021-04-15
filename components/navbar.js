@@ -8,13 +8,12 @@ import { useSettingsContext } from "../context/settings";
 import Image from "next/image";
 import AppleModal from "./appleModal";
 import {isApple, isInstallable} from "./hooks";
-
+import DownloadModal from "./downloadModal";
 export default function Navbar() {
   const [menuOpened, setMenuOpened] = useState(false);
   const { setSettingsOpened } = useSettingsContext();
-  const [isAppleShown,setIsAppleShown] = useState(false);
-  const installPWA = isInstallable()
-  const isAppleDevice = isApple();
+  const [isDownloadShown,setIsDownloadShown] = useState(false);
+
 
   const router = useRouter();
   const Language = Languages[router.locale];
@@ -80,10 +79,9 @@ export default function Navbar() {
             <ActiveLink onClick={()=>{setMenuOpened(false)}} href="mailto:contact@iftarkar.com" icon={["fas","envelope"]}>
               {Language.contactus}
             </ActiveLink>
-            <a className={classNames("navbar-item is-size-5",{"is-hidden":(!isAppleDevice && !installPWA)})} onClick={
+            <a className={classNames("navbar-item is-size-5")} onClick={
               ()=>{
-                if(isAppleDevice) setIsAppleShown(true);
-                else installPWA.prompt();
+               setIsDownloadShown(true)
               }
             }>
                 <FontAwesomeIcon className="is-size-7 mx-2" icon={"fas","arrow-down"}/> {Language.download}
@@ -91,7 +89,7 @@ export default function Navbar() {
           </div>
         </div>
       </nav>
-      <AppleModal isActive={isAppleShown} handleClose={()=>{setIsAppleShown(false)}}/>
+      <DownloadModal modalOpened={isDownloadShown} setModalOpened={setIsDownloadShown}/>
     </>
   );
 }
