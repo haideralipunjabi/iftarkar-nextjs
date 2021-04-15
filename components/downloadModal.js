@@ -53,7 +53,7 @@ export default function DownloadModal(props) {
               <br/>
               <button
                 className={classNames("button is-primary is-rounded", {
-                  "is-hidden": false,
+                  "is-hidden": !isAppleDevice,
                 })}
                 onClick={() => {
                   setIsAppleShown(true);
