@@ -53,4 +53,5 @@ module.exports = withPlugins([
   },
   future: {webpack5: true,},
   compress: true,
+  target: "serverless",
 });

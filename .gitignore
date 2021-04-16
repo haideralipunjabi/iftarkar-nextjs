@@ -39,3 +39,5 @@ yarn-error.log*
 /public/workbox*
 data-gen/
 /public/sw.js
+# Local Netlify folder
+.netlify
