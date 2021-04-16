@@ -40,4 +40,5 @@ yarn-error.log*
 data-gen/
 /public/sw.js
 # Local Netlify folder
-.netlify
+.netlifne
+netlify/
