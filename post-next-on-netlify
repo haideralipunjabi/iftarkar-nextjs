@@ -1,0 +1,4 @@
+cp out_publish/en.html out_publish/index.html
+cp out_publish/en/404.html out_publish/404.html
+cp out_publish/en/about.html out_publish/about.html
+cp out_publish/en/timings.html out_publish/timings.html
