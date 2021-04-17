@@ -1,5 +1,5 @@
 @import "variables.scss";
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Oswald:wght@700&family=Amiri:wght@400&family=Lateef:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Oswald:wght@700&family=Amiri:wght@400&family=Lateef:wght@400&family=Scheherazade:wght@400&display=swap");
 @import "../node_modules/bulma/sass/base/_all.sass";
 @import "../node_modules/bulma/sass/components/dropdown.sass";
 @import "../node_modules/bulma/sass/components/modal.sass";
@@ -20,14 +20,7 @@
 @import "../node_modules/bulma/sass/form/select.sass";
 @import "../node_modules/bulma/sass/elements/other.sass";
 
-@font-face {
-  font-family: "Jameel";
-  src: url("https://cdn.githubraw.com/haideralipunjabi/iftarkar-nextjs/main/public/fonts/Jameel.ttf");
-}
-@font-face {
-  font-family: "Gulmarg Narqalam";
-  src: url("/fonts/Narqalam.woff2");
-}
+
 :root {
   --font-family: "Open Sans";
   --clock-font-family: "Oswald";
@@ -76,8 +69,8 @@
   }
 }
 [lang="ur"],[lang="kmr"] {
-  --font-family: "Jameel","Lateef";
-  --clock-font-family: "Jameel","Lateef";
+  --font-family: "Lateef";
+  --clock-font-family: "Lateef";
   font-weight: normal !important;
   --font-factor: 0.25rem;
   --size-1: calc(3rem + var(--font-factor));
@@ -114,7 +107,7 @@
   // }
 }
 [lang="kmr"] {
-  --font-family: "Gulmarg Narqalam","Lateef";
+  --font-family: "Scheherazade";
 }
 .amiri,
   .amiri > * {
