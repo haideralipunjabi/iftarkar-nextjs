@@ -20,6 +20,10 @@
 @import "../node_modules/bulma/sass/form/select.sass";
 @import "../node_modules/bulma/sass/elements/other.sass";
 
+@font-face {
+  font-family: "Gulmarg";
+  src: url('/fonts/Narqalam.woff2');
+}
 
 :root {
   --font-family: "Open Sans";
@@ -107,7 +111,7 @@
   // }
 }
 [lang="kmr"] {
-  --font-family: "Scheherazade";
+  --font-family: "Gulmarg";
 }
 .amiri,
   .amiri > * {
