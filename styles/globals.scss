@@ -1,5 +1,5 @@
 @import "variables.scss";
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Oswald:wght@700&family=Amiri:wght@400&family=Mirza:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Oswald:wght@700&family=Amiri:wght@400&family=Lateef:wght@400&display=swap");
 @import "../node_modules/bulma/sass/base/_all.sass";
 @import "../node_modules/bulma/sass/components/dropdown.sass";
 @import "../node_modules/bulma/sass/components/modal.sass";
@@ -76,8 +76,8 @@
   }
 }
 [lang="ur"],[lang="kmr"] {
-  --font-family: "Jameel","Mirza";
-  --clock-font-family: "Jameel","Mirza";
+  --font-family: "Jameel","Lateef";
+  --clock-font-family: "Jameel","Lateef";
   font-weight: normal !important;
   --font-factor: 0.25rem;
   --size-1: calc(3rem + var(--font-factor));
@@ -114,7 +114,7 @@
   // }
 }
 [lang="kmr"] {
-  --font-family: "Gulmarg Narqalam","Amiri";
+  --font-family: "Gulmarg Narqalam","Lateef";
 }
 .amiri,
   .amiri > * {
