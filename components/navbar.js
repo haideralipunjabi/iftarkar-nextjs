@@ -5,7 +5,6 @@ import classNames from "classnames/bind";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Languages from "../data/languages.json";
 import { useSettingsContext } from "../context/settings";
-import Image from "next/image";
 import AppleModal from "./appleModal";
 import {isApple, isInstallable} from "./hooks";
 import DownloadModal from "./downloadModal";
@@ -47,7 +46,8 @@ export default function Navbar() {
           <div className="navbar-start ml-a">
             <Link href="/">
               <a onClick={()=>{setMenuOpened(false)}} className={classNames("navbar-item", "is-size-5")}>
-                <Image src={`/logo_horizontal${(router.locale!=="en")?"_urdu":""}.svg`} width={395} height={100} />
+                {/* <Image src={`/logo_horizontal${(router.locale!=="en")?"_urdu":""}.svg`} width={395} height={100} /> */}
+                <img src={(router.locale==="en"?require("../public/logo_horizontal.svg?url"):require("../public/logo_horizontal_urdu.svg?url"))} />
               </a>
             </Link>
             <ActiveLink href="/timings" icon={["fas", "calendar-alt"]} onClick={()=>{setMenuOpened(false)}}>

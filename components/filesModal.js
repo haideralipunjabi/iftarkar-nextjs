@@ -1,5 +1,4 @@
 import { useRouter } from "next/router";
-import Image from "next/image"
 import Languages from "../data/languages.json";
 
 export default function FilesModal(props) {
@@ -14,7 +13,7 @@ export default function FilesModal(props) {
                 "kmr":"فقہ حنفیہ - انگریزی"
             },
             "url":"https://drive.google.com/file/d/16YLSHjEKOSiuGPybAuyho5qFbmdIJe6x/view?usp=sharing",
-            "thumb": "pdf-1.png"
+            "thumb": require("../public/images/pdf-1.png")
         },
         {
             "names":{
@@ -23,7 +22,7 @@ export default function FilesModal(props) {
                 "kmr":"فقہ جعفریہ - انگریزی"
             },
             "url":"https://drive.google.com/file/d/1TATP722gB5u5xS4i7l_0y4znzRXpxFFH/view?usp=sharing",
-            "thumb": "pdf-2.png"
+            "thumb": require("../public/images/pdf-2.png")
         },
         {
             "names":{
@@ -32,7 +31,7 @@ export default function FilesModal(props) {
                 "kmr":"فقہ حنفیہ - اردو"
             },
             "url":"https://drive.google.com/file/d/1MGS1pij5DQSRUsElQt2KOWwKld8_t6RS/view?usp=sharing",
-            "thumb": "pdf-3.png"
+            "thumb": require("../public/images/pdf-3.png")
         },
         {
             "names":{
@@ -41,7 +40,7 @@ export default function FilesModal(props) {
                 "kmr":"فقہ جعفریہ - اردو"
             },
             "url":"https://drive.google.com/file/d/1qik6Xktj74hAo2JrF7KTHu0I0EvBLouu/view?usp=sharing",
-            "thumb": "pdf-4.png"
+            "thumb": require("../public/images/pdf-4.png")
         },
         {
             "names":{
@@ -50,7 +49,7 @@ export default function FilesModal(props) {
                 "kmr":"کرگل - انگریزی",
             },
             "url":"https://drive.google.com/file/d/1y2DpJqsId22gMgrlAYOn_m6ZdbOz-YNv/view?usp=sharing",
-            "thumb":"pdf-5.png"
+            "thumb":require("../public/images/pdf-5.png")
         },
         {
             "names":{
@@ -59,7 +58,7 @@ export default function FilesModal(props) {
                 "kmr":"کرگل - اردو",
             },
             "url":"https://drive.google.com/file/d/1werVooZsj-fC5b3Rk2Sz30ykZ0GEgkny/view?usp=sharing",
-            "thumb":"pdf-6.png"
+            "thumb":require("../public/images/pdf-6.png")
         }
     ]
     return (
@@ -80,7 +79,7 @@ export default function FilesModal(props) {
                         FILES.map((file,idx)=>
                             <div key={idx} className="column is-full-mobile is-half-desktop">
                                 <a className="is-size-5" href={file.url} target="_blank" rel="noopener noreferrer">
-                                <Image className="border-white" width={100} height={142} src={`/images/${file.thumb}`}/>
+                                <img src={file.thumb} />
                                 <p>
                                     {file.names[router.locale]}
                                 </p>
