@@ -51,7 +51,7 @@ export default function Settings(props) {
                   >
                     {Timings.map((timing, idx) => (
                       <option key={idx} value={timing.name[router.locale]}>
-                        {timing.name[router.locale]}
+                        {timing.full_name[router.locale]}
                       </option>
                     ))}
                   </select>
