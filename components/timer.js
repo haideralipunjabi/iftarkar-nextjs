@@ -10,12 +10,14 @@ import Languages from "../data/languages.json";
 import { useSettingsContext } from "../context/settings";
 import { route } from "next/dist/next-server/server/router";
 import Head from "next/head";
+import DonationModal from "./donationModal";
 
 export default function Timer() {
   const { settings, setSettingsOpened } = useSettingsContext();
   const router = useRouter();
   const Language = Languages[router.locale];
 
+  const [isDonationShown,setIsDonationShown] = useState(false);
   // Get timeStart, timeEnd & timeType
   const getTimes = () => {
     let timings = Timings[settings.timingIndex].timings;
@@ -336,6 +338,9 @@ export default function Timer() {
                 </>
               )}
             </p>
+            <div className="button is-primary is-rounded my-2" onClick={()=>{
+              setIsDonationShown(true)
+            }}><span className="icon"><FontAwesomeIcon icon={["fas","hands-helping"]}/></span><span>{Language.donate}</span></div>
             {timeStart && (
               <div
                 className={classNames("container", styles.progressContainer)}
@@ -357,6 +362,7 @@ export default function Timer() {
               </div>
             )}
           </div>
+          <DonationModal isActive={isDonationShown} handleClose={()=>{setIsDonationShown(false)}}/>
         </>
       }
     </div>

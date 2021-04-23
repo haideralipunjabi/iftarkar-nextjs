@@ -8,11 +8,12 @@ import { useSettingsContext } from "../context/settings";
 import AppleModal from "./appleModal";
 import {isApple, isInstallable} from "./hooks";
 import DownloadModal from "./downloadModal";
+import DonationModal from "./donationModal";
 export default function Navbar() {
   const [menuOpened, setMenuOpened] = useState(false);
   const { setSettingsOpened } = useSettingsContext();
   const [isDownloadShown,setIsDownloadShown] = useState(false);
-
+  const [isDonationShown,setIsDonationShown] = useState(false);
 
   const router = useRouter();
   const Language = Languages[router.locale];
@@ -86,10 +87,19 @@ export default function Navbar() {
             }>
                 <FontAwesomeIcon className="is-size-7 mx-2" icon={"fas","arrow-down"}/> {Language.download}
             </a>
+            <a className="navbar-item is-size-5" onClick={
+              ()=>{
+                setIsDonationShown(true)
+              }
+            }>
+                <FontAwesomeIcon className="is-size-7 mx-2" icon={"fas","hands-helping"}/> {Language.donate}
+
+            </a>
           </div>
         </div>
       </nav>
       <DownloadModal modalOpened={isDownloadShown} setModalOpened={setIsDownloadShown}/>
+      <DonationModal isActive={isDonationShown} handleClose={()=>{setIsDonationShown(false)}}/>
     </>
   );
 }

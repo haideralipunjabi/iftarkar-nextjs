@@ -39,7 +39,8 @@
         "contactus":"Contact Us",
         "downloadpdf": "Download PDF",
         "change":"Change",
-        "addToCalendar":"Add to Calendar"
+        "addToCalendar":"Add to Calendar",
+        "donate":"Donate"
     },
     "ur": {
         "en":"انگریزی",
@@ -81,7 +82,8 @@
         "contactus":"رابطہ کریں",
         "downloadpdf": "پی ڈی ایف ڈاؤن لوڈ کریں",
         "change":"بدلیں",
-        "addToCalendar":"ڈاؤن لوڈ کیلنڈر فائل"
+        "addToCalendar":"ڈاؤن لوڈ کیلنڈر فائل",
+        "donate":"عطیات"
     },
     "kmr": {
         "en":"انگریزی",
@@ -123,7 +125,7 @@
         "contactus":"رابطہ کَرِو",
         "downloadpdf": "پی ڈی ایف ڈاؤن لوڈ کَرِو",
         "change":"بدلٲؠو",
-        "addToCalendar":"ڈاؤن لوڈ کٮ۪لنٛڈَر فاؠل"
-
+        "addToCalendar":"ڈاؤن لوڈ کٮ۪لنٛڈَر فاؠل",
+        "donate":"عطیات"
     }
 }
