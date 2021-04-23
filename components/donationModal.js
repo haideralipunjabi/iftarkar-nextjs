@@ -25,6 +25,10 @@ export default function DonationModal(props) {
        {
            "name": "Sahuliyat Kashmir",
            "url": "https://linktr.ee/sahuliyatkashmir"
+       },
+       {
+         "name": "KASHMER",
+         "url":"https://www.kashmer.org/donate-now/"
        }
     ]
     return (
