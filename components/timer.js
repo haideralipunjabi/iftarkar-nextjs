@@ -9,6 +9,7 @@ import { translate } from "../utils/utils";
 import Languages from "../data/languages.json";
 import { useSettingsContext } from "../context/settings";
 import { route } from "next/dist/next-server/server/router";
+import Head from "next/head";
 
 export default function Timer() {
   const { settings, setSettingsOpened } = useSettingsContext();
@@ -175,6 +176,25 @@ export default function Timer() {
   }
   return (
     <div className="is-flex is-flex-direction-column is-justify-content-center has-text-centered">
+      <Head>
+        <title>
+          {translate(
+            router.locale,
+            timeLeft.toFormat("dd:hh:mm:ss").split(":")[1]
+          )}
+          :
+          {translate(
+            router.locale,
+            timeLeft.toFormat("dd:hh:mm:ss").split(":")[2]
+          )}
+          :
+          {translate(
+            router.locale,
+            timeLeft.toFormat("dd:hh:mm:ss").split(":")[3]
+          )}{" "}
+          | {Language.iftarkar}
+        </title>
+      </Head>
       {
         <>
           {
@@ -211,7 +231,13 @@ export default function Timer() {
               icon={["fas", "cogs"]}
               onClick={() => setSettingsOpened(true)}
             /> */}
-            <a className="mx-2 is-size-6 is-primary underline" onClick={() => setSettingsOpened(true)}>({Language.change})</a>          </h2>
+            <a
+              className="mx-2 is-size-6 is-primary underline"
+              onClick={() => setSettingsOpened(true)}
+            >
+              ({Language.change})
+            </a>
+          </h2>
           <h2 className={styles.timerDetails}>
             {Language["next"][timeType]}:{" "}
             <span className="time">
@@ -227,7 +253,11 @@ export default function Timer() {
               icon={["fas", "bell"]}
               onClick={() => {
                 const [hour, minute] = timeEnd.toFormat("HH:mm").split(":");
-                setAlarm(hour, minute,timeType[0].toUpperCase() + timeType.slice(1));
+                setAlarm(
+                  hour,
+                  minute,
+                  timeType[0].toUpperCase() + timeType.slice(1)
+                );
               }}
             />
           </h2>
