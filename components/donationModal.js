@@ -29,6 +29,10 @@ export default function DonationModal(props) {
        {
          "name": "KASHMER",
          "url":"https://www.kashmer.org/donate-now/"
+       }, 
+       {
+         "name": "Help Together Foundation",
+         "url": "http://helptogetherfoundation.org/donate.html"
        }
     ]
     return (
