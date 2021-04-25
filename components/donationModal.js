@@ -19,8 +19,8 @@ export default function DonationModal(props) {
            "url": "https://www.covidjk.com/donate"
        },
        {
-           "name": "CharityFundraisingJK",
-           "url":"https://twitter.com/Charity_JK"
+           "name": "MadadgaarJK",
+           "url":"https://twitter.com/MadadgaarJK"
        },
        {
            "name": "Sahuliyat Kashmir",
