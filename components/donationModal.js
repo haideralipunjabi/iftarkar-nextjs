@@ -33,6 +33,10 @@ export default function DonationModal(props) {
        {
          "name": "Help Together Foundation",
          "url": "http://helptogetherfoundation.org/donate.html"
+       },
+       {
+         "name": "Imdaad Foundation",
+         "url": "http://imdaadfoundation.org/"
        }
     ]
     return (
