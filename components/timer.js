@@ -10,7 +10,7 @@ import Languages from "../data/languages.json";
 import { useSettingsContext } from "../context/settings";
 import { route } from "next/dist/next-server/server/router";
 import Head from "next/head";
-import DonationModal from "./donationModal";
+import DonationModal, { Food4Kashmir } from "./donationModal";
 
 export default function Timer() {
   const { settings, setSettingsOpened } = useSettingsContext();
@@ -18,6 +18,7 @@ export default function Timer() {
   const Language = Languages[router.locale];
 
   const [isDonationShown,setIsDonationShown] = useState(false);
+  const [isFoodShown, setIsFoodShown] = useState(false);
   // Get timeStart, timeEnd & timeType
   const getTimes = () => {
     let timings = Timings[settings.timingIndex].timings;
@@ -338,9 +339,14 @@ export default function Timer() {
                 </>
               )}
             </p>
-            <div className="button is-primary is-rounded my-2" onClick={()=>{
+            <div className="button is-primary is-rounded m-2" onClick={()=>{
               setIsDonationShown(true)
             }}><span className="icon"><FontAwesomeIcon icon={["fas","hands-helping"]}/></span><span>{Language.donate}</span></div>
+            <div className="button is-primary is-rounded m-2 english" onClick={()=>{
+              setIsFoodShown(true)
+            }}>
+              <span className="icon"><FontAwesomeIcon icon={["fas","utensils"]} /></span><span>Food4Kashmir</span>
+            </div>
             {timeStart && (
               <div
                 className={classNames("container", styles.progressContainer)}
@@ -363,6 +369,7 @@ export default function Timer() {
             )}
           </div>
           <DonationModal isActive={isDonationShown} handleClose={()=>{setIsDonationShown(false)}}/>
+          <Food4Kashmir isActive={isFoodShown} handleClose={()=>{setIsFoodShown(false)}}/>
         </>
       }
     </div>

@@ -117,6 +117,11 @@
   .amiri > * {
     --font-family: "Amiri";
   }
+
+.english {
+  --font-family: "Open Sans" !important;
+  direction: ltr !important;
+}
 [data-theme="dark"] {
   --text-color: #ffffff;
   --text-invert: #ffffff;
