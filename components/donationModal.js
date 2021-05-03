@@ -115,7 +115,7 @@ export function Food4Kashmir(props) {
           </p>
           <br/>
           <p>
-            Those who want to support this #Food4KKashmir initiative, message
+            Those who want to support this #Food4Kashmir initiative, message
             them on their social media or call / Whatsapp them.
           </p>
           <br/>
