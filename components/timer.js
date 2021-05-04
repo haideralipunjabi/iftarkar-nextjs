@@ -347,6 +347,7 @@ export default function Timer() {
             }}>
               <span className="icon"><FontAwesomeIcon icon={["fas","utensils"]} /></span><span>Food4Kashmir</span>
             </div>
+            <a className="button is-primary is-rounded m-2 english" href="https://www.waqarqamri.com/products/eid-cards" target="_blank" rel="noopener noreferrer">#EidiforAll</a>
             {timeStart && (
               <div
                 className={classNames("container", styles.progressContainer)}
