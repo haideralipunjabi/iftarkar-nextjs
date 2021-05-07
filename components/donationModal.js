@@ -90,7 +90,7 @@ export function Food4Kashmir(props) {
         </header>
         <section className="modal-card-body">
           <p>
-            Foor for Kashmir is an initiative by Tiffin Aaw, in which they
+            Food for Kashmir is an initiative by Tiffin Aaw, in which they
             invite people to give their charity to sponsor food for
             underprivileged and distressed COVID positive patients and their
             families, either in hospitals or in home quarantine.
