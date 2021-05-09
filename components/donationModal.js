@@ -39,6 +39,10 @@ export default function DonationModal(props) {
       name: "Imdaad Foundation",
       url: "http://imdaadfoundation.org/",
     },
+    {
+      name: "Madad Charitable Trust",
+      url: "https://twitter.com/madad_trust/status/1390325881382445059?s=20"
+    }
   ];
   return (
     <div className={`modal ${isActive ? "is-active" : ""}`}>
