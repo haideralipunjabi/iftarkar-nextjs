@@ -17,7 +17,7 @@ export default function Home() {
 
       <div className="my-6">
         {settings && <Timer />}
-        <Duas />
+        {/* <Duas /> */}
       </div>
     </>
   );

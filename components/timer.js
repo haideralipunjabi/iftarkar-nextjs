@@ -109,12 +109,12 @@ export default function Timer() {
     };
   };
   const times = getTimes();
-  if (times.timeType === "EM")
-    return (
-      <div className="is-flex is-flex-direction-column is-justify-content-center has-text-centered">
-        <h2 className={styles.timeTitle}>{Language.eidmubarak}</h2>
-      </div>
-    );
+  // if (times.timeType === "EM")
+  return (
+    <div className="is-flex is-flex-direction-column is-justify-content-center has-text-centered">
+      <h2 className={styles.timeTitle}>{Language.eidmubarak}</h2>
+    </div>
+  );
 
   const [timeStart, setTimeStart] = useState(times.timeStart);
   const [timeEnd, setTimeEnd] = useState(times.timeEnd);
