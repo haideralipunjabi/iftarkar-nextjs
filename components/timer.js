@@ -109,7 +109,7 @@ export default function Timer() {
     };
   };
   const times = getTimes();
-  // if (times.timeType === "EM")
+  if (times.timeType === "EM")
   return (
     <div className="is-flex is-flex-direction-column is-justify-content-center has-text-centered">
       <h2 className={styles.timeTitle}>{Language.eidmubarak}</h2>
@@ -205,7 +205,7 @@ export default function Timer() {
               {hijri && (
                 <>
                   <span>
-                    {translate(router.locale, hijri)} {Language.ramadan}{" "}
+                    {translate(router.locale, hijri)} {Language.shawal}{" "}
                     {translate(router.locale, 1442)} {Language.ah}
                   </span>
                   <div></div>
