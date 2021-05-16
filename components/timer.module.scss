@@ -52,6 +52,7 @@
   margin-bottom: 20px;
 }
 .timeTitle {
+  width:var(--clock-font);
   font-family: var(--clock-font-family);
   margin-bottom: 20px;
   font-size:  var(--clock-font);
@@ -61,4 +62,9 @@
   font-size: var(--size-4);
   position: relative;
   bottom: 0;
+}
+
+.timeSeparator{
+  font-family: var(--clock-font-family);
+  font-size:  var(--clock-font);
 }
