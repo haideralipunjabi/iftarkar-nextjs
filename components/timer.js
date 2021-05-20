@@ -173,7 +173,8 @@ export default function Timer() {
   if (timeType === "EM") {
     return (
       <div className="is-flex is-flex-direction-column is-justify-content-center has-text-centered">
-        <h2 className={styles.timeTitle}>{Language.eidmubarak}</h2>
+        {/* <h2 className={styles.timeTitle}>{Language.eidmubarak}</h2> */}
+        <h2 className={styles.timeTitle}>We will return next year</h2>
       </div>
     );
   }
