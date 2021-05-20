@@ -286,7 +286,7 @@ export default function Timer() {
                     </span>
                   </span>
                   <span className={styles.timeContainer}>
-                    <span className={styles.timeTitle}>:</span>
+                    <span className={styles.timeSeparator}>:</span>
                   </span>
                 </>
               )}
@@ -302,7 +302,7 @@ export default function Timer() {
                 </span>
               </span>
               <span className={styles.timeContainer}>
-                <span className={styles.timeTitle}>:</span>
+                <span className={styles.timeSeparator}>:</span>
               </span>
               <span className={styles.timeContainer}>
                 <span className={styles.timeTitle}>
@@ -318,7 +318,7 @@ export default function Timer() {
               {timeLeft.days < 1 && (
                 <>
                   <span className={styles.timeContainer}>
-                    <span className={styles.timeTitle}>:</span>
+                    <span className={styles.timeSeparator}>:</span>
                   </span>
                   <span className={styles.timeContainer}>
                     <span className={styles.timeTitle}>
