@@ -53,7 +53,7 @@ module.exports = withPlugins([
 ],
 {
   i18n: {
-    locales: ['en', 'ur','kmr'],
+    locales: ['en'],
     defaultLocale: 'en',
     localeDetection: false,
   },

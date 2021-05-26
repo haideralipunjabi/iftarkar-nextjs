@@ -4,6 +4,7 @@ import Timer from "../components/timer";
 import Duas from "../components/duas";
 import Languages from "../data/languages.json";
 import { useSettingsContext } from "../context/settings";
+import Wait from "../components/wait";
 
 export default function Home() {
   const router = useRouter();
@@ -16,7 +17,8 @@ export default function Home() {
       </Head>
 
       <div className="my-6">
-        {settings && <Timer />}
+        <Wait/>
+        {/* {settings && <Timer />} */}
         {/* <Duas /> */}
       </div>
     </>
