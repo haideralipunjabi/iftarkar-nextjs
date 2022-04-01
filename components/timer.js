@@ -8,7 +8,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { translate } from "../utils/utils";
 import Languages from "../data/languages.json";
 import { useSettingsContext } from "../context/settings";
-import { route } from "next/dist/next-server/server/router";
 import Head from "next/head";
 import DonationModal, { Food4Kashmir } from "./donationModal";
 

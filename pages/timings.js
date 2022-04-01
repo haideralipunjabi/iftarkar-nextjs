@@ -8,16 +8,12 @@ import { useSettingsContext } from "../context/settings";
 import classNames from "classnames";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
-import FilesModal from "../components/filesModal";
+// import FilesModal from "../components/filesModal";
 
 export default function Timings() {
-  const {
-    settings,
-    setSettings,
-    settingsOpened,
-    setSettingsOpened,
-  } = useSettingsContext();
-  const [filesModal, setFilesModal] = useState(false);
+  const { settings, setSettings, settingsOpened, setSettingsOpened } =
+    useSettingsContext();
+  // const [filesModal, setFilesModal] = useState(false);
   const router = useRouter();
   const Language = Languages[router.locale];
   const getTimes = (timing) => {
@@ -37,15 +33,19 @@ export default function Timings() {
   if (!settings) {
     return (
       <Head>
-     <title>{Language.timings} | {Language.iftarkar}</title>
-   </Head>
-    )
+        <title>
+          {Language.timings} | {Language.iftarkar}
+        </title>
+      </Head>
+    );
   }
   return (
     <>
-    <Head>
-     <title>{Language.timings} | {Language.iftarkar}</title>
-   </Head>
+      <Head>
+        <title>
+          {Language.timings} | {Language.iftarkar}
+        </title>
+      </Head>
       <div className="my-6 has-text-centered">
         <h1 className=" has-text-centered is-size-2 title">
           {Language.timings}
@@ -72,38 +72,36 @@ export default function Timings() {
           <table className="table is-bordered has-text-centered mx-a my-2">
             <thead>
               <tr>
-                <th>
-                  {Language.islamicdate}
-                </th>
-                <th>
-                  {Language.gregoriandate}
-                </th>
-                <th>
-                  {Language.day}
-                </th>
-                <th>
-                  {Language.sahar}
-                </th>
-                <th>
-                  {Language.iftar}
-                </th>
+                <th>{Language.islamicdate}</th>
+                <th>{Language.gregoriandate}</th>
+                <th>{Language.day}</th>
+                <th>{Language.sahar}</th>
+                <th>{Language.iftar}</th>
               </tr>
             </thead>
             <tbody>
               {TimingsData[settings.timingIndex].timings.map((timing, idx) => {
                 return (
                   <tr key={idx}>
-                    <td className={classNames({"time":router.locale!=="en"})}>{translate(router.locale, timing.dates.hijri)}</td>
-                    <td className={classNames({"time":router.locale!=="en"})}>
+                    <td
+                      className={classNames({ time: router.locale !== "en" })}
+                    >
+                      {translate(router.locale, timing.dates.hijri)}
+                    </td>
+                    <td
+                      className={classNames({ time: router.locale !== "en" })}
+                    >
                       {translate(router.locale, timing.dates.gregorian)}
                     </td>
-                    <td>
-                      {translate(router.locale, getTimes(timing).day)}
-                    </td>
-                    <td className={classNames({"time":router.locale!=="en"})}>
+                    <td>{translate(router.locale, getTimes(timing).day)}</td>
+                    <td
+                      className={classNames({ time: router.locale !== "en" })}
+                    >
                       {translate(router.locale, getTimes(timing).sahar)}
                     </td>
-                    <td className={classNames({"time":router.locale!=="en"})}>
+                    <td
+                      className={classNames({ time: router.locale !== "en" })}
+                    >
                       {translate(router.locale, getTimes(timing).iftar)}
                     </td>
                   </tr>
@@ -113,7 +111,7 @@ export default function Timings() {
           </table>
         </div>
       </div>
-      <FilesModal isActive={filesModal} handleClose={()=>{setFilesModal(false)}} />
+      {/* <FilesModal isActive={filesModal} handleClose={()=>{setFilesModal(false)}} /> */}
     </>
   );
 }
