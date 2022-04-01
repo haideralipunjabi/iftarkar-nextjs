@@ -6,7 +6,7 @@ import Timings from "../data/timings.json";
 export default function About() {
   const router = useRouter();
   const Language = Languages[router.locale];
-  //ؠ
+  
   return (
     <>
       <Head>
@@ -40,7 +40,7 @@ export default function About() {
                 Google Play Store
               </a>
               .
-              {/* <hr />
+              <hr />
               We use the following sources for the different timings:
               <ul>
                 {
@@ -48,7 +48,7 @@ export default function About() {
                     <li key={idx}><b>{calendar.name["en"]}:</b> {calendar.source["en"]}</li>
                   )
                 }
-              </ul> */}
+              </ul>
               <hr />
               Special Thanks: <br/>
               <a href="https://muhammadfaysal.com/" target="_blank" rel="noopener noreferrer">Muhammad Faysal</a>
@@ -86,7 +86,7 @@ export default function About() {
                 گوگل پلے اسٹور
               </a>{" "}
               پر بھی دستیاب ہے۔
-              {/* <hr />
+              <hr />
               ہم مختلف اوقات کے لئے درج ذیل ذرائع کا استعمال کرتے ہیں۔
               <ul>
               {
@@ -94,7 +94,7 @@ export default function About() {
                     <li key={idx}>{calendar.name["ur"]}: {calendar.source["ur"]}</li>
                   )
                 }
-              </ul> */}
+              </ul>
               <hr />
              {" "}
               خصوصی شکریہ:
@@ -130,7 +130,7 @@ export default function About() {
               >
                 گوٗگل پلے اِسٹورس
               </a>{" "}
-              {/* پیٛٹھ تہِ دستیاب. <hr />
+              پیٛٹھ تہِ دستیاب. <hr />
               أسؠ چھِ مُختَلِف اوٚقاتن باپتھ یِم وسٲیٔل استعمال کران:
               <ul>
               {
@@ -138,7 +138,7 @@ export default function About() {
                     <li key={idx}>{calendar.name["kmr"]}: {calendar.source["kmr"]}</li>
                   )
                 }
-              </ul> */}
+              </ul>
               <hr />
               خصوصی شُکریہ:
               <a href="https://muhammadfaysal.com/" target="_blank" rel="noopener noreferrer">محمد فیصل</a>

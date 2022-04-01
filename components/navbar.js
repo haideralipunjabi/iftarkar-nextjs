@@ -51,10 +51,10 @@ export default function Navbar() {
                 <img src={(router.locale==="en"?require("../public/logo_horizontal.svg?url"):require("../public/logo_horizontal_urdu.svg?url"))} />
               </a>
             </Link>
-            {/* <ActiveLink href="/timings" icon={["fas", "calendar-alt"]} onClick={()=>{setMenuOpened(false)}}>
+            <ActiveLink href="/timings" icon={["fas", "calendar-alt"]} onClick={()=>{setMenuOpened(false)}}>
               {Language.timings}
-            </ActiveLink> */}
-            {/* <a
+            </ActiveLink>
+            <a
               onClick={() => setSettingsOpened(true)}
               className="navbar-item is-size-5"
             >
@@ -63,11 +63,11 @@ export default function Navbar() {
                 icon={["fas", "cogs"]}
               />
               {Language.settings}
-            </a> */}
+            </a>
             <ActiveLink onClick={()=>{setMenuOpened(false)}} href="/about" icon={["fas", "info-circle"]}>
               {Language.about}
             </ActiveLink>
-            {/* <div className="navbar-item has-dropdown is-hoverable">
+            <div className="navbar-item has-dropdown is-hoverable">
               <div className="navbar-link is-size-5">{Language.language}</div>
               <div className="navbar-dropdown">
                 {Object.keys(Languages).map((lang,key) => (
@@ -76,18 +76,18 @@ export default function Navbar() {
                   </Link>
                 ))}
               </div>
-            </div> */}
+            </div>
             <ActiveLink onClick={()=>{setMenuOpened(false)}} href="mailto:contact@iftarkar.com" icon={["fas","envelope"]}>
               {Language.contactus}
             </ActiveLink>
-            {/* <a className={classNames("navbar-item is-size-5")} onClick={
+            <a className={classNames("navbar-item is-size-5")} onClick={
               ()=>{
                setIsDownloadShown(true)
               }
             }>
-                <FontAwesomeIcon className="is-size-7 mx-2" icon={"fas","arrow-down"}/> {Language.download}
+                <FontAwesomeIcon className="is-size-7 mx-2" icon={["fas","arrow-down"]}/> {Language.download}
             </a>
-            <a className="navbar-item is-size-5" onClick={
+            {/*<a className="navbar-item is-size-5" onClick={
               ()=>{
                 setIsDonationShown(true)
               }

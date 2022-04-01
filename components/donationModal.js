@@ -41,8 +41,8 @@ export default function DonationModal(props) {
     },
     {
       name: "Madad Charitable Trust",
-      url: "https://twitter.com/madad_trust/status/1390325881382445059?s=20"
-    }
+      url: "https://twitter.com/madad_trust/status/1390325881382445059?s=20",
+    },
   ];
   return (
     <div className={`modal ${isActive ? "is-active" : ""}`}>
@@ -59,7 +59,7 @@ export default function DonationModal(props) {
         <section className="modal-card-body english">
           <ul>
             {CHARITIES.map((charity, idx) => (
-              <li>
+              <li key={idx}>
                 <a
                   className="is-size-4 underline"
                   key={idx}
@@ -99,14 +99,14 @@ export function Food4Kashmir(props) {
             underprivileged and distressed COVID positive patients and their
             families, either in hospitals or in home quarantine.
           </p>
-          <br/>
+          <br />
           <p>
             They are a small start up / business initiative which provides
             affordable home cooked food at reasonable costs. Now, in addition,
             they want to extend this service to those who can't pay through your
             small donations.
           </p>
-          <br/>
+          <br />
           <p>
             COVID-19 has hit us bad socially and exonomically. At this time they
             have been receiving calls refarding food and they are doing in
@@ -117,20 +117,59 @@ export function Food4Kashmir(props) {
             Rs.120. Their one single meal costs Rs. 150 but they have deicded to
             keep it Rs. 120 only.
           </p>
-          <br/>
+          <br />
           <p>
             Those who want to support this #Food4Kashmir initiative, message
             them on their social media or call / Whatsapp them.
           </p>
-          <br/>
+          <br />
           <p className="has-text-centered">
-            <a href="https://wa.me/919419444700" target="_blank" rel="noopener noreferrer" className="button is-primary is-rounded m-2"><span className="icon"><FontAwesomeIcon icon={["fab","whatsapp"]}/></span><span>9419444700</span></a>
-            <a href="tel:+919419444700" className="button is-primary is-rounded m-2"><span className="icon"><FontAwesomeIcon icon={["fas","phone"]}/></span><span>9419444700</span></a>
+            <a
+              href="https://wa.me/919419444700"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="button is-primary is-rounded m-2"
+            >
+              <span className="icon">
+                <FontAwesomeIcon icon={["fab", "whatsapp"]} />
+              </span>
+              <span>9419444700</span>
+            </a>
+            <a
+              href="tel:+919419444700"
+              className="button is-primary is-rounded m-2"
+            >
+              <span className="icon">
+                <FontAwesomeIcon icon={["fas", "phone"]} />
+              </span>
+              <span>9419444700</span>
+            </a>
           </p>
-          <div className="is-flex is-justify-content-center is-size-3" style={{gap: "20px"}}>
-              <a href="https://www.facebook.com/tiffinaaw" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={["fab","facebook-f"]}/></a>
-              <a href="https://twitter.com/tiffinaaw" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={["fab","twitter"]}/></a>
-              <a href="https://www.instagram.com/tiffinaaw/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={["fab","instagram"]}/></a>
+          <div
+            className="is-flex is-justify-content-center is-size-3"
+            style={{ gap: "20px" }}
+          >
+            <a
+              href="https://www.facebook.com/tiffinaaw"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon icon={["fab", "facebook-f"]} />
+            </a>
+            <a
+              href="https://twitter.com/tiffinaaw"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon icon={["fab", "twitter"]} />
+            </a>
+            <a
+              href="https://www.instagram.com/tiffinaaw/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon icon={["fab", "instagram"]} />
+            </a>
           </div>
         </section>
       </div>

@@ -17,8 +17,8 @@ export default function Timer() {
   const router = useRouter();
   const Language = Languages[router.locale];
 
-  const [isDonationShown,setIsDonationShown] = useState(false);
-  const [isFoodShown, setIsFoodShown] = useState(false);
+  // const [isDonationShown,setIsDonationShown] = useState(false);
+  // const [isFoodShown, setIsFoodShown] = useState(false);
   // Get timeStart, timeEnd & timeType
   const getTimes = () => {
     let timings = Timings[settings.timingIndex].timings;
@@ -110,11 +110,11 @@ export default function Timer() {
   };
   const times = getTimes();
   if (times.timeType === "EM")
-  return (
-    <div className="is-flex is-flex-direction-column is-justify-content-center has-text-centered">
-      <h2 className={styles.timeTitle}>{Language.eidmubarak}</h2>
-    </div>
-  );
+    return (
+      <div className="is-flex is-flex-direction-column is-justify-content-center has-text-centered">
+        <h2 className={styles.timeTitle}>{Language.eidmubarak}</h2>
+      </div>
+    );
 
   const [timeStart, setTimeStart] = useState(times.timeStart);
   const [timeEnd, setTimeEnd] = useState(times.timeEnd);
@@ -206,8 +206,8 @@ export default function Timer() {
               {hijri && (
                 <>
                   <span>
-                    {translate(router.locale, hijri)} {Language.shawal}{" "}
-                    {translate(router.locale, 1442)} {Language.ah}
+                    {translate(router.locale, hijri)} {Language.ramadan}{" "}
+                    {translate(router.locale, 1443)} {Language.ah}
                   </span>
                   <div></div>
                 </>
@@ -340,7 +340,7 @@ export default function Timer() {
                 </>
               )}
             </p>
-            <div className="button is-primary is-rounded m-2" onClick={()=>{
+            {/* <div className="button is-primary is-rounded m-2" onClick={()=>{
               setIsDonationShown(true)
             }}><span className="icon"><FontAwesomeIcon icon={["fas","hands-helping"]}/></span><span>{Language.donate}</span></div>
             <div className="button is-primary is-rounded m-2 english" onClick={()=>{
@@ -348,7 +348,7 @@ export default function Timer() {
             }}>
               <span className="icon"><FontAwesomeIcon icon={["fas","utensils"]} /></span><span>Food4Kashmir</span>
             </div>
-            <a className="button is-primary is-rounded m-2 english" href="https://www.waqarqamri.com/products/eid-cards" target="_blank" rel="noopener noreferrer">Download Eid Cards</a>
+            <a className="button is-primary is-rounded m-2 english" href="https://www.waqarqamri.com/products/eid-cards" target="_blank" rel="noopener noreferrer">Download Eid Cards</a> */}
             {timeStart && (
               <div
                 className={classNames("container", styles.progressContainer)}
@@ -370,8 +370,8 @@ export default function Timer() {
               </div>
             )}
           </div>
-          <DonationModal isActive={isDonationShown} handleClose={()=>{setIsDonationShown(false)}}/>
-          <Food4Kashmir isActive={isFoodShown} handleClose={()=>{setIsFoodShown(false)}}/>
+          {/* <DonationModal isActive={isDonationShown} handleClose={()=>{setIsDonationShown(false)}}/>
+          <Food4Kashmir isActive={isFoodShown} handleClose={()=>{setIsFoodShown(false)}}/> */}
         </>
       }
     </div>

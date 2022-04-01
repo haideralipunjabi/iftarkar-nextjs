@@ -17,9 +17,9 @@ export default function Home() {
       </Head>
 
       <div className="my-6">
-        <Wait/>
-        {/* {settings && <Timer />} */}
-        {/* <Duas /> */}
+        {/* <Wait/> */}
+        {settings && <Timer />}
+        <Duas />
       </div>
     </>
   );
