@@ -6,14 +6,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Languages from "../data/languages.json";
 import { useSettingsContext } from "../context/settings";
 import AppleModal from "./appleModal";
-import {isApple, isInstallable} from "./hooks";
+import { isApple, isInstallable } from "./hooks";
 import DownloadModal from "./downloadModal";
 import DonationModal from "./donationModal";
+import logo from "../public/logo_horizontal.svg";
+import logoUrdu from "../public/logo_horizontal_urdu.svg";
+import Image from "next/image";
 export default function Navbar() {
   const [menuOpened, setMenuOpened] = useState(false);
   const { setSettingsOpened } = useSettingsContext();
-  const [isDownloadShown,setIsDownloadShown] = useState(false);
-  const [isDonationShown,setIsDonationShown] = useState(false);
+  const [isDownloadShown, setIsDownloadShown] = useState(false);
+  const [isDonationShown, setIsDonationShown] = useState(false);
 
   const router = useRouter();
   const Language = Languages[router.locale];
@@ -46,12 +49,22 @@ export default function Navbar() {
         >
           <div className="navbar-start ml-a">
             <Link href="/">
-              <a onClick={()=>{setMenuOpened(false)}} className={classNames("navbar-item", "is-size-5")}>
-                {/* <Image src={`/logo_horizontal${(router.locale!=="en")?"_urdu":""}.svg`} width={395} height={100} /> */}
-                <img src={(router.locale==="en"?require("../public/logo_horizontal.svg?url"):require("../public/logo_horizontal_urdu.svg?url"))} />
+              <a
+                onClick={() => {
+                  setMenuOpened(false);
+                }}
+                className={classNames("navbar-item", "is-size-5")}
+              >
+                <Image src={router.locale === "en" ? logo : logoUrdu} />
               </a>
             </Link>
-            <ActiveLink href="/timings" icon={["fas", "calendar-alt"]} onClick={()=>{setMenuOpened(false)}}>
+            <ActiveLink
+              href="/timings"
+              icon={["fas", "calendar-alt"]}
+              onClick={() => {
+                setMenuOpened(false);
+              }}
+            >
               {Language.timings}
             </ActiveLink>
             <a
@@ -64,28 +77,52 @@ export default function Navbar() {
               />
               {Language.settings}
             </a>
-            <ActiveLink onClick={()=>{setMenuOpened(false)}} href="/about" icon={["fas", "info-circle"]}>
+            <ActiveLink
+              onClick={() => {
+                setMenuOpened(false);
+              }}
+              href="/about"
+              icon={["fas", "info-circle"]}
+            >
               {Language.about}
             </ActiveLink>
             <div className="navbar-item has-dropdown is-hoverable">
               <div className="navbar-link is-size-5">{Language.language}</div>
               <div className="navbar-dropdown">
-                {Object.keys(Languages).map((lang,key) => (
+                {Object.keys(Languages).map((lang, key) => (
                   <Link key={key} href={router.pathname} locale={lang}>
-                    <a onClick={()=>{setMenuOpened(false)}}  className="navbar-item is-size-5">{Language[lang]}</a>
+                    <a
+                      onClick={() => {
+                        setMenuOpened(false);
+                      }}
+                      className="navbar-item is-size-5"
+                    >
+                      {Language[lang]}
+                    </a>
                   </Link>
                 ))}
               </div>
             </div>
-            <ActiveLink onClick={()=>{setMenuOpened(false)}} href="mailto:contact@iftarkar.com" icon={["fas","envelope"]}>
+            <ActiveLink
+              onClick={() => {
+                setMenuOpened(false);
+              }}
+              href="mailto:contact@iftarkar.com"
+              icon={["fas", "envelope"]}
+            >
               {Language.contactus}
             </ActiveLink>
-            <a className={classNames("navbar-item is-size-5")} onClick={
-              ()=>{
-               setIsDownloadShown(true)
-              }
-            }>
-                <FontAwesomeIcon className="is-size-7 mx-2" icon={["fas","arrow-down"]}/> {Language.download}
+            <a
+              className={classNames("navbar-item is-size-5")}
+              onClick={() => {
+                setIsDownloadShown(true);
+              }}
+            >
+              <FontAwesomeIcon
+                className="is-size-7 mx-2"
+                icon={["fas", "arrow-down"]}
+              />{" "}
+              {Language.download}
             </a>
             {/*<a className="navbar-item is-size-5" onClick={
               ()=>{
@@ -98,18 +135,26 @@ export default function Navbar() {
           </div>
         </div>
       </nav>
-      <DownloadModal modalOpened={isDownloadShown} setModalOpened={setIsDownloadShown}/>
-      <DonationModal isActive={isDonationShown} handleClose={()=>{setIsDonationShown(false)}}/>
+      <DownloadModal
+        modalOpened={isDownloadShown}
+        setModalOpened={setIsDownloadShown}
+      />
+      <DonationModal
+        isActive={isDonationShown}
+        handleClose={() => {
+          setIsDonationShown(false);
+        }}
+      />
     </>
   );
 }
 
-function ActiveLink({ href, className, onClick, icon,newtab, children }) {
+function ActiveLink({ href, className, onClick, icon, newtab, children }) {
   const router = useRouter();
   return (
     <Link href={href}>
       <a
-       onClick={onClick} 
+        onClick={onClick}
         className={classNames("navbar-item", "is-size-5", {
           "is-active": router.pathname === href,
         })}
