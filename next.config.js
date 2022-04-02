@@ -5,7 +5,6 @@ const withPostCSSFlexbugsFixes = require("postcss-flexbugs-fixes");
 const withPostCSSPresetEnv = require("postcss-preset-env");
 const purgeCSS = require("@fullhuman/postcss-purgecss")
 const cache = require("./cache")
-const optimizedImages = require("next-optimized-images")
 module.exports = withPlugins([
   [
     withPWA,
@@ -45,11 +44,6 @@ module.exports = withPlugins([
       safelist: ["html", "body"]
     }
   ],
-  [
-    optimizedImages,{
-
-    }
-  ]
 ],
 {
   i18n: {
