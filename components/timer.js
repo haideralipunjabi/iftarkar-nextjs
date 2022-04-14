@@ -341,7 +341,7 @@ export default function Timer() {
             </p>
             <a
               style={{ whiteSpace: "normal" }}
-              href="https://pippin.news"
+              href="https://pippin.news?utm_source=iftarkar"
               target="_blank"
               rel="noopener noreferrer"
               className="py-5 button is-normal is-primary is-rounded m-2"
