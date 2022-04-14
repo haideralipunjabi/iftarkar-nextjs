@@ -339,6 +339,15 @@ export default function Timer() {
                 </>
               )}
             </p>
+            <a
+              style={{ whiteSpace: "normal" }}
+              href="https://pippin.news"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="py-5 button is-normal is-primary is-rounded m-2"
+            >
+              Pippin - Local News and Stories at your fingertips
+            </a>
             {/* <div className="button is-primary is-rounded m-2" onClick={()=>{
               setIsDonationShown(true)
             }}><span className="icon"><FontAwesomeIcon icon={["fas","hands-helping"]}/></span><span>{Language.donate}</span></div>
