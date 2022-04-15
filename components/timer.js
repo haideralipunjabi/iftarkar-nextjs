@@ -345,6 +345,12 @@ export default function Timer() {
               target="_blank"
               rel="noopener noreferrer"
               className="py-5 button is-normal is-primary is-rounded m-2"
+              onClick={() => {
+                gtag("event", "link_click", {
+                  event_category: "link_click",
+                  value: "pippin",
+                });
+              }}
             >
               Pippin - Local News and Stories at your fingertips
             </a>
