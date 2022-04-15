@@ -348,7 +348,7 @@ export default function Timer() {
               onClick={() => {
                 gtag("event", "link_click", {
                   event_category: "link_click",
-                  value: "pippin",
+                  event_label: "pippin",
                 });
               }}
             >
