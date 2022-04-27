@@ -367,7 +367,7 @@ export default function Timer() {
                 });
               }}
             >
-              Eid Fundraiser 2022
+              Donate: Eid Fundraiser 2022
             </a>
             {/* <div className="button is-primary is-rounded m-2" onClick={()=>{
               setIsDonationShown(true)
