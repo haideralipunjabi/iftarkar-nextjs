@@ -354,6 +354,21 @@ export default function Timer() {
             >
               Pippin - Local News and Stories at your fingertips
             </a>
+              <a
+              style={{ whiteSpace: "normal" }}
+              href="https://ker.house/?utm_source=iftarkar"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="py-5 button is-normal is-primary is-rounded m-2"
+              onClick={() => {
+                gtag("event", "link_click", {
+                  event_category: "link_click",
+                  event_label: "eid-fundraiser",
+                });
+              }}
+            >
+              Eid Fundraiser 2022
+            </a>
             {/* <div className="button is-primary is-rounded m-2" onClick={()=>{
               setIsDonationShown(true)
             }}><span className="icon"><FontAwesomeIcon icon={["fas","hands-helping"]}/></span><span>{Language.donate}</span></div>
