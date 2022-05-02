@@ -422,11 +422,6 @@
         "timestamps": { "iftar": 1651499700.0, "sehri": 1651444680.0 },
         "times": { "iftar": "19:25", "sehri": "04:08" },
         "dates": { "hijri": 30, "gregorian": "02/05" }
-      },
-      {
-        "timestamps": { "iftar": 1651586160.0, "sehri": 1651531020.0 },
-        "times": { "iftar": "19:26", "sehri": "04:07" },
-        "dates": { "hijri": 31, "gregorian": "03/05" }
       }
     ]
   },
