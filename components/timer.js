@@ -111,7 +111,7 @@ export default function Timer() {
   if (times.timeType === "EM")
     return (
       <div className="is-flex is-flex-direction-column is-justify-content-center has-text-centered">
-        <h2 className={styles.timeTitle}>{Language.eidmubarak}</h2>
+        <h2 className={styles.title}>{Language.eidmubarak}</h2>
       </div>
     );
 
@@ -173,7 +173,7 @@ export default function Timer() {
     return (
       <div className="is-flex is-flex-direction-column is-justify-content-center has-text-centered">
         {/* <h2 className={styles.timeTitle}>{Language.eidmubarak}</h2> */}
-        <h2 className={styles.timeTitle}>We will return next year</h2>
+        <h2 className={styles.title}>We will return next year</h2>
       </div>
     );
   }
@@ -354,7 +354,7 @@ export default function Timer() {
             >
               Pippin - Local News and Stories at your fingertips
             </a>
-              <a
+            <a
               style={{ whiteSpace: "normal" }}
               href="https://ker.house/?utm_source=iftarkar"
               target="_blank"
