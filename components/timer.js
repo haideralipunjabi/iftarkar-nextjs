@@ -12,7 +12,7 @@ import Head from "next/head";
 import DonationModal, { Food4Kashmir } from "./donationModal";
 
 export default function Timer() {
-  const { settings, setSettingsOpened } = useSettingsContext();
+  const { settings, setSettingsOpened, updateSettings } = useSettingsContext();
   const router = useRouter();
   const Language = Languages[router.locale];
 
@@ -20,7 +20,14 @@ export default function Timer() {
   // const [isFoodShown, setIsFoodShown] = useState(false);
   // Get timeStart, timeEnd & timeType
   const getTimes = () => {
-    let timings = Timings[settings.timingIndex].timings;
+    let timingIndex;
+    if (settings.timingIndex >= Timings.length) {
+      updateSettings("timingIndex", 0);
+      timingIndex = 0;
+    } else {
+      timingIndex = settings.timingIndex;
+    }
+    let timings = Timings[timingIndex].timings;
     let dates = timings.map((timing) => timing.dates.gregorian);
     let now = DateTime.now();
     let idx = dates.indexOf(now.toFormat("dd/MM"));
@@ -205,7 +212,7 @@ export default function Timer() {
               {hijri && (
                 <>
                   <span>
-                    {translate(router.locale, hijri)} {Language.ramadan}{" "}
+                    {translate(router.locale, hijri)} {Language.shawal}{" "}
                     {translate(router.locale, 1443)} {Language.ah}
                   </span>
                   <div></div>
@@ -354,30 +361,6 @@ export default function Timer() {
             >
               Pippin - Local News and Stories at your fingertips
             </a>
-            <a
-              style={{ whiteSpace: "normal" }}
-              href="https://ker.house/?utm_source=iftarkar"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="py-5 button is-normal is-primary is-rounded m-2"
-              onClick={() => {
-                gtag("event", "link_click", {
-                  event_category: "link_click",
-                  event_label: "eid-fundraiser",
-                });
-              }}
-            >
-              Donate: Eid Fundraiser 2022
-            </a>
-            {/* <div className="button is-primary is-rounded m-2" onClick={()=>{
-              setIsDonationShown(true)
-            }}><span className="icon"><FontAwesomeIcon icon={["fas","hands-helping"]}/></span><span>{Language.donate}</span></div>
-            <div className="button is-primary is-rounded m-2 english" onClick={()=>{
-              setIsFoodShown(true)
-            }}>
-              <span className="icon"><FontAwesomeIcon icon={["fas","utensils"]} /></span><span>Food4Kashmir</span>
-            </div>
-            <a className="button is-primary is-rounded m-2 english" href="https://www.waqarqamri.com/products/eid-cards" target="_blank" rel="noopener noreferrer">Download Eid Cards</a> */}
             {timeStart && (
               <div
                 className={classNames("container", styles.progressContainer)}
