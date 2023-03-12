@@ -10,6 +10,7 @@ import { translate } from "../utils/utils";
 import Languages from "../data/languages.json";
 import { useSettingsContext } from "../context/settings";
 import Head from "next/head";
+import { getGeneralTimings, methods } from "../utils/adhanWrapper";
 // import DonationModal, { Food4Kashmir } from "./donationModal";
 
 export default function Timer() {
@@ -115,7 +116,14 @@ export default function Timer() {
       hijri: timings[idx].dates.hijri,
     };
   };
-  const times = getTimes();
+  let times;
+  if(settings.usingGeneralTimings) {
+    times = getGeneralTimings(settings.latitude, settings.longitude,settings.method)
+    console.log(times);
+  }
+  else {
+    times = getTimes();
+  }
   if (times.timeType === "EM")
     return (
       <div className="is-flex is-flex-direction-column is-justify-content-center has-text-centered">
@@ -225,23 +233,24 @@ export default function Timer() {
               </span>
             </h2>
           }
-
           <h2 className={styles.timerDetails}>
+            {
+              !settings.usingGeneralTimings && 
+              <>
             {Timings[settings.timingIndex].name[router.locale]}{" "}
             {Timings[settings.timingIndex].offsets.length > 0 &&
               " - " +
                 Timings[settings.timingIndex].offsets.filter(
                   (offset) => offset.offset == settings.offset
                 )[0]?.name[router.locale]}
-            {/* <FontAwesomeIcon
-              className={classNames(
-                "mx-4",
-                { "has-text-primary": settings.theme === "light" },
-                { "has-text-info": settings.theme === "dark" }
-              )}
-              icon={["fas", "cogs"]}
-              onClick={() => setSettingsOpened(true)}
-            /> */}
+              </>
+            }
+            {
+               settings.usingGeneralTimings && 
+               <>
+               {methods[settings.method].name} - {settings.latitude},{settings.longitude}
+               </>
+            }
             <a
               className="mx-2 is-size-6 is-primary underline"
               onClick={() => setSettingsOpened(true)}

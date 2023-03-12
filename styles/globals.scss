@@ -16,8 +16,7 @@
 @import "../node_modules/bulma/sass/layout/section.sass";
 @import "../node_modules/bulma/sass/utilities/_all.sass";
 @import "../node_modules/bulma/sass/components/tabs.sass";
-@import "../node_modules/bulma/sass/form/shared.sass";
-@import "../node_modules/bulma/sass/form/select.sass";
+@import "../node_modules/bulma/sass/form/_all.sass";
 @import "../node_modules/bulma/sass/elements/other.sass";
 
 @font-face {
@@ -64,6 +63,7 @@
     --progress-height: 1rem;
   }
 }
+
 @media only screen and (min-width: 1200px) {
   :root {
     --title-font: 2.5rem;
@@ -72,6 +72,7 @@
     --progress-height: 1.5rem;
   }
 }
+
 [lang="ur"],
 [lang="kmr"] {
   --font-family: "Lateef";
@@ -92,29 +93,35 @@
   --weight-bold: 400;
   font-size: var(--size-6);
   direction: rtl;
+
   @media only screen and (max-width: 600px) {
     --title-font: 1rem;
     --clock-font: 4rem;
   }
+
   @media only screen and (min-width: 600px) {
     --title-font: 1.5rem;
     --clock-font: 8rem;
   }
+
   @media only screen and (min-width: 1200px) {
     --title-font: 2rem;
     --clock-font: 10rem;
   }
+
   // @media only screen and (min-width: 1024px) {
   //   .navbar {
   //     min-height: 5rem;
   //   }
   // }
 }
+
 [lang="kmr"] {
   --font-family: "Gulmarg";
 }
+
 .amiri,
-.amiri > * {
+.amiri>* {
   --font-family: "Amiri";
 }
 
@@ -122,34 +129,42 @@
   --font-family: "Open Sans" !important;
   direction: ltr !important;
 }
+
 [data-theme="dark"] {
   --text-color: #ffffff;
   --text-invert: #ffffff;
   --background: #131836;
 }
+
 .footer,
-.footer > * {
+.footer>* {
   font-size: 1rem !important;
 }
+
 .footer,
 .navbar {
   --text-color: #ffffff;
   --text-invert: #ffffff;
 }
+
 .footer a {
   border-bottom: 1px solid white;
 }
+
 .container {
   --text-invert: var(--text-color);
+
   a {
     border-bottom: 1px solid var(--text-color);
   }
+
   .tabs {
     .is-active {
       a {
         border-bottom: 1px solid var(--text-color);
       }
     }
+
     a {
       border-bottom: none;
 
@@ -159,9 +174,11 @@
     }
   }
 }
+
 .select select {
   color: black;
 }
+
 select,
 .control,
 .select select,
@@ -177,9 +194,11 @@ body {
   overflow: auto;
   font-size: var(--size-6);
 }
+
 #__next {
   height: 100%;
 }
+
 *,
 *::before,
 *::after {
@@ -190,6 +209,7 @@ body {
   scroll-behavior: smooth;
   font-family: var(--font-family);
 }
+
 * {
   box-sizing: border-box;
   margin-block-start: 0em;
@@ -197,9 +217,11 @@ body {
   margin-inline-start: 0px;
   margin-inline-end: 0px;
 }
+
 a {
   text-decoration: none;
 }
+
 hr {
   background-color: var(--text-color);
 }
@@ -207,19 +229,24 @@ hr {
 .mt-a {
   margin-top: auto;
 }
+
 .ml-a {
   margin-left: auto;
 }
+
 .mr-a {
   margin-right: auto;
 }
+
 .mb-a {
   margin-bottom: auto;
 }
+
 .mx-a {
   margin-left: auto;
   margin-right: auto;
 }
+
 .my-a {
   margin-top: auto;
   margin-bottom: auto;
@@ -229,9 +256,11 @@ ul.icons {
   display: flex;
   flex-direction: row;
   margin-top: 10px;
+
   li {
     margin: 0 10px;
   }
+
   a {
     border-bottom: none;
   }
@@ -247,9 +276,11 @@ ul.icons {
 ::-webkit-scrollbar-track {
   background-color: var(--background);
 }
+
 ::-webkit-scrollbar-track-piece {
   background-color: var(--background);
 }
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
   -webkit-border-radius: 10px;
@@ -259,9 +290,11 @@ ul.icons {
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
 }
+
 ::-webkit-scrollbar-thumb:window-inactive {
   background: $dark;
 }
+
 .time {
   font-family: var(--clock-font-family);
 }
@@ -273,6 +306,7 @@ ul.icons {
 a.primary {
   color: $primary;
 }
+
 a.underline {
   text-decoration: underline;
 }

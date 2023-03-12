@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Languages from "../data/languages.json";
 import Head from "next/head";
 import Timings from "../data/timings.json";
+import { methods } from "../utils/adhanWrapper";
 export default function About() {
   const router = useRouter();
   const Language = Languages[router.locale];
@@ -48,6 +49,13 @@ export default function About() {
                     <b>{calendar.name["en"]}:</b> {calendar.source["en"]}
                   </li>
                 ))}
+                {
+                  methods.map((source,idx) => (
+                    <li key={idx}>
+                    <b>{source.name}:</b> {source.description}
+                  </li>
+                  ))
+                }
               </ul>
               <hr />
               Special Thanks: <br />

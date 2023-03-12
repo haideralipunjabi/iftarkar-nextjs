@@ -3,12 +3,37 @@ import Timings from "../data/timings.json";
 import Languages from "../data/languages.json";
 import classNames from "classnames";
 import { useSettingsContext } from "../context/settings";
-
+import { useEffect, useState } from "react";
+import { methods } from "../utils/adhanWrapper";
 export default function Settings() {
   const { settingsOpened, setSettingsOpened, settings, updateSettings } =
     useSettingsContext();
-  const router = useRouter();
-  const Language = Languages[router.locale];
+    const router = useRouter();
+    const Language = Languages[router.locale];
+    const [generalTimings, setGeneralTimings] = useState(settings?.usingGeneralTimings ?? false);
+    const [locationError, setLocationError] = useState(false);
+    useEffect(()=>{
+      setGeneralTimings(settings?.usingGeneralTimings ?? false)
+    }, [settings])
+
+    const getLatLong=() => {
+      if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition((position)=>{
+          if(position){
+            updateSettings(
+              "latitude",
+              position.coords.latitude
+            );
+            updateSettings(
+              "longitude",
+              position.coords.longitude
+            );
+            return;
+          }
+        })
+      }
+      setLocationError(true)
+    }
   if (!settings) return <></>;
   return (
     <div className={classNames("modal", { "is-active": settingsOpened })}>
@@ -24,6 +49,9 @@ export default function Settings() {
         </header>
         <section className={classNames("modal-card-body")}>
           <form>
+            {
+              !generalTimings &&
+            
             <div className="field">
               <label htmlFor="" className="label">
                 {Language.timings}
@@ -51,36 +79,102 @@ export default function Settings() {
                 </div>
               </div>
             </div>
-            {Timings[settings.timingIndex]["offsets"].length > 0 && (
-              <div className="field">
-                <label htmlFor="" className="label">
-                  {Language.area}
-                </label>
-                <div className="control">
-                  <div className="select">
-                    <select
-                      id="offset"
-                      onChange={(e) => {
-                        updateSettings(
-                          "offset",
-                          parseInt(e.target.selectedOptions[0].value)
-                        );
-                      }}
-                      value={settings.offset}
-                    >
-                      {Timings[settings.timingIndex]["offsets"].map(
-                        (offset, key) => (
-                          <option key={key} value={offset.offset}>
-                            {offset.name[router.locale]}
-                          </option>
-                        )
-                      )}
-                    </select>
+              }{
+                !generalTimings && 
+              Timings[settings.timingIndex]["offsets"].length > 0 && (
+                <div className="field my-2">
+                  <label htmlFor="" className="label">
+                    {Language.area}
+                  </label>
+                  <div className="control">
+                    <div className="select">
+                      <select
+                        id="offset"
+                        onChange={(e) => {
+                          updateSettings(
+                            "offset",
+                            parseInt(e.target.selectedOptions[0].value)
+                          );
+                        }}
+                        value={settings.offset}
+                      >
+                        {Timings[settings.timingIndex]["offsets"].map(
+                          (offset, key) => (
+                            <option key={key} value={offset.offset}>
+                              {offset.name[router.locale]}
+                            </option>
+                          )
+                        )}
+                      </select>
+                    </div>
                   </div>
                 </div>
-              </div>
-            )}
+              )
+            }
+            {
+            generalTimings &&
+            <>
+
             <div className="field">
+              <label htmlFor="" className="label">
+                {Language.timings}
+              </label>
+              <div className="control">
+                <div className="select">
+                  <select
+                    id="method"
+                    onChange={(e) => {
+                      updateSettings(
+                        "method",
+                        e.target.selectedIndex
+                      );
+                    }}
+                    value={settings.method}
+                  >
+                    {
+                      methods.map((method,idx) => (
+                      <option key={idx} value={idx}>
+                        {method.name}
+                      </option>
+                      ))
+                    }
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div className="field">
+              <label className="label">Location</label>
+              <div className="field-body">
+                <div className="field">
+                  <label htmlFor="">Latitude</label>
+                  <p className="control">
+                          <input onChange={(e) => {
+                      updateSettings(
+                        "latitude",
+                        e.target.value
+                      );
+                    }} type="number" className="input my-2 has-text-black" placeholder="Latitude" value={settings.latitude}/>
+                    </p>  
+                </div>
+                <div className="field">
+                <label htmlFor="">Longitude</label>
+
+                  <p className="control">
+                          <input onChange={(e) => {
+                      updateSettings(
+                        "longitude",
+                        e.target.value
+                      );
+                    }} type="number" className="input my-2 has-text-black" placeholder="Longitude" value={settings.longitude}/>
+                    </p>  
+                </div>
+              </div>
+              <div onClick={getLatLong} className="button is-primary">Locate</div>
+              { locationError && <div className="has-text-danger">Couldn&apos;t find location. Enter location manually</div>}
+            </div>
+            </>
+              }
+            <div className="field my-2">
               <label htmlFor="" className="label">
                 {Language.theme}
               </label>
@@ -102,6 +196,19 @@ export default function Settings() {
                   </select>
                 </div>
               </div>
+            </div>
+            <div className="field my-2">
+              <label htmlFor="generalTimings" className="checkbox">
+              <input className="mx-2" type="checkbox" name="generalTimings" id="generalTimings" checked={generalTimings} onChange={
+                (e) => {
+                  setGeneralTimings(e.target.checked);
+                  updateSettings(
+                    "usingGeneralTimings",
+                    e.target.checked
+                  );
+                }
+              }/>
+                Can&apos;t choose a timing, use General Timings?</label>
             </div>
           </form>
         </section>
