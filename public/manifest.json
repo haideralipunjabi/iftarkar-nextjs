@@ -1,93 +1,115 @@
 {
-    "short_name": "Iftarkar",
-    "url": "iftarkar.com",
-    "description": "Iftarkar is your companion app for 2022's Ramzan. Daily Countdown Timer, Iftar and Sehri Timings for Jammu, Kashmir, Kargil and Ladakh.",
-    "background_color": "#eceef8",
-    "display": "standalone",
-    "scope": "/",
-    "start_url": "/?utm_source=pwa",
-    "theme_color": "#131836",
-    "name": "Iftarkar",
-    "icons": [
-      {
-        "src": "/favicons/android-chrome-192x192.png",
-        "sizes": "192x192",
-        "type": "image/png",
-        "purpose": "any maskable"
-      },
-      {
-        "src": "/favicons/android-chrome-512x512.png",
-        "sizes": "512x512",
-        "type": "image/png"
-      }
-    ],
-    "oritentation":"any",
-    "screenshots":[
-      {
-        "src":"/screenshots/screenshot1.png",
-        "sizes":"1080x1920",
-        "type":"image/png"
-      },
-      {
-        "src":"/screenshots/screenshot2.png",
-        "sizes":"1080x1920",
-        "type":"image/png"
-      },
-      {
-        "src":"/screenshots/screenshot3.png",
-        "sizes":"1080x1920",
-        "type":"image/png"
-      },
-      {
-        "src":"/screenshots/screenshot4.png",
-        "sizes":"1080x1920",
-        "type":"image/png"
-      },
-      {
-        "src":"/screenshots/screenshot5.png",
-        "sizes":"1080x1920",
-        "type":"image/png"
-      },
-      {
-        "src":"/screenshots/screenshot6.png",
-        "sizes":"1080x1920",
-        "type":"image/png"
-      },
-      {
-        "src":"/screenshots/screenshot7.png",
-        "sizes":"1080x1920",
-        "type":"image/png"
-      }
-    ],
-    "categories":["utilities"],
-    "shortcuts": [
-      {
-        "name": "Iftarkar English",
-        "shortname": "English",
-        "description": "Opens the App in English",
-        "url": "/?utm_source=pwa_shortcut",
-        "icons": [{"src":"/favicons/android-chrome-192x192.png", "sizes":"192x192"}]
-      },
-      {
-        "name": "Iftarkar Urdu",
-        "shortname": "Urdu",
-        "description": "Opens the App in Urdu",
-        "url": "/ur?utm_source=pwa_shortcut",
-        "icons": [{"src":"/favicons/android-chrome-192x192.png", "sizes":"192x192"}]
-      },
-      {
-        "name": "Iftarkar Kashmir",
-        "shortname": "Kashmir",
-        "description": "Opens the App in Kashmir",
-        "url": "/kmr?utm_source=pwa_shortcut",
-        "icons": [{"src":"/favicons/android-chrome-192x192.png", "sizes":"192x192"}]
-      },
-      {
-        "name": "Timings",
-        "shortname": "Timings",
-        "description": "Opens the Timings View",
-        "url": "/timings?utm_source=pwa_shortcut",
-        "icons": [{"src":"/favicons/android-chrome-192x192.png", "sizes":"192x192"}]
-      }
-    ]
-  }
+  "short_name": "Iftarkar",
+  "url": "www.iftarkar.com",
+  "description": "Iftarkar is your companion app for 2022's Ramzan. Daily Countdown Timer, Iftar and Sehri Timings for Jammu, Kashmir, Kargil and Ladakh.",
+  "background_color": "#eceef8",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/?utm_source=pwa",
+  "theme_color": "#131836",
+  "name": "Iftarkar",
+  "icons": [
+    {
+      "src": "/favicons/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicons/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "oritentation": "any",
+  "screenshots": [
+    {
+      "src": "/screenshots/screenshot1.png",
+      "sizes": "1080x1920",
+      "type": "image/png"
+    },
+    {
+      "src": "/screenshots/screenshot2.png",
+      "sizes": "1080x1920",
+      "type": "image/png"
+    },
+    {
+      "src": "/screenshots/screenshot3.png",
+      "sizes": "1080x1920",
+      "type": "image/png"
+    },
+    {
+      "src": "/screenshots/screenshot4.png",
+      "sizes": "1080x1920",
+      "type": "image/png"
+    },
+    {
+      "src": "/screenshots/screenshot5.png",
+      "sizes": "1080x1920",
+      "type": "image/png"
+    },
+    {
+      "src": "/screenshots/screenshot6.png",
+      "sizes": "1080x1920",
+      "type": "image/png"
+    },
+    {
+      "src": "/screenshots/screenshot7.png",
+      "sizes": "1080x1920",
+      "type": "image/png"
+    }
+  ],
+  "categories": [
+    "utilities"
+  ],
+  "shortcuts": [
+    {
+      "name": "Iftarkar English",
+      "shortname": "English",
+      "description": "Opens the App in English",
+      "url": "/?utm_source=pwa_shortcut",
+      "icons": [
+        {
+          "src": "/favicons/android-chrome-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Iftarkar Urdu",
+      "shortname": "Urdu",
+      "description": "Opens the App in Urdu",
+      "url": "/ur?utm_source=pwa_shortcut",
+      "icons": [
+        {
+          "src": "/favicons/android-chrome-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Iftarkar Kashmir",
+      "shortname": "Kashmir",
+      "description": "Opens the App in Kashmir",
+      "url": "/kmr?utm_source=pwa_shortcut",
+      "icons": [
+        {
+          "src": "/favicons/android-chrome-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Timings",
+      "shortname": "Timings",
+      "description": "Opens the Timings View",
+      "url": "/timings?utm_source=pwa_shortcut",
+      "icons": [
+        {
+          "src": "/favicons/android-chrome-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}
