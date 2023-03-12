@@ -4,18 +4,11 @@ import Languages from "../data/languages.json";
 import classNames from "classnames";
 import { useSettingsContext } from "../context/settings";
 
-export default function Settings(props) {
-  const {
-    settingsOpened,
-    setSettingsOpened,
-    settings,
-    updateSettings,
-  } = useSettingsContext();
+export default function Settings() {
+  const { settingsOpened, setSettingsOpened, settings, updateSettings } =
+    useSettingsContext();
   const router = useRouter();
   const Language = Languages[router.locale];
-  const handleOnChange = (e) => {
-    updateSettings(e.target.id, e.target.selectedOptions[0].text);
-  };
   if (!settings) return <></>;
   return (
     <div className={classNames("modal", { "is-active": settingsOpened })}>

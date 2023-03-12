@@ -7,11 +7,10 @@ import TimingsData from "../data/timings.json";
 import { useSettingsContext } from "../context/settings";
 import classNames from "classnames";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
 // import FilesModal from "../components/filesModal";
 
 export default function Timings() {
-  const { settings, setSettings, settingsOpened, setSettingsOpened } =
+  const { settings } =
     useSettingsContext();
   // const [filesModal, setFilesModal] = useState(false);
   const router = useRouter();

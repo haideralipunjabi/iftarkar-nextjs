@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "next export"
+    "export": "next export",
+    "format": "prettier --write \"{app,components,lib,pages,styles,data,context}/**/*.{js,jsx,ts,tsx,css,scss,json,yaml,md}\"",
+    "format:check": "prettier --check \"{app,components,lib,pages,styles,data,context}/**/*.{js,jsx,ts,tsx,css,scss,json,yaml,md}\" ",
+    "lint": "next lint",
+    "lint:check": "eslint '{app,components,pages,utils,context}/**/*.{js,jsx,ts,tsx}'"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
@@ -33,9 +37,16 @@
   "devDependencies": {
     "autoprefixer": "^10.4.4",
     "bulma": "^0.9.3",
+    "eslint": "^8.36.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-next": "^13.2.4",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "postcss": "^8.4.12",
+    "prettier": "^2.8.4",
     "tailwindcss": "^3.0.23",
     "webpack": "5.70.0"
-  },
-  "_id": "nextjs-boilerplate@0.1.0"
+  }
 }

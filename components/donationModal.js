@@ -103,7 +103,7 @@ export function Food4Kashmir(props) {
           <p>
             They are a small start up / business initiative which provides
             affordable home cooked food at reasonable costs. Now, in addition,
-            they want to extend this service to those who can't pay through your
+            they want to extend this service to those who can&apos;t pay through your
             small donations.
           </p>
           <br />

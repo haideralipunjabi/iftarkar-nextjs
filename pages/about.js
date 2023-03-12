@@ -6,7 +6,7 @@ import Timings from "../data/timings.json";
 export default function About() {
   const router = useRouter();
   const Language = Languages[router.locale];
-  
+
   return (
     <>
       <Head>
@@ -43,17 +43,23 @@ export default function About() {
               <hr />
               We use the following sources for the different timings:
               <ul>
-                {
-                  Timings.map((calendar,idx)=>
-                    <li key={idx}><b>{calendar.name["en"]}:</b> {calendar.source["en"]}</li>
-                  )
-                }
+                {Timings.map((calendar, idx) => (
+                  <li key={idx}>
+                    <b>{calendar.name["en"]}:</b> {calendar.source["en"]}
+                  </li>
+                ))}
               </ul>
               <hr />
-              Special Thanks: <br/>
-              <a href="https://muhammadfaysal.com/" target="_blank" rel="noopener noreferrer">Muhammad Faysal</a>
-              <br/>
-              <br/>
+              Special Thanks: <br />
+              <a
+                href="https://muhammadfaysal.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Muhammad Faysal
+              </a>
+              <br />
+              <br />
               Developed By: <br />
               <a
                 href="https://haideralipunjabi.com"
@@ -89,17 +95,21 @@ export default function About() {
               <hr />
               ہم مختلف اوقات کے لئے درج ذیل ذرائع کا استعمال کرتے ہیں۔
               <ul>
-              {
-                  Timings.map((calendar,idx)=>
-                    <li key={idx}>{calendar.name["ur"]}: {calendar.source["ur"]}</li>
-                  )
-                }
+                {Timings.map((calendar, idx) => (
+                  <li key={idx}>
+                    {calendar.name["ur"]}: {calendar.source["ur"]}
+                  </li>
+                ))}
               </ul>
-              <hr />
-             {" "}
-              خصوصی شکریہ:
-              <a href="https://muhammadfaysal.com/" target="_blank" rel="noopener noreferrer">محمد فیصل</a>
-              <br/>
+              <hr /> خصوصی شکریہ:
+              <a
+                href="https://muhammadfaysal.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                محمد فیصل
+              </a>
+              <br />
               تیار کردہ:
               <a
                 href="https://haideralipunjabi.com"
@@ -112,8 +122,9 @@ export default function About() {
           )}
           {router.locale === "kmr" && (
             <>
-              اِفطار کَر چھُ اکھ ویٚب ایپ یُس رَمضانَس منٛزٕ چھُ جموں و کشمیر، لداخ
-              تہٕ کرگِل باپتھ سَحر تہٕ اِفطارِچ اوٚقات فراہم کران. یہ چھِ اکھ{" "}
+              اِفطار کَر چھُ اکھ ویٚب ایپ یُس رَمضانَس منٛزٕ چھُ جموں و کشمیر،
+              لداخ تہٕ کرگِل باپتھ سَحر تہٕ اِفطارِچ اوٚقات فراہم کران. یہ چھِ
+              اکھ{" "}
               <a
                 href="https://iftarkar.com"
                 target="_blank"
@@ -121,8 +132,8 @@ export default function About() {
               >
                 ویٚب سایٹ
               </a>{" "}
-              کِس صورتس منٛزٕ دستیاب یُس تۄہیہِ ہر کنٛہـ پلیٹ فارمس پیٛٹھ ہیکِو اِنسٹال
-              کرِتھ. یِہ چھِ{" "}
+              کِس صورتس منٛزٕ دستیاب یُس تۄہیہِ ہر کنٛہـ پلیٹ فارمس پیٛٹھ ہیکِو
+              اِنسٹال کرِتھ. یِہ چھِ{" "}
               <a
                 href="https://play.google.com/store/apps/details?id=org.hackesta.iftarkar"
                 target="_blank"
@@ -133,16 +144,22 @@ export default function About() {
               پیٛٹھ تہِ دستیاب. <hr />
               أسؠ چھِ مُختَلِف اوٚقاتن باپتھ یِم وسٲیٔل استعمال کران:
               <ul>
-              {
-                  Timings.map((calendar,idx)=>
-                    <li key={idx}>{calendar.name["kmr"]}: {calendar.source["kmr"]}</li>
-                  )
-                }
+                {Timings.map((calendar, idx) => (
+                  <li key={idx}>
+                    {calendar.name["kmr"]}: {calendar.source["kmr"]}
+                  </li>
+                ))}
               </ul>
               <hr />
               خصوصی شُکریہ:
-              <a href="https://muhammadfaysal.com/" target="_blank" rel="noopener noreferrer">محمد فیصل</a>
-              <br/>
+              <a
+                href="https://muhammadfaysal.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                محمد فیصل
+              </a>
+              <br />
               پیش کش:
               <a
                 href="https://haideralipunjabi.com"
@@ -151,7 +168,6 @@ export default function About() {
               >
                 حیدر علی پنجابی{" "}
               </a>{" "}
-              {" "}
             </>
           )}
           <br />
@@ -198,8 +214,14 @@ export default function About() {
               </a>
             </li>
           </ul>
-          <br/>
-          <a href="https://instagram.com/iftarkardotcom" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={["fab","instagram"]}/> iftarkardotcom</a>
+          <br />
+          <a
+            href="https://instagram.com/iftarkardotcom"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={["fab", "instagram"]} /> iftarkardotcom
+          </a>
         </p>
       </div>
     </>

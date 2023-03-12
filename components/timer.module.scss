@@ -1,6 +1,5 @@
 @import "../styles/variables.scss";
 
-
 .timerTitle {
   direction: ltr !important;
 }
@@ -17,13 +16,12 @@
     background-color: var(--text-color);
     margin: 0 20px;
   }
-  
 }
 
 .timerDetails {
   font-size: calc(var(--title-font));
   svg {
-    width:  calc(var(--title-font)) !important;
+    width: calc(var(--title-font)) !important;
   }
   z-index: 2;
 }
@@ -52,17 +50,16 @@
   margin-bottom: 20px;
 }
 .timeTitle {
-  width:var(--clock-font);
+  width: var(--clock-font);
   font-family: var(--clock-font-family);
   margin-bottom: 20px;
-  font-size:  var(--clock-font);
+  font-size: var(--clock-font);
 }
 
 .title {
   font-family: var(--clock-font-family);
   margin-bottom: 20px;
-  font-size:  var(--clock-font);
-  
+  font-size: var(--clock-font);
 }
 .timeSubtitle {
   font-size: var(--size-4);
@@ -70,7 +67,7 @@
   bottom: 0;
 }
 
-.timeSeparator{
+.timeSeparator {
   font-family: var(--clock-font-family);
-  font-size:  var(--clock-font);
+  font-size: var(--clock-font);
 }

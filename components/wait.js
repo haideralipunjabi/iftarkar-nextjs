@@ -30,12 +30,11 @@ export default function Wait() {
           </span>
           <span className={styles.subtitle}>for Ramzan 1443</span>
         </p>
-        <hr/>
-            <span className={styles.subtitle}>In Ramzan 1442</span>
+        <hr />
+        <span className={styles.subtitle}>In Ramzan 1442</span>
         <div className="is-flex is-flex-direction-row is-justify-content-space-around is-flex-wrap-wrap">
-            
           {icons.map((icon, key) => (
-            <div className={styles.iconContainer}>
+            <div key={key} className={styles.iconContainer}>
               <FontAwesomeIcon className={styles.icon} icon={icon.icon} />
               <br />
               <span className={styles.title}>{icon.title}</span>

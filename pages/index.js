@@ -4,12 +4,12 @@ import Timer from "../components/timer";
 import Duas from "../components/duas";
 import Languages from "../data/languages.json";
 import { useSettingsContext } from "../context/settings";
-import Wait from "../components/wait";
+// import Wait from "../components/wait";
 
 export default function Home() {
   const router = useRouter();
   const Language = Languages[router.locale];
-  const { settings, setSettingsOpened } = useSettingsContext();
+  const { settings } = useSettingsContext();
   return (
     <>
       <Head>

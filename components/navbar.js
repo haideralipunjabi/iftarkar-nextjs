@@ -1,12 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import classNames from "classnames/bind";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Languages from "../data/languages.json";
 import { useSettingsContext } from "../context/settings";
-import AppleModal from "./appleModal";
-import { isApple, isInstallable } from "./hooks";
 import DownloadModal from "./downloadModal";
 import DonationModal from "./donationModal";
 import logo from "../public/logo_horizontal.svg";
@@ -55,7 +53,7 @@ export default function Navbar() {
                 }}
                 className={classNames("navbar-item", "is-size-5")}
               >
-                <Image src={router.locale === "en" ? logo : logoUrdu} />
+                <Image alt={"Logo"} src={router.locale === "en" ? logo : logoUrdu} />
               </a>
             </Link>
             <ActiveLink
@@ -149,7 +147,7 @@ export default function Navbar() {
   );
 }
 
-function ActiveLink({ href, className, onClick, icon, newtab, children }) {
+function ActiveLink({ href, className, onClick, icon, children }) {
   const router = useRouter();
   return (
     <Link href={href}>
@@ -157,6 +155,7 @@ function ActiveLink({ href, className, onClick, icon, newtab, children }) {
         onClick={onClick}
         className={classNames("navbar-item", "is-size-5", {
           "is-active": router.pathname === href,
+          className
         })}
       >
         <FontAwesomeIcon className="is-size-7 mx-2" icon={icon} />

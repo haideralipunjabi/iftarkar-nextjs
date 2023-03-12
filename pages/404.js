@@ -7,9 +7,11 @@ export default function Home() {
   const Language = Languages[router.locale];
   return (
     <>
-    <Head>
-      <title>{translate(router.locale,404) } | {Language.iftarkar}</title>
-    </Head>
+      <Head>
+        <title>
+          {translate(router.locale, 404)} | {Language.iftarkar}
+        </title>
+      </Head>
 
       <div>
         <h1 className="is-size-1 has-text-centered">{Language["404"]}</h1>

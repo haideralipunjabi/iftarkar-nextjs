@@ -22,7 +22,7 @@
 
 @font-face {
   font-family: "Gulmarg";
-  src: url('/fonts/Narqalam.woff2');
+  src: url("/fonts/Narqalam.woff2");
 }
 
 :root {
@@ -72,7 +72,8 @@
     --progress-height: 1.5rem;
   }
 }
-[lang="ur"],[lang="kmr"] {
+[lang="ur"],
+[lang="kmr"] {
   --font-family: "Lateef";
   --clock-font-family: "Lateef";
   font-weight: normal !important;
@@ -98,7 +99,6 @@
   @media only screen and (min-width: 600px) {
     --title-font: 1.5rem;
     --clock-font: 8rem;
-    
   }
   @media only screen and (min-width: 1200px) {
     --title-font: 2rem;
@@ -114,9 +114,9 @@
   --font-family: "Gulmarg";
 }
 .amiri,
-  .amiri > * {
-    --font-family: "Amiri";
-  }
+.amiri > * {
+  --font-family: "Amiri";
+}
 
 .english {
   --font-family: "Open Sans" !important;
@@ -127,9 +127,9 @@
   --text-invert: #ffffff;
   --background: #131836;
 }
-.footer,.footer > * {
+.footer,
+.footer > * {
   font-size: 1rem !important;
-
 }
 .footer,
 .navbar {
@@ -169,7 +169,6 @@ label.label {
   font-family: inherit;
 }
 
-
 html,
 body {
   padding: 0;
@@ -194,9 +193,9 @@ body {
 * {
   box-sizing: border-box;
   margin-block-start: 0em;
-    margin-block-end: 0em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
 }
 a {
   text-decoration: none;
@@ -256,12 +255,12 @@ ul.icons {
   -webkit-border-radius: 10px;
   border-radius: 10px;
 
-  background: $primary; 
-  box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+  background: $primary;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
 }
 ::-webkit-scrollbar-thumb:window-inactive {
-background: $dark; 
+  background: $dark;
 }
 .time {
   font-family: var(--clock-font-family);

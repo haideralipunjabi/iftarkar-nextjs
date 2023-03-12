@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { useRouter } from "next/router";
 import styles from "./timer.module.scss";
 import { DateTime } from "luxon";
@@ -9,7 +10,7 @@ import { translate } from "../utils/utils";
 import Languages from "../data/languages.json";
 import { useSettingsContext } from "../context/settings";
 import Head from "next/head";
-import DonationModal, { Food4Kashmir } from "./donationModal";
+// import DonationModal, { Food4Kashmir } from "./donationModal";
 
 export default function Timer() {
   const { settings, setSettingsOpened, updateSettings } = useSettingsContext();
@@ -346,21 +347,6 @@ export default function Timer() {
                 </>
               )}
             </p>
-            <a
-              style={{ whiteSpace: "normal" }}
-              href="https://pippin.news?utm_source=iftarkar"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="py-5 button is-normal is-primary is-rounded m-2"
-              onClick={() => {
-                gtag("event", "link_click", {
-                  event_category: "link_click",
-                  event_label: "pippin",
-                });
-              }}
-            >
-              Pippin - Local News and Stories at your fingertips
-            </a>
             {timeStart && (
               <div
                 className={classNames("container", styles.progressContainer)}
