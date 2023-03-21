@@ -167,7 +167,7 @@ export default function Timer() {
     setTimeEnd(times.timeEnd);
     setTimeType(times.timeType);
     setHijri(times.hijri);
-    1;
+    // updateSettings("hijriDate", times.hijri);
   };
 
   const isAndroidApp = () => router.query["utm_source"] === "androidapp";
@@ -236,7 +236,7 @@ export default function Timer() {
               {hijri && (
                 <>
                   <span>
-                    {translate(router.locale, hijri)} {Language.shawal}{" "}
+                    {translate(router.locale, hijri)} {Language.ramzan}{" "}
                     {translate(router.locale, 1443)} {Language.ah}
                   </span>
                   <div></div>
@@ -261,8 +261,8 @@ export default function Timer() {
             )}
             {settings.usingGeneralTimings && (
               <>
-                {methods[settings.method].name[router.locale]} - {settings.latitude.toFixed(2)},
-                {settings.longitude.toFixed(2)}
+                {methods[settings.method].name[router.locale]} -{" "}
+                {settings.latitude.toFixed(2)},{settings.longitude.toFixed(2)}
               </>
             )}
             <a

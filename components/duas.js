@@ -2,10 +2,16 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import classNames from "classnames";
 import styles from "./duas.module.scss";
+import dailyDuas from "../data/duas.json";
+import { useSettingsContext } from "../context/settings";
+import Languages from "../data/languages.json";
 
 export default function Duas() {
   const [duaIdx, setDuaIdx] = useState();
+  const { settings } = useSettingsContext();
+
   const router = useRouter();
+  const Language = Languages[router.locale];
   const Duas = [
     {
       titles: {
@@ -49,6 +55,23 @@ export default function Duas() {
       <div className="container">
         <div className={classNames("tabs is-centered")}>
           <ul>
+            {settings.hijriDate > 0 && (
+              <li
+                key={-1}
+                className={classNames({ "is-active": duaIdx === -1 })}
+              >
+                <a
+                  className="is-size-4 is-size-5-mobile"
+                  data-target={-1}
+                  onClick={() => {
+                    if (duaIdx === -1) setDuaIdx();
+                    else setDuaIdx(-1);
+                  }}
+                >
+                  {Language.dailyDua}
+                </a>
+              </li>
+            )}
             {Duas.map((dua, key) => (
               <li
                 key={key}
@@ -68,6 +91,26 @@ export default function Duas() {
             ))}
           </ul>
         </div>
+        {settings.hijriDate > 0 && (
+          <div
+            key={-1}
+            className={classNames("dua", "has-text-centered", "px-3", {
+              "is-hidden": duaIdx != -1,
+            })}
+          >
+            <h2 className="amiri is-size-2 is-size-4-mobile">
+              {dailyDuas[settings.hijriDate - 1]["ar"]}
+            </h2>
+            <hr className={styles.seperator} />
+            <h2 className="is-size-4 is-size-6-mobile">
+              {dailyDuas[settings.hijriDate - 1]["trans"]}
+            </h2>
+            <hr className={styles.seperator} />
+            <h2 className="is-size-4 is-size-6-mobile">
+              {dailyDuas[settings.hijriDate - 1]["en"]}
+            </h2>
+          </div>
+        )}
         {Duas.map((dua, key) => (
           <div
             key={key}

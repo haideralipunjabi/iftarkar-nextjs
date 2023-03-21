@@ -24,6 +24,7 @@ export function SettingsWrapper({ children }) {
       longitude: parseFloat(localStorage.getItem("settings-longitude") ?? 0.0),
       sehriOffset: parseInt(localStorage.getItem("settings-sehriOffset") ?? 0),
       iftarOffset: parseInt(localStorage.getItem("settings-iftarOffset") ?? 0),
+      hijriDate: parseInt(localStorage.getItem("settings-hijriDate") ?? 0),
     });
   }, []);
   useEffect(() => {

@@ -15,12 +15,13 @@ export default function Home() {
       <Head>
         <title>{Language.iftarkar}</title>
       </Head>
-
-      <div className="my-6">
-        {/* <Wait/> */}
-        {settings && <Timer />}
-        <Duas />
-      </div>
+      {settings && (
+        <div className="my-6">
+          {/* <Wait/> */}
+          <Timer />
+          <Duas />
+        </div>
+      )}
     </>
   );
 }
