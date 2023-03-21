@@ -92,20 +92,6 @@
     "timings": [
       {
         "timestamps": {
-          "iftar": 1679577480.0,
-          "sehri": 1679528280.0
-        },
-        "times": {
-          "iftar": "18:48",
-          "sehri": "05:08"
-        },
-        "dates": {
-          "hijri": 1,
-          "gregorian": "23/03"
-        }
-      },
-      {
-        "timestamps": {
           "iftar": 1679663880.0,
           "sehri": 1679614560.0
         },
@@ -114,7 +100,7 @@
           "sehri": "05:06"
         },
         "dates": {
-          "hijri": 2,
+          "hijri": 1,
           "gregorian": "24/03"
         }
       },
@@ -128,7 +114,7 @@
           "sehri": "05:05"
         },
         "dates": {
-          "hijri": 3,
+          "hijri": 2,
           "gregorian": "25/03"
         }
       },
@@ -142,7 +128,7 @@
           "sehri": "05:04"
         },
         "dates": {
-          "hijri": 4,
+          "hijri": 3,
           "gregorian": "26/03"
         }
       },
@@ -156,7 +142,7 @@
           "sehri": "05:02"
         },
         "dates": {
-          "hijri": 5,
+          "hijri": 4,
           "gregorian": "27/03"
         }
       },
@@ -170,7 +156,7 @@
           "sehri": "05:00"
         },
         "dates": {
-          "hijri": 6,
+          "hijri": 5,
           "gregorian": "28/03"
         }
       },
@@ -184,7 +170,7 @@
           "sehri": "04:58"
         },
         "dates": {
-          "hijri": 7,
+          "hijri": 6,
           "gregorian": "29/03"
         }
       },
@@ -198,7 +184,7 @@
           "sehri": "04:56"
         },
         "dates": {
-          "hijri": 8,
+          "hijri": 7,
           "gregorian": "30/03"
         }
       },
@@ -212,7 +198,7 @@
           "sehri": "04:56"
         },
         "dates": {
-          "hijri": 9,
+          "hijri": 8,
           "gregorian": "31/03"
         }
       },
@@ -226,7 +212,7 @@
           "sehri": "04:55"
         },
         "dates": {
-          "hijri": 10,
+          "hijri": 9,
           "gregorian": "01/04"
         }
       },
@@ -240,7 +226,7 @@
           "sehri": "04:53"
         },
         "dates": {
-          "hijri": 11,
+          "hijri": 10,
           "gregorian": "02/04"
         }
       },
@@ -254,7 +240,7 @@
           "sehri": "04:52"
         },
         "dates": {
-          "hijri": 12,
+          "hijri": 11,
           "gregorian": "03/04"
         }
       },
@@ -268,7 +254,7 @@
           "sehri": "04:50"
         },
         "dates": {
-          "hijri": 13,
+          "hijri": 12,
           "gregorian": "04/04"
         }
       },
@@ -282,7 +268,7 @@
           "sehri": "04:48"
         },
         "dates": {
-          "hijri": 14,
+          "hijri": 13,
           "gregorian": "05/04"
         }
       },
@@ -296,7 +282,7 @@
           "sehri": "04:47"
         },
         "dates": {
-          "hijri": 15,
+          "hijri": 14,
           "gregorian": "06/04"
         }
       },
@@ -310,7 +296,7 @@
           "sehri": "04:45"
         },
         "dates": {
-          "hijri": 16,
+          "hijri": 15,
           "gregorian": "07/04"
         }
       },
@@ -324,7 +310,7 @@
           "sehri": "04:43"
         },
         "dates": {
-          "hijri": 17,
+          "hijri": 16,
           "gregorian": "08/04"
         }
       },
@@ -338,7 +324,7 @@
           "sehri": "04:42"
         },
         "dates": {
-          "hijri": 18,
+          "hijri": 17,
           "gregorian": "09/04"
         }
       },
@@ -352,7 +338,7 @@
           "sehri": "04:41"
         },
         "dates": {
-          "hijri": 19,
+          "hijri": 18,
           "gregorian": "10/04"
         }
       },
@@ -366,7 +352,7 @@
           "sehri": "04:39"
         },
         "dates": {
-          "hijri": 20,
+          "hijri": 19,
           "gregorian": "11/04"
         }
       },
@@ -380,7 +366,7 @@
           "sehri": "04:38"
         },
         "dates": {
-          "hijri": 21,
+          "hijri": 20,
           "gregorian": "12/04"
         }
       },
@@ -394,7 +380,7 @@
           "sehri": "04:36"
         },
         "dates": {
-          "hijri": 22,
+          "hijri": 21,
           "gregorian": "13/04"
         }
       },
@@ -408,7 +394,7 @@
           "sehri": "04:34"
         },
         "dates": {
-          "hijri": 23,
+          "hijri": 22,
           "gregorian": "14/04"
         }
       },
@@ -422,7 +408,7 @@
           "sehri": "04:33"
         },
         "dates": {
-          "hijri": 24,
+          "hijri": 23,
           "gregorian": "15/04"
         }
       },
@@ -436,7 +422,7 @@
           "sehri": "04:32"
         },
         "dates": {
-          "hijri": 25,
+          "hijri": 24,
           "gregorian": "16/04"
         }
       },
@@ -450,7 +436,7 @@
           "sehri": "04:31"
         },
         "dates": {
-          "hijri": 26,
+          "hijri": 25,
           "gregorian": "17/04"
         }
       },
@@ -464,7 +450,7 @@
           "sehri": "04:30"
         },
         "dates": {
-          "hijri": 27,
+          "hijri": 26,
           "gregorian": "18/04"
         }
       },
@@ -478,7 +464,7 @@
           "sehri": "04:28"
         },
         "dates": {
-          "hijri": 28,
+          "hijri": 27,
           "gregorian": "19/04"
         }
       },
@@ -492,7 +478,7 @@
           "sehri": "04:27"
         },
         "dates": {
-          "hijri": 29,
+          "hijri": 28,
           "gregorian": "20/04"
         }
       },
@@ -506,8 +492,22 @@
           "sehri": "04:25"
         },
         "dates": {
-          "hijri": 30,
+          "hijri": 29,
           "gregorian": "21/04"
+        }
+      },
+      {
+        "timestamps": {
+          "iftar": 1682170800.0,
+          "sehri": 1682117580.0
+        },
+        "times": {
+          "iftar": "19:10",
+          "sehri": "04:23"
+        },
+        "dates": {
+          "hijri": 30,
+          "gregorian": "22/04"
         }
       }
     ]
@@ -605,20 +605,6 @@
     "timings": [
       {
         "timestamps": {
-          "iftar": 1679577780.0,
-          "sehri": 1679528220.0
-        },
-        "times": {
-          "iftar": "18:53",
-          "sehri": "05:07"
-        },
-        "dates": {
-          "hijri": 1,
-          "gregorian": "23/03"
-        }
-      },
-      {
-        "timestamps": {
           "iftar": 1679664240.0,
           "sehri": 1679614500.0
         },
@@ -627,7 +613,7 @@
           "sehri": "05:05"
         },
         "dates": {
-          "hijri": 2,
+          "hijri": 1,
           "gregorian": "24/03"
         }
       },
@@ -641,7 +627,7 @@
           "sehri": "05:04"
         },
         "dates": {
-          "hijri": 3,
+          "hijri": 2,
           "gregorian": "25/03"
         }
       },
@@ -655,7 +641,7 @@
           "sehri": "05:02"
         },
         "dates": {
-          "hijri": 4,
+          "hijri": 3,
           "gregorian": "26/03"
         }
       },
@@ -669,7 +655,7 @@
           "sehri": "05:00"
         },
         "dates": {
-          "hijri": 5,
+          "hijri": 4,
           "gregorian": "27/03"
         }
       },
@@ -683,7 +669,7 @@
           "sehri": "04:58"
         },
         "dates": {
-          "hijri": 6,
+          "hijri": 5,
           "gregorian": "28/03"
         }
       },
@@ -697,7 +683,7 @@
           "sehri": "04:56"
         },
         "dates": {
-          "hijri": 7,
+          "hijri": 6,
           "gregorian": "29/03"
         }
       },
@@ -711,7 +697,7 @@
           "sehri": "04:54"
         },
         "dates": {
-          "hijri": 8,
+          "hijri": 7,
           "gregorian": "30/03"
         }
       },
@@ -725,7 +711,7 @@
           "sehri": "04:53"
         },
         "dates": {
-          "hijri": 9,
+          "hijri": 8,
           "gregorian": "31/03"
         }
       },
@@ -739,7 +725,7 @@
           "sehri": "04:53"
         },
         "dates": {
-          "hijri": 10,
+          "hijri": 9,
           "gregorian": "01/04"
         }
       },
@@ -753,7 +739,7 @@
           "sehri": "04:52"
         },
         "dates": {
-          "hijri": 11,
+          "hijri": 10,
           "gregorian": "02/04"
         }
       },
@@ -767,7 +753,7 @@
           "sehri": "04:50"
         },
         "dates": {
-          "hijri": 12,
+          "hijri": 11,
           "gregorian": "03/04"
         }
       },
@@ -781,7 +767,7 @@
           "sehri": "04:49"
         },
         "dates": {
-          "hijri": 13,
+          "hijri": 12,
           "gregorian": "04/04"
         }
       },
@@ -795,7 +781,7 @@
           "sehri": "04:47"
         },
         "dates": {
-          "hijri": 14,
+          "hijri": 13,
           "gregorian": "05/04"
         }
       },
@@ -809,7 +795,7 @@
           "sehri": "04:46"
         },
         "dates": {
-          "hijri": 15,
+          "hijri": 14,
           "gregorian": "06/04"
         }
       },
@@ -823,7 +809,7 @@
           "sehri": "04:44"
         },
         "dates": {
-          "hijri": 16,
+          "hijri": 15,
           "gregorian": "07/04"
         }
       },
@@ -837,7 +823,7 @@
           "sehri": "04:43"
         },
         "dates": {
-          "hijri": 17,
+          "hijri": 16,
           "gregorian": "08/04"
         }
       },
@@ -851,7 +837,7 @@
           "sehri": "04:41"
         },
         "dates": {
-          "hijri": 18,
+          "hijri": 17,
           "gregorian": "09/04"
         }
       },
@@ -865,7 +851,7 @@
           "sehri": "04:40"
         },
         "dates": {
-          "hijri": 19,
+          "hijri": 18,
           "gregorian": "10/04"
         }
       },
@@ -879,7 +865,7 @@
           "sehri": "04:39"
         },
         "dates": {
-          "hijri": 20,
+          "hijri": 19,
           "gregorian": "11/04"
         }
       },
@@ -893,7 +879,7 @@
           "sehri": "04:37"
         },
         "dates": {
-          "hijri": 21,
+          "hijri": 20,
           "gregorian": "12/04"
         }
       },
@@ -907,7 +893,7 @@
           "sehri": "04:35"
         },
         "dates": {
-          "hijri": 22,
+          "hijri": 21,
           "gregorian": "13/04"
         }
       },
@@ -921,7 +907,7 @@
           "sehri": "04:33"
         },
         "dates": {
-          "hijri": 23,
+          "hijri": 22,
           "gregorian": "14/04"
         }
       },
@@ -935,7 +921,7 @@
           "sehri": "04:32"
         },
         "dates": {
-          "hijri": 24,
+          "hijri": 23,
           "gregorian": "15/04"
         }
       },
@@ -949,7 +935,7 @@
           "sehri": "04:31"
         },
         "dates": {
-          "hijri": 25,
+          "hijri": 24,
           "gregorian": "16/04"
         }
       },
@@ -963,7 +949,7 @@
           "sehri": "04:30"
         },
         "dates": {
-          "hijri": 26,
+          "hijri": 25,
           "gregorian": "17/04"
         }
       },
@@ -977,7 +963,7 @@
           "sehri": "04:28"
         },
         "dates": {
-          "hijri": 27,
+          "hijri": 26,
           "gregorian": "18/04"
         }
       },
@@ -991,7 +977,7 @@
           "sehri": "04:26"
         },
         "dates": {
-          "hijri": 28,
+          "hijri": 27,
           "gregorian": "19/04"
         }
       },
@@ -1005,7 +991,7 @@
           "sehri": "04:25"
         },
         "dates": {
-          "hijri": 29,
+          "hijri": 28,
           "gregorian": "20/04"
         }
       },
@@ -1019,8 +1005,22 @@
           "sehri": "04:23"
         },
         "dates": {
-          "hijri": 30,
+          "hijri": 29,
           "gregorian": "21/04"
+        }
+      },
+      {
+        "timestamps": {
+          "iftar": 1682171160.0,
+          "sehri": 1682117520.0
+        },
+        "times": {
+          "iftar": "19:16",
+          "sehri": "04:22"
+        },
+        "dates": {
+          "hijri": 30,
+          "gregorian": "22/04"
         }
       }
     ]
@@ -1118,20 +1118,6 @@
     "timings": [
       {
         "timestamps": {
-          "iftar": 1679577240.0,
-          "sehri": 1679528280.0
-        },
-        "times": {
-          "iftar": "18:44",
-          "sehri": "05:08"
-        },
-        "dates": {
-          "hijri": 1,
-          "gregorian": "23/03"
-        }
-      },
-      {
-        "timestamps": {
           "iftar": 1679663700.0,
           "sehri": 1679614560.0
         },
@@ -1140,7 +1126,7 @@
           "sehri": "05:06"
         },
         "dates": {
-          "hijri": 2,
+          "hijri": 1,
           "gregorian": "24/03"
         }
       },
@@ -1154,7 +1140,7 @@
           "sehri": "05:05"
         },
         "dates": {
-          "hijri": 3,
+          "hijri": 2,
           "gregorian": "25/03"
         }
       },
@@ -1168,7 +1154,7 @@
           "sehri": "05:03"
         },
         "dates": {
-          "hijri": 4,
+          "hijri": 3,
           "gregorian": "26/03"
         }
       },
@@ -1182,7 +1168,7 @@
           "sehri": "05:02"
         },
         "dates": {
-          "hijri": 5,
+          "hijri": 4,
           "gregorian": "27/03"
         }
       },
@@ -1196,7 +1182,7 @@
           "sehri": "05:00"
         },
         "dates": {
-          "hijri": 6,
+          "hijri": 5,
           "gregorian": "28/03"
         }
       },
@@ -1210,7 +1196,7 @@
           "sehri": "04:59"
         },
         "dates": {
-          "hijri": 7,
+          "hijri": 6,
           "gregorian": "29/03"
         }
       },
@@ -1224,7 +1210,7 @@
           "sehri": "04:57"
         },
         "dates": {
-          "hijri": 8,
+          "hijri": 7,
           "gregorian": "30/03"
         }
       },
@@ -1238,7 +1224,7 @@
           "sehri": "04:56"
         },
         "dates": {
-          "hijri": 9,
+          "hijri": 8,
           "gregorian": "31/03"
         }
       },
@@ -1252,7 +1238,7 @@
           "sehri": "04:54"
         },
         "dates": {
-          "hijri": 10,
+          "hijri": 9,
           "gregorian": "01/04"
         }
       },
@@ -1266,7 +1252,7 @@
           "sehri": "04:53"
         },
         "dates": {
-          "hijri": 11,
+          "hijri": 10,
           "gregorian": "02/04"
         }
       },
@@ -1280,7 +1266,7 @@
           "sehri": "04:51"
         },
         "dates": {
-          "hijri": 12,
+          "hijri": 11,
           "gregorian": "03/04"
         }
       },
@@ -1294,7 +1280,7 @@
           "sehri": "04:50"
         },
         "dates": {
-          "hijri": 13,
+          "hijri": 12,
           "gregorian": "04/04"
         }
       },
@@ -1308,7 +1294,7 @@
           "sehri": "04:48"
         },
         "dates": {
-          "hijri": 14,
+          "hijri": 13,
           "gregorian": "05/04"
         }
       },
@@ -1322,7 +1308,7 @@
           "sehri": "04:46"
         },
         "dates": {
-          "hijri": 15,
+          "hijri": 14,
           "gregorian": "06/04"
         }
       },
@@ -1336,7 +1322,7 @@
           "sehri": "04:45"
         },
         "dates": {
-          "hijri": 16,
+          "hijri": 15,
           "gregorian": "07/04"
         }
       },
@@ -1350,7 +1336,7 @@
           "sehri": "04:43"
         },
         "dates": {
-          "hijri": 17,
+          "hijri": 16,
           "gregorian": "08/04"
         }
       },
@@ -1364,7 +1350,7 @@
           "sehri": "04:42"
         },
         "dates": {
-          "hijri": 18,
+          "hijri": 17,
           "gregorian": "09/04"
         }
       },
@@ -1378,7 +1364,7 @@
           "sehri": "04:40"
         },
         "dates": {
-          "hijri": 19,
+          "hijri": 18,
           "gregorian": "10/04"
         }
       },
@@ -1392,7 +1378,7 @@
           "sehri": "04:39"
         },
         "dates": {
-          "hijri": 20,
+          "hijri": 19,
           "gregorian": "11/04"
         }
       },
@@ -1406,7 +1392,7 @@
           "sehri": "04:37"
         },
         "dates": {
-          "hijri": 21,
+          "hijri": 20,
           "gregorian": "12/04"
         }
       },
@@ -1420,7 +1406,7 @@
           "sehri": "04:36"
         },
         "dates": {
-          "hijri": 22,
+          "hijri": 21,
           "gregorian": "13/04"
         }
       },
@@ -1434,7 +1420,7 @@
           "sehri": "04:34"
         },
         "dates": {
-          "hijri": 23,
+          "hijri": 22,
           "gregorian": "14/04"
         }
       },
@@ -1448,7 +1434,7 @@
           "sehri": "04:33"
         },
         "dates": {
-          "hijri": 24,
+          "hijri": 23,
           "gregorian": "15/04"
         }
       },
@@ -1462,7 +1448,7 @@
           "sehri": "04:31"
         },
         "dates": {
-          "hijri": 25,
+          "hijri": 24,
           "gregorian": "16/04"
         }
       },
@@ -1476,7 +1462,7 @@
           "sehri": "04:30"
         },
         "dates": {
-          "hijri": 26,
+          "hijri": 25,
           "gregorian": "17/04"
         }
       },
@@ -1490,7 +1476,7 @@
           "sehri": "04:28"
         },
         "dates": {
-          "hijri": 27,
+          "hijri": 26,
           "gregorian": "18/04"
         }
       },
@@ -1504,7 +1490,7 @@
           "sehri": "04:27"
         },
         "dates": {
-          "hijri": 28,
+          "hijri": 27,
           "gregorian": "19/04"
         }
       },
@@ -1518,7 +1504,7 @@
           "sehri": "04:25"
         },
         "dates": {
-          "hijri": 29,
+          "hijri": 28,
           "gregorian": "20/04"
         }
       }
