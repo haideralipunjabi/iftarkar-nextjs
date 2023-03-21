@@ -167,7 +167,7 @@ export default function Timer() {
     setTimeEnd(times.timeEnd);
     setTimeType(times.timeType);
     setHijri(times.hijri);
-    // updateSettings("hijriDate", times.hijri);
+    updateSettings("hijriDate", times.hijri);
   };
 
   const isAndroidApp = () => router.query["utm_source"] === "androidapp";
