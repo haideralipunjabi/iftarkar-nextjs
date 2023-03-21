@@ -172,6 +172,34 @@ export default function Settings() {
               <div onClick={getLatLong} className="button is-primary">Locate</div>
               { locationError && <div className="has-text-danger">Couldn&apos;t find location. Enter location manually</div>}
             </div>
+            <div className="field">
+              <label className="label">Offsets</label>
+              <div className="field-body">
+                <div className="field">
+                  <label htmlFor="">Sehri</label>
+                  <p className="control">
+                          <input onChange={(e) => {
+                      updateSettings(
+                        "sehriOffset",
+                        e.target.value
+                      );
+                    }} type="number" className="input my-2 has-text-black" placeholder="Sehri Offset" value={settings.sehriOffset}/>
+                    </p>  
+                </div>
+                <div className="field">
+                <label htmlFor="">Iftar</label>
+
+                  <p className="control">
+                          <input onChange={(e) => {
+                      updateSettings(
+                        "iftarOffset",
+                        e.target.value
+                      );
+                    }} type="number" className="input my-2 has-text-black" placeholder="Iftar Offset" value={settings.iftarOffset}/>
+                    </p>  
+                </div>
+              </div>
+            </div>
             </>
               }
             <div className="field my-2">

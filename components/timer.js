@@ -118,8 +118,7 @@ export default function Timer() {
   };
   let times;
   if(settings.usingGeneralTimings) {
-    times = getGeneralTimings(settings.latitude, settings.longitude,settings.method)
-    console.log(times);
+    times = getGeneralTimings(settings.latitude, settings.longitude,settings.method, settings.sehriOffset, settings.iftarOffset)
   }
   else {
     times = getTimes();
@@ -147,7 +146,13 @@ export default function Timer() {
   };
   const [percentDone, setPercentDone] = useState(getPercentDone());
   const setTimes = () => {
-    const times = getTimes();
+    let times;
+    if(settings.usingGeneralTimings) {
+      times = getGeneralTimings(settings.latitude, settings.longitude,settings.method, settings.sehriOffset, settings.iftarOffset)
+    }
+    else {
+      times = getTimes();
+    }
     setTimeStart(times.timeStart);
     setTimeEnd(times.timeEnd);
     setTimeType(times.timeType);

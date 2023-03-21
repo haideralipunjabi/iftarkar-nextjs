@@ -131,7 +131,7 @@ export default function Timings() {
                 );
               })}
               {
-                settings.usingGeneralTimings && getTimingsTable(settings.latitude, settings.longitude, settings.method).map((timing,idx)=> {
+                settings.usingGeneralTimings && getTimingsTable(settings.latitude, settings.longitude, settings.method, settings.sehriOffset, settings.iftarOffset).map((timing,idx)=> {
                   return (
                     <tr key={idx}>
                       <td
