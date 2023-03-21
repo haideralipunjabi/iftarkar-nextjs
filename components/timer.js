@@ -261,8 +261,8 @@ export default function Timer() {
             )}
             {settings.usingGeneralTimings && (
               <>
-                {methods[settings.method].name[router.locale]} - {settings.latitude},
-                {settings.longitude}
+                {methods[settings.method].name[router.locale]} - {settings.latitude.toFixed(2)},
+                {settings.longitude.toFixed(2)}
               </>
             )}
             <a
