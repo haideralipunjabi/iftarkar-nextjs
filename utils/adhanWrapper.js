@@ -112,8 +112,8 @@ export const methods = [
     },
     
 ]
-const firstDay = DateTime.fromISO("2023-03-24")
-const lastDay = DateTime.fromISO("2023-04-22")
+const firstDay = DateTime.fromISO("2023-03-23")
+const lastDay = DateTime.fromISO("2023-04-21")
 
 export function getGeneralTimings(coordLat, coordLong, method,sehriOffset=0,iftarOffset=0) {
     const firstSehri = getSehriIftar(coordLat, coordLong, method,firstDay, sehriOffset, iftarOffset).sehri;
