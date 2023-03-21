@@ -49,13 +49,11 @@ export default function About() {
                     <b>{calendar.name["en"]}:</b> {calendar.source["en"]}
                   </li>
                 ))}
-                {
-                  methods.map((source,idx) => (
-                    <li key={idx}>
+                {methods.map((source, idx) => (
+                  <li key={idx}>
                     <b>{source.name}:</b> {source.description}
                   </li>
-                  ))
-                }
+                ))}
               </ul>
               <hr />
               Special Thanks: <br />

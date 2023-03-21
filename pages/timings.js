@@ -11,8 +11,7 @@ import { getTimingsTable, methods } from "../utils/adhanWrapper";
 // import FilesModal from "../components/filesModal";
 
 export default function Timings() {
-  const { settings } =
-    useSettingsContext();
+  const { settings } = useSettingsContext();
   // const [filesModal, setFilesModal] = useState(false);
   const router = useRouter();
   const Language = Languages[router.locale];
@@ -50,45 +49,43 @@ export default function Timings() {
         <h1 className=" has-text-centered is-size-2 title">
           {Language.timings}
         </h1>
-          {
-            !settings.usingGeneralTimings &&
-        <div className="buttons is-centered">
-          {/* <button  className="mb-3 has-text-centered button is-primary" onClick={()=>{setFilesModal(true)}}>
+        {!settings.usingGeneralTimings && (
+          <div className="buttons is-centered">
+            {/* <button  className="mb-3 has-text-centered button is-primary" onClick={()=>{setFilesModal(true)}}>
           <span className="icon"><FontAwesomeIcon icon={["fas","file-pdf"]} /></span>
           <span>{Language.downloadpdf}</span>
         </button> */}
 
-          <a
-          href={`/calendars/${TimingsData[settings.timingIndex].name["en"]}-${
-            settings.offset
-          }.ics`}
-          className="mb-3 has-text-centered button is-primary"
-          >
-            <span className="icon">
-              <FontAwesomeIcon icon={["fas", "calendar-alt"]} />
-            </span>
-            <span>{Language.addToCalendar}</span>
-          </a>
-        </div>
-          }
+            <a
+              href={`/calendars/${
+                TimingsData[settings.timingIndex].name["en"]
+              }-${settings.offset}.ics`}
+              className="mb-3 has-text-centered button is-primary"
+            >
+              <span className="icon">
+                <FontAwesomeIcon icon={["fas", "calendar-alt"]} />
+              </span>
+              <span>{Language.addToCalendar}</span>
+            </a>
+          </div>
+        )}
         <h2 className="has-text-centered is-size-4 subitle">
-          {
-            !settings.usingGeneralTimings &&
+          {!settings.usingGeneralTimings && (
             <>
-          {TimingsData[settings.timingIndex].name[router.locale]}
-          {TimingsData[settings.timingIndex].offsets.length > 0 &&
-            " - " +
-              TimingsData[settings.timingIndex].offsets.filter(
-                (offset) => offset.offset == settings.offset
-              )[0]?.name[router.locale]}
+              {TimingsData[settings.timingIndex].name[router.locale]}
+              {TimingsData[settings.timingIndex].offsets.length > 0 &&
+                " - " +
+                  TimingsData[settings.timingIndex].offsets.filter(
+                    (offset) => offset.offset == settings.offset
+                  )[0]?.name[router.locale]}
             </>
-          }
-          {
-            settings.usingGeneralTimings && 
+          )}
+          {settings.usingGeneralTimings && (
             <>
-            {methods[settings.method].name} - {settings.latitude},{settings.longitude}
+              {methods[settings.method].name} - {settings.latitude},
+              {settings.longitude}
             </>
-          }
+          )}
         </h2>
         <div className="table-container">
           <table className="table is-bordered has-text-centered mx-a my-2">
@@ -102,36 +99,42 @@ export default function Timings() {
               </tr>
             </thead>
             <tbody>
-              { !settings.usingGeneralTimings  &&
-              TimingsData[settings.timingIndex].timings.map((timing, idx) => {
-                return (
-                  <tr key={idx}>
-                    <td
-                      className={classNames({ time: router.locale !== "en" })}
-                    >
-                      {translate(router.locale, timing.dates.hijri)}
-                    </td>
-                    <td
-                      className={classNames({ time: router.locale !== "en" })}
-                    >
-                      {translate(router.locale, timing.dates.gregorian)}
-                    </td>
-                    <td>{translate(router.locale, getTimes(timing).day)}</td>
-                    <td
-                      className={classNames({ time: router.locale !== "en" })}
-                    >
-                      {translate(router.locale, getTimes(timing).sahar)}
-                    </td>
-                    <td
-                      className={classNames({ time: router.locale !== "en" })}
-                    >
-                      {translate(router.locale, getTimes(timing).iftar)}
-                    </td>
-                  </tr>
-                );
-              })}
-              {
-                settings.usingGeneralTimings && getTimingsTable(settings.latitude, settings.longitude, settings.method, settings.sehriOffset, settings.iftarOffset).map((timing,idx)=> {
+              {!settings.usingGeneralTimings &&
+                TimingsData[settings.timingIndex].timings.map((timing, idx) => {
+                  return (
+                    <tr key={idx}>
+                      <td
+                        className={classNames({ time: router.locale !== "en" })}
+                      >
+                        {translate(router.locale, timing.dates.hijri)}
+                      </td>
+                      <td
+                        className={classNames({ time: router.locale !== "en" })}
+                      >
+                        {translate(router.locale, timing.dates.gregorian)}
+                      </td>
+                      <td>{translate(router.locale, getTimes(timing).day)}</td>
+                      <td
+                        className={classNames({ time: router.locale !== "en" })}
+                      >
+                        {translate(router.locale, getTimes(timing).sahar)}
+                      </td>
+                      <td
+                        className={classNames({ time: router.locale !== "en" })}
+                      >
+                        {translate(router.locale, getTimes(timing).iftar)}
+                      </td>
+                    </tr>
+                  );
+                })}
+              {settings.usingGeneralTimings &&
+                getTimingsTable(
+                  settings.latitude,
+                  settings.longitude,
+                  settings.method,
+                  settings.sehriOffset,
+                  settings.iftarOffset
+                ).map((timing, idx) => {
                   return (
                     <tr key={idx}>
                       <td
@@ -157,9 +160,7 @@ export default function Timings() {
                       </td>
                     </tr>
                   );
-                })
-                
-              }
+                })}
             </tbody>
           </table>
         </div>

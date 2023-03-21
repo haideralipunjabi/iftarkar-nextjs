@@ -53,7 +53,10 @@ export default function Navbar() {
                 }}
                 className={classNames("navbar-item", "is-size-5")}
               >
-                <Image alt={"Logo"} src={router.locale === "en" ? logo : logoUrdu} />
+                <Image
+                  alt={"Logo"}
+                  src={router.locale === "en" ? logo : logoUrdu}
+                />
               </a>
             </Link>
             <ActiveLink
@@ -155,7 +158,7 @@ function ActiveLink({ href, className, onClick, icon, children }) {
         onClick={onClick}
         className={classNames("navbar-item", "is-size-5", {
           "is-active": router.pathname === href,
-          className
+          className,
         })}
       >
         <FontAwesomeIcon className="is-size-7 mx-2" icon={icon} />

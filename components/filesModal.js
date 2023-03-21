@@ -83,7 +83,7 @@ export default function FilesModal(props) {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img alt='Thumbnail' src={file.thumb} />
+                  <img alt="Thumbnail" src={file.thumb} />
                   <p>{file.names[router.locale]}</p>
                 </a>
               </div>

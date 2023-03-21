@@ -117,10 +117,15 @@ export default function Timer() {
     };
   };
   let times;
-  if(settings.usingGeneralTimings) {
-    times = getGeneralTimings(settings.latitude, settings.longitude,settings.method, settings.sehriOffset, settings.iftarOffset)
-  }
-  else {
+  if (settings.usingGeneralTimings) {
+    times = getGeneralTimings(
+      settings.latitude,
+      settings.longitude,
+      settings.method,
+      settings.sehriOffset,
+      settings.iftarOffset
+    );
+  } else {
     times = getTimes();
   }
   if (times.timeType === "EM")
@@ -147,10 +152,15 @@ export default function Timer() {
   const [percentDone, setPercentDone] = useState(getPercentDone());
   const setTimes = () => {
     let times;
-    if(settings.usingGeneralTimings) {
-      times = getGeneralTimings(settings.latitude, settings.longitude,settings.method, settings.sehriOffset, settings.iftarOffset)
-    }
-    else {
+    if (settings.usingGeneralTimings) {
+      times = getGeneralTimings(
+        settings.latitude,
+        settings.longitude,
+        settings.method,
+        settings.sehriOffset,
+        settings.iftarOffset
+      );
+    } else {
       times = getTimes();
     }
     setTimeStart(times.timeStart);
@@ -239,23 +249,22 @@ export default function Timer() {
             </h2>
           }
           <h2 className={styles.timerDetails}>
-            {
-              !settings.usingGeneralTimings && 
+            {!settings.usingGeneralTimings && (
               <>
-            {Timings[settings.timingIndex].name[router.locale]}{" "}
-            {Timings[settings.timingIndex].offsets.length > 0 &&
-              " - " +
-                Timings[settings.timingIndex].offsets.filter(
-                  (offset) => offset.offset == settings.offset
-                )[0]?.name[router.locale]}
+                {Timings[settings.timingIndex].name[router.locale]}{" "}
+                {Timings[settings.timingIndex].offsets.length > 0 &&
+                  " - " +
+                    Timings[settings.timingIndex].offsets.filter(
+                      (offset) => offset.offset == settings.offset
+                    )[0]?.name[router.locale]}
               </>
-            }
-            {
-               settings.usingGeneralTimings && 
-               <>
-               {methods[settings.method].name} - {settings.latitude},{settings.longitude}
-               </>
-            }
+            )}
+            {settings.usingGeneralTimings && (
+              <>
+                {methods[settings.method].name} - {settings.latitude},
+                {settings.longitude}
+              </>
+            )}
             <a
               className="mx-2 is-size-6 is-primary underline"
               onClick={() => setSettingsOpened(true)}

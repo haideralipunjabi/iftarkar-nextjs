@@ -1,12 +1,12 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
-import Script from 'next/script'
+import Script from "next/script";
 
 export default class MyDocument extends Document {
   render() {
     return (
       <Html>
         <Head>
-            <Script
+          <Script
             src="https://www.googletagmanager.com/gtag/js?id=UA-83905982-7"
             strategy="afterInteractive"
           />
