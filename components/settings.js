@@ -125,7 +125,7 @@ export default function Settings() {
                       >
                         {methods.map((method, idx) => (
                           <option key={idx} value={idx}>
-                            {method.name}
+                            {method.name[router.locale]}
                           </option>
                         ))}
                       </select>
@@ -133,10 +133,10 @@ export default function Settings() {
                   </div>
                 </div>
                 <div className="field">
-                  <label className="label">Location</label>
+                  <label className="label">{Language.location}</label>
                   <div className="field-body">
                     <div className="field">
-                      <label htmlFor="">Latitude</label>
+                      <label htmlFor="">{Language.latitude}</label>
                       <p className="control">
                         <input
                           onChange={(e) => {
@@ -150,7 +150,7 @@ export default function Settings() {
                       </p>
                     </div>
                     <div className="field">
-                      <label htmlFor="">Longitude</label>
+                      <label htmlFor="">{Language.longitude}</label>
 
                       <p className="control">
                         <input
@@ -166,19 +166,19 @@ export default function Settings() {
                     </div>
                   </div>
                   <div onClick={getLatLong} className="button is-primary">
-                    Locate
+                    {Language.locate}
                   </div>
                   {locationError && (
                     <div className="has-text-danger">
-                      Couldn&apos;t find location. Enter location manually
+                      {Language.LocationErrorMessage}
                     </div>
                   )}
                 </div>
                 <div className="field">
-                  <label className="label">Offsets</label>
+                  <label className="label">{Language.offsets}</label>
                   <div className="field-body">
                     <div className="field">
-                      <label htmlFor="">Sehri</label>
+                      <label htmlFor="">{Language.sahar}</label>
                       <p className="control">
                         <input
                           onChange={(e) => {
@@ -192,7 +192,7 @@ export default function Settings() {
                       </p>
                     </div>
                     <div className="field">
-                      <label htmlFor="">Iftar</label>
+                      <label htmlFor="">{Language.iftar}</label>
 
                       <p className="control">
                         <input
@@ -246,7 +246,7 @@ export default function Settings() {
                     updateSettings("usingGeneralTimings", e.target.checked);
                   }}
                 />
-                Can&apos;t choose a timing, use General Timings?
+                {Language.GeneralSettingsMessage}
               </label>
             </div>
           </form>

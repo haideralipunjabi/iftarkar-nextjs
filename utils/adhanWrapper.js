@@ -3,63 +3,111 @@ import { DateTime } from "luxon";
 
 export const methods = [
     {
-        name: "Muslim World League",
+        name: {
+            "en": "Muslim World League",
+            "ur": "مسلم ورلڈ لیگ",
+            "kmr": "مسلم ورلڈ لیگ",
+        } ,
         description: "Muslim World League. Standard Fajr time with an angle of 18°. Earlier Isha time with an angle of 17°.",
         function: CalculationMethod.MuslimWorldLeague
     },
     {
-        name:"Egyptian General Authority of Survey",
+        name: {
+            "en": "Egyptian General Authority of Survey",
+            "ur": "مصری جنرل اتھارٹی آف سروے",
+            "kmr": "مصری جنرل اتھارٹی آف سروے",
+        },
         description:"Egyptian General Authority of Survey. Early Fajr time using an angle 19.5° and a slightly earlier Isha time using an angle of 17.5°.",
         function: CalculationMethod.Egyptian
     },
     {
-        name:"University of Islamic Sciences, Karachi",
+        name:{
+            "en": "University of Islamic Sciences, Karachi",
+            "ur": "یونیورسٹی آف اسلامی سائنسس، کراچی",
+            "kmr": "یونیورسٹی آف اسلامی سائنسس، کراچی",
+        },
         description:"University of Islamic Sciences, Karachi. A generally applicable method that uses standard Fajr and Isha angles of 18°.",
         function: CalculationMethod.Karachi
     },
     {
-        name:"Umm al-Qura University, Makkah",
+        name:{
+            "en": "Umm al-Qura University, Makkah",
+            "ur": "ام القری یونیورسٹی مکہ مکرمہ",
+            "kmr": "ام القری یونیورسٹی مکہ مکرمہ",
+        },
         description:"Umm al-Qura University, Makkah. Uses a fixed interval of 90 minutes from maghrib to calculate Isha. And a slightly earlier Fajr time with an angle of 18.5°. Note: you should add a +30 minute custom adjustment for Isha during Ramadan.",
         function: CalculationMethod.UmmAlQura
     },
     {
-        name:"Dubai",
+        name:{
+            "en": "Dubai",
+            "ur": "دبئی",
+            "kmr": "دبئی",
+        },
         description:"Used in the UAE. Slightly earlier Fajr time and slightly later Isha time with angles of 18.2° for Fajr and Isha in addition to 3 minute offsets for sunrise, Dhuhr, Asr, and Maghrib.",
         function: CalculationMethod.Dubai
     },
     {
-        name:"Qatar",
+        name:{
+            "en": "Qatar",
+            "ur": "قطر",
+            "kmr": "قطر",
+        },
         description:"Same Isha interval as UmmAlQura but with the standard Fajr time using an angle of 18°.",
         function: CalculationMethod.Qatar
     },
     {
-        name:"Kuwait",
+        name:{
+            "en": "Kuwait",
+            "ur": "کویت",
+            "kmr": "کویت",
+        },
         description:"Standard Fajr time with an angle of 18°. Slightly earlier Isha time with an angle of 17.5°.",
         function: CalculationMethod.Kuwait
     },
     {
-        name:"Moonsighting Committee",
+        name:{
+            "en": "Moonsighting Committee",
+            "ur": "چاند دیکھنے والی کمیٹی",
+            "kmr": "چاند دیکھنے والی کمیٹی",
+        },
         description:"Method developed by Khalid Shaukat, founder of Moonsighting Committee Worldwide. Uses standard 18° angles for Fajr and Isha in addition to seasonal adjustment values. This method automatically applies the 1/7 approximation rule for locations above 55° latitude. Recommended for North America and the UK.",
         function: CalculationMethod.MoonsightingCommittee
     },
     {
-        name:"Singapore",
+        name:{
+            "en": "Singapore, Malaysia, and Indonesia",
+            "ur": "سنگاپور، ملائیشیا اور انڈونیشیا",
+            "kmr": "سنگاپور، ملائیشیا اور انڈونیشیا",
+        },
         description:"Used in Singapore, Malaysia, and Indonesia. Early Fajr time with an angle of 20° and standard Isha time with an angle of 18°.",
         function: CalculationMethod.Singapore
     },
     {
-        name:"Turkey",
+        name:{
+            "en": "Turkey",
+            "ur": "ترکی",
+            "kmr": "ترکی",
+        },
         description:"An approximation of the Diyanet method used in Turkey. This approximation is less accurate outside the region of Turkey.",
         function: CalculationMethod.Turkey
     },
     {
-        name:"University of Tehran",
+        name:{
+            "en": "University of Tehran",
+            "ur": "تہران یونیورسٹی",
+            "kmr": "تہران یونیورسٹی",
+        },
         description:"Institute of Geophysics, University of Tehran. Early Isha time with an angle of 14°. Slightly later Fajr time with an angle of 17.7°. Calculates Maghrib based on the sun reaching an angle of 4.5° below the horizon.",
         function: CalculationMethod.Tehran
     },
     {
-        name:"ISNA",
-        description:"Also known as the ISNA method. Can be used for North America, but the moonsightingCommittee method is preferable. Gives later Fajr times and early Isha times with angles of 15°.",
+        name:{
+            "en": "Islamic Society of North America",
+            "ur": "اسلامک سوسائٹی آف نارتھ امریکہ",
+            "kmr": "اسلامک سوسائٹی آف نارتھ امریکہ",
+        },
+        description:"Can be used for North America, but the moonsightingCommittee method is preferable. Gives later Fajr times and early Isha times with angles of 15°.",
         function: CalculationMethod.NorthAmerica
     },
     

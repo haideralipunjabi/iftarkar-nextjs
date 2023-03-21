@@ -51,7 +51,7 @@ export default function About() {
                 ))}
                 {methods.map((source, idx) => (
                   <li key={idx}>
-                    <b>{source.name}:</b> {source.description}
+                    <b>{source.name[router.locale]}:</b> {source.description}
                   </li>
                 ))}
               </ul>

@@ -82,7 +82,7 @@ export default function Timings() {
           )}
           {settings.usingGeneralTimings && (
             <>
-              {methods[settings.method].name} - {settings.latitude},
+              {methods[settings.method].name[router.locale]} - {settings.latitude},
               {settings.longitude}
             </>
           )}

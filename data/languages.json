@@ -41,7 +41,14 @@
     "downloadpdf": "Download PDF",
     "change": "Change",
     "addToCalendar": "Add to Calendar",
-    "donate": "Donate"
+    "donate": "Donate",
+    "location": "Location",
+    "latitude": "Latitude",
+    "longitude": "Longitude",
+    "offsets": "Offsets",
+    "locate": "Locate",
+    "GeneralSettingsMessage": "Live outside J&K / Ladakh. Use General Timings",
+    "LocationErrorMessage": "Couldn't find location. Enter location manually"
   },
   "ur": {
     "en": "انگریزی",
@@ -85,7 +92,14 @@
     "downloadpdf": "پی ڈی ایف ڈاؤن لوڈ کریں",
     "change": "بدلیں",
     "addToCalendar": "ڈاؤن لوڈ کیلنڈر فائل",
-    "donate": "عطیات"
+    "donate": "عطیات",
+    "location": "مقام",
+    "latitude": "ارض البلد",
+    "longitude": "طول البلد",
+    "offsets": "توازن",
+    "locate": "تلاش",
+    "GeneralSettingsMessage": "جموں و کشمیر / لداخ سے باہر رہتے ہیں۔ عمومی اوقات استعمال کریں۔",
+    "LocationErrorMessage": "خرابی ہو گئی"
   },
   "kmr": {
     "en": "انگریزی",
@@ -129,6 +143,13 @@
     "downloadpdf": "پی ڈی ایف ڈاؤن لوڈ کَرِو",
     "change": "بدلٲؠو",
     "addToCalendar": "ڈاؤن لوڈ کٮ۪لنٛڈَر فاؠل",
-    "donate": "عطیات"
+    "donate": "عطیات",
+    "location": "جاے",
+    "latitude": "اَرضِ بلَد",
+    "longitude": "طولِ بلَد",
+    "offsets": "توازن",
+    "locate": "تلاش",
+    "GeneralSettingsMessage": "عمومی اوقات استعمال کَرِو",
+    "LocationErrorMessage": "خرٲبی گئ"
   }
 }
