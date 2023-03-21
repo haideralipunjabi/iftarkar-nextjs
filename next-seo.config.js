@@ -1,6 +1,6 @@
 let config = {
     title:"Iftarkar",
-    description:"Iftarkar is your companion app for 2022's Ramzan. Daily Countdown Timer, Iftar and Sehri Timings for Jammu, Kashmir, Kargil and Ladakh.",
+    description:"Iftarkar is your companion app for 2023's Ramzan. Daily Countdown Timer, Iftar and Sehri Timings for Jammu, Kashmir, Kargil and Ladakh.",
     url:"https://www.iftarkar.com",
 }
 export default {
