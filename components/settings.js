@@ -141,9 +141,13 @@ export default function Settings() {
                       <p className="control">
                         <input
                           onChange={(e) => {
+                            let val = parseFloat(e.target.value);
+                            if(isNaN(val)) {
+                              val = 0;
+                            }
                             updateSettings(
                               "latitude",
-                              parseFloat(e.target.value)
+                              val
                             );
                           }}
                           type="number"
@@ -159,9 +163,13 @@ export default function Settings() {
                       <p className="control">
                         <input
                           onChange={(e) => {
+                            let val = parseFloat(e.target.value);
+                            if(isNaN(val)) {
+                              val = 0;
+                            }
                             updateSettings(
                               "longitude",
-                              parseFloat(e.target.value)
+                              val
                             );
                           }}
                           type="number"
