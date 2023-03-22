@@ -16,20 +16,8 @@ export default function DonationModal(props) {
       url: "http://hpvtrust.org/donate/",
     },
     {
-      name: "Coronavirus Watch - J&K",
-      url: "https://www.covidjk.com/donate",
-    },
-    {
-      name: "MadadgaarJK",
-      url: "https://twitter.com/MadadgaarJK",
-    },
-    {
       name: "Sahuliyat Kashmir",
       url: "https://linktr.ee/sahuliyatkashmir",
-    },
-    {
-      name: "KASHMER",
-      url: "https://www.kashmer.org/donate-now/",
     },
     {
       name: "Help Together Foundation",
@@ -40,9 +28,9 @@ export default function DonationModal(props) {
       url: "http://imdaadfoundation.org/",
     },
     {
-      name: "Madad Charitable Trust",
-      url: "https://twitter.com/madad_trust/status/1390325881382445059?s=20",
-    },
+      "name": "Hyemath Kashmir",
+      "url": "https://twitter.com/Azzharmalik/status/1638464861188378625?s=20"
+  }
   ];
   return (
     <div className={`modal ${isActive ? "is-active" : ""}`}>

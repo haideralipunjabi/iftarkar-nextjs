@@ -125,14 +125,14 @@ export default function Navbar() {
               />{" "}
               {Language.download}
             </a>
-            {/*<a className="navbar-item is-size-5" onClick={
+            <a className="navbar-item is-size-5" onClick={
               ()=>{
                 setIsDonationShown(true)
               }
             }>
-                <FontAwesomeIcon className="is-size-7 mx-2" icon={"fas","hands-helping"}/> {Language.donate}
+                <FontAwesomeIcon className="is-size-7 mx-2" icon={["fas","hands-helping"]}/> {Language.donate}
 
-            </a> */}
+            </a>
           </div>
         </div>
       </nav>
