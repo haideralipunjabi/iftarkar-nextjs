@@ -23,8 +23,8 @@ export function SettingsWrapper({ children }) {
       method: parseInt(localStorage.getItem("settings-method") ?? 0),
       latitude: isNaN(parseFloat(localStorage.getItem("settings-latitude") ?? 0.0)) ? 0.0: parseFloat(localStorage.getItem("settings-latitude") ?? 0.0),
       longitude: isNaN(parseFloat(localStorage.getItem("settings-longitude") ?? 0.0)) ? 0.0 : parseFloat(localStorage.getItem("settings-longitude") ?? 0.0),
-      sehriOffset: parseInt(localStorage.getItem("settings-sehriOffset") ?? 0),
-      iftarOffset: parseInt(localStorage.getItem("settings-iftarOffset") ?? 0),
+      sehriOffset: isNaN(parseInt(localStorage.getItem("settings-sehriOffset") ?? 0)) ? 0 : parseInt(localStorage.getItem("settings-sehriOffset") ?? 0),
+      iftarOffset: isNaN(parseInt(localStorage.getItem("settings-iftarOffset") ?? 0))?0:parseInt(localStorage.getItem("settings-iftarOffset") ?? 0),
       hijriDate: parseInt(localStorage.getItem("settings-hijriDate") ?? 0),
       generalStartDate: DateTime.fromISO(
         localStorage.getItem("settings-generalStartDate") ?? "2023-03-23"

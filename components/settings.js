@@ -141,9 +141,10 @@ export default function Settings() {
                       <p className="control">
                         <input
                           onChange={(e) => {
+
                             let val = parseFloat(e.target.value);
                             if(isNaN(val)) {
-                              val = 0;
+                              val = 0.0;
                             }
                             updateSettings(
                               "latitude",
@@ -165,7 +166,7 @@ export default function Settings() {
                           onChange={(e) => {
                             let val = parseFloat(e.target.value);
                             if(isNaN(val)) {
-                              val = 0;
+                              val = 0.0;
                             }
                             updateSettings(
                               "longitude",
@@ -197,9 +198,13 @@ export default function Settings() {
                       <p className="control">
                         <input
                           onChange={(e) => {
+                            let val = parseInt(e.target.value);
+                            if(isNaN(val)) {
+                              val = 0;
+                            }
                             updateSettings(
                               "sehriOffset",
-                              parseInt(e.target.value)
+                              val
                             );
                           }}
                           type="number"
@@ -215,9 +220,13 @@ export default function Settings() {
                       <p className="control">
                         <input
                           onChange={(e) => {
+                            let val = parseInt(e.target.value);
+                            if(isNaN(val)) {
+                              val = 0;
+                            }
                             updateSettings(
                               "iftarOffset",
-                              parseInt(e.target.value)
+                              val
                             );
                           }}
                           type="number"
