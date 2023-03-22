@@ -154,7 +154,7 @@ export default function Settings() {
                           type="number"
                           className="input my-2 has-text-black"
                           placeholder="Latitude"
-                          value={settings.latitude}
+                          value={settings.latitude > 0 ? settings.latitude : "" }
                         />
                       </p>
                     </div>
@@ -176,7 +176,7 @@ export default function Settings() {
                           type="number"
                           className="input my-2 has-text-black"
                           placeholder="Longitude"
-                          value={settings.longitude}
+                          value={settings.longitude > 0 ? settings.longitude : ""}
                         />
                       </p>
                     </div>
