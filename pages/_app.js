@@ -12,6 +12,7 @@ import { SettingsWrapper } from "../context/settings";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import Settings from "../components/settings";
+import Script from "next/script";
 
 function MyApp({ Component, pageProps }) {
   library.add(fab, fas, far);
@@ -71,7 +72,19 @@ function MyApp({ Component, pageProps }) {
           style={{ minHeight: "100%" }}
         >
           <Navbar />
+          <Script
+            src="https://www.googletagmanager.com/gtag/js?id=UA-83905982-7"
+            strategy="afterInteractive"
+          />
+          <Script id="google-analytics" strategy="afterInteractive">
+            {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
 
+          gtag('config', 'UA-83905982-7');
+        `}
+          </Script>
           <Component {...pageProps} />
           <Settings />
           <Footer />
