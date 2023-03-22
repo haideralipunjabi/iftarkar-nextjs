@@ -6,21 +6,19 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <script
+          <Script
             src="https://www.googletagmanager.com/gtag/js?id=UA-83905982-7"
             strategy="afterInteractive"
           />
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-    
-                gtag('config', 'UA-83905982-7');
-                `,
-            }}
-          ></script>
+          <Script id="google-analytics" strategy="afterInteractive">
+            {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-83905982-7');
+        `}
+          </Script>
         </Head>
         <body>
           <Main />

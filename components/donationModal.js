@@ -28,9 +28,9 @@ export default function DonationModal(props) {
       url: "http://imdaadfoundation.org/",
     },
     {
-      "name": "Hyemath Kashmir",
-      "url": "https://twitter.com/Azzharmalik/status/1638464861188378625?s=20"
-  }
+      name: "Hyemath Kashmir",
+      url: "https://twitter.com/Azzharmalik/status/1638464861188378625?s=20",
+    },
   ];
   return (
     <div className={`modal ${isActive ? "is-active" : ""}`}>
