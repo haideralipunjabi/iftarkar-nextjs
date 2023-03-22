@@ -28,7 +28,7 @@ export default function Wait() {
           <span className={styles.title}>
             {daysLeft.diffNow(["days"]).toFormat("dd")} days left <br />
           </span>
-          <span className={styles.subtitle}>for Ramzan 1443</span>
+          <span className={styles.subtitle}>for Ramzan 1444</span>
         </p>
         <hr />
         <span className={styles.subtitle}>In Ramzan 1442</span>
