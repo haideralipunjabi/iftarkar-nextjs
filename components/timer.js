@@ -160,7 +160,7 @@ export default function Timer() {
         settings.method,
         settings.sehriOffset,
         settings.iftarOffset,
-      settings.generalStartDate
+        settings.generalStartDate
       );
     } else {
       times = getTimes();
@@ -264,7 +264,8 @@ export default function Timer() {
             {settings.usingGeneralTimings && (
               <>
                 {methods[settings.method].name[router.locale]} -{" "}
-                {settings.latitude.toFixed(2)},{settings.longitude.toFixed(2)}
+                {parseFloat(settings.latitude).toFixed(2)},
+                {parseFloat(settings.longitude).toFixed(2)}
               </>
             )}
             <a

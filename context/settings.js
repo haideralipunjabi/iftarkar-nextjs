@@ -26,7 +26,9 @@ export function SettingsWrapper({ children }) {
       sehriOffset: parseInt(localStorage.getItem("settings-sehriOffset") ?? 0),
       iftarOffset: parseInt(localStorage.getItem("settings-iftarOffset") ?? 0),
       hijriDate: parseInt(localStorage.getItem("settings-hijriDate") ?? 0),
-      generalStartDate: DateTime.fromISO(localStorage.getItem("settings-generalStartDate") ?? "2023-03-23")
+      generalStartDate: DateTime.fromISO(
+        localStorage.getItem("settings-generalStartDate") ?? "2023-03-23"
+      ),
     });
   }, []);
   useEffect(() => {
@@ -45,7 +47,6 @@ export function SettingsWrapper({ children }) {
     }
   }, [settings]);
   const updateSettings = (key, value) => {
-    console.log(key, value);
     localStorage.setItem("settings-" + key, value);
     setSettings((settings) => ({
       ...settings,

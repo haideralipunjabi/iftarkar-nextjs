@@ -24,8 +24,8 @@ export default function Settings() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
         if (position) {
-          updateSettings("latitude", position.coords.latitude);
-          updateSettings("longitude", position.coords.longitude);
+          updateSettings("latitude", parseFloat(position.coords.latitude));
+          updateSettings("longitude", parseFloat(position.coords.longitude));
           return;
         } else {
           setLocationError(true);
@@ -141,7 +141,10 @@ export default function Settings() {
                       <p className="control">
                         <input
                           onChange={(e) => {
-                            updateSettings("latitude", e.target.value);
+                            updateSettings(
+                              "latitude",
+                              parseFloat(e.target.value)
+                            );
                           }}
                           type="number"
                           className="input my-2 has-text-black"
@@ -156,7 +159,10 @@ export default function Settings() {
                       <p className="control">
                         <input
                           onChange={(e) => {
-                            updateSettings("longitude", e.target.value);
+                            updateSettings(
+                              "longitude",
+                              parseFloat(e.target.value)
+                            );
                           }}
                           type="number"
                           className="input my-2 has-text-black"
@@ -183,7 +189,10 @@ export default function Settings() {
                       <p className="control">
                         <input
                           onChange={(e) => {
-                            updateSettings("sehriOffset", e.target.value);
+                            updateSettings(
+                              "sehriOffset",
+                              parseInt(e.target.value)
+                            );
                           }}
                           type="number"
                           className="input my-2 has-text-black"
@@ -198,7 +207,10 @@ export default function Settings() {
                       <p className="control">
                         <input
                           onChange={(e) => {
-                            updateSettings("iftarOffset", e.target.value);
+                            updateSettings(
+                              "iftarOffset",
+                              parseInt(e.target.value)
+                            );
                           }}
                           type="number"
                           className="input my-2 has-text-black"
@@ -219,7 +231,10 @@ export default function Settings() {
                         id="generalStartDate"
                         name="generalStartDate"
                         onChange={(e) => {
-                          updateSettings("generalStartDate", DateTime.fromISO(e.target.value));
+                          updateSettings(
+                            "generalStartDate",
+                            DateTime.fromISO(e.target.value)
+                          );
                         }}
                         value={settings.generalStartDate.toISODate()}
                         type="date"
