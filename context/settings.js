@@ -21,8 +21,8 @@ export function SettingsWrapper({ children }) {
       usingGeneralTimings:
         localStorage.getItem("settings-usingGeneralTimings") === "true",
       method: parseInt(localStorage.getItem("settings-method") ?? 0),
-      latitude: parseFloat(localStorage.getItem("settings-latitude") ?? 0.0),
-      longitude: parseFloat(localStorage.getItem("settings-longitude") ?? 0.0),
+      latitude: isNaN(parseFloat(localStorage.getItem("settings-latitude") ?? 0.0)) ? 0.0: parseFloat(localStorage.getItem("settings-latitude") ?? 0.0),
+      longitude: isNaN(parseFloat(localStorage.getItem("settings-longitude") ?? 0.0)) ? 0.0 : parseFloat(localStorage.getItem("settings-longitude") ?? 0.0),
       sehriOffset: parseInt(localStorage.getItem("settings-sehriOffset") ?? 0),
       iftarOffset: parseInt(localStorage.getItem("settings-iftarOffset") ?? 0),
       hijriDate: parseInt(localStorage.getItem("settings-hijriDate") ?? 0),
