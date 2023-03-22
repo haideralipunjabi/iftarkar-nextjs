@@ -133,7 +133,8 @@ export default function Timings() {
                   settings.longitude,
                   settings.method,
                   settings.sehriOffset,
-                  settings.iftarOffset
+                  settings.iftarOffset,
+                  settings.generalStartDate
                 ).map((timing, idx) => {
                   return (
                     <tr key={idx}>

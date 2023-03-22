@@ -123,7 +123,8 @@ export default function Timer() {
       settings.longitude,
       settings.method,
       settings.sehriOffset,
-      settings.iftarOffset
+      settings.iftarOffset,
+      settings.generalStartDate
     );
   } else {
     times = getTimes();
@@ -158,7 +159,8 @@ export default function Timer() {
         settings.longitude,
         settings.method,
         settings.sehriOffset,
-        settings.iftarOffset
+        settings.iftarOffset,
+      settings.generalStartDate
       );
     } else {
       times = getTimes();

@@ -5,6 +5,7 @@ import classNames from "classnames";
 import { useSettingsContext } from "../context/settings";
 import { useEffect, useState } from "react";
 import { methods } from "../utils/adhanWrapper";
+import { DateTime } from "luxon";
 export default function Settings() {
   const { settingsOpened, setSettingsOpened, settings, updateSettings } =
     useSettingsContext();
@@ -205,6 +206,24 @@ export default function Settings() {
                           value={settings.iftarOffset}
                         />
                       </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="field">
+                  <label htmlFor="" className="label">
+                    {Language.firstDate}
+                  </label>
+                  <div className="control">
+                    <div className="select">
+                      <input
+                        id="generalStartDate"
+                        name="generalStartDate"
+                        onChange={(e) => {
+                          updateSettings("generalStartDate", DateTime.fromISO(e.target.value));
+                        }}
+                        value={settings.generalStartDate.toISODate()}
+                        type="date"
+                      />
                     </div>
                   </div>
                 </div>

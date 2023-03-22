@@ -112,12 +112,12 @@ export const methods = [
     },
     
 ]
-const firstDay = DateTime.fromISO("2023-03-24")
-const lastDay = DateTime.fromISO("2023-04-22")
+// const firstDay = DateTime.fromISO("2023-03-24")
+// const lastDay = DateTime.fromISO("2023-04-22")
 
-export function getGeneralTimings(coordLat, coordLong, method,sehriOffset=0,iftarOffset=0) {
+export function getGeneralTimings(coordLat, coordLong, method,sehriOffset=0,iftarOffset=0,firstDay=DateTime.fromISO("2023-03-23")) {
     const firstSehri = getSehriIftar(coordLat, coordLong, method,firstDay, sehriOffset, iftarOffset).sehri;
-    const lastIftar = getSehriIftar(coordLat, coordLong, method,lastDay,sehriOffset, iftarOffset).iftar;
+    const lastIftar = getSehriIftar(coordLat, coordLong, method,firstDay.plus({days:30}),sehriOffset, iftarOffset).iftar;
     const now = DateTime.now()
     if(now < firstSehri) {
         return {
@@ -177,10 +177,10 @@ function getSehriIftar(coordLat, coordLong, method,date, sehriOffset=0,iftarOffs
       };
 }
 
-export function getTimingsTable(coordLat,coordLong,method,sehriOffset=0,iftarOffset=0) {
+export function getTimingsTable(coordLat,coordLong,method,sehriOffset=0,iftarOffset=0,firstDay=DateTime.fromISO("2023-03-23")) {
     let iterator = firstDay;
     const table = [];
-    while(iterator <= lastDay) {
+    while(iterator <= firstDay.plus({days:30})) {
         const {sehri, iftar} =getSehriIftar(coordLat, coordLong,method, iterator,sehriOffset, iftarOffset);
         table.push({
             "dates": {

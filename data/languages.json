@@ -49,7 +49,8 @@
     "locate": "Locate",
     "GeneralSettingsMessage": "Live outside J&K / Ladakh. Use General Timings",
     "LocationErrorMessage": "Couldn't find location. Enter location manually",
-    "dailyDua": "Daily Dua"
+    "dailyDua": "Daily Dua",
+    "firstDate": "First Date"
   },
   "ur": {
     "en": "انگریزی",
@@ -101,7 +102,8 @@
     "locate": "تلاش",
     "GeneralSettingsMessage": "جموں و کشمیر / لداخ سے باہر رہتے ہیں۔ عمومی اوقات استعمال کریں۔",
     "LocationErrorMessage": "خرابی ہو گئی",
-    "dailyDua": "آج کی دعا"
+    "dailyDua": "آج کی دعا",
+    "firstDate": "پہلی تاریخ"
   },
   "kmr": {
     "en": "انگریزی",
@@ -153,6 +155,7 @@
     "locate": "تلاش",
     "GeneralSettingsMessage": "عمومی اوقات استعمال کَرِو",
     "LocationErrorMessage": "خرٲبی گئ",
-    "dailyDua": "دُعا"
+    "dailyDua": "دُعا",
+    "firstDate":"گۄڈنِیُک تٲریٖخ"
   }
 }

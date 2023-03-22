@@ -1,3 +1,4 @@
+import { DateTime } from "luxon";
 import { useContext, createContext, useState, useEffect } from "react";
 
 const SettingsContext = createContext({});
@@ -25,6 +26,7 @@ export function SettingsWrapper({ children }) {
       sehriOffset: parseInt(localStorage.getItem("settings-sehriOffset") ?? 0),
       iftarOffset: parseInt(localStorage.getItem("settings-iftarOffset") ?? 0),
       hijriDate: parseInt(localStorage.getItem("settings-hijriDate") ?? 0),
+      generalStartDate: DateTime.fromISO(localStorage.getItem("settings-generalStartDate") ?? "2023-03-23")
     });
   }, []);
   useEffect(() => {
