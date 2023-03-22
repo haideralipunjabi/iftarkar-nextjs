@@ -6,7 +6,7 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <Script
+          <script
             src="https://www.googletagmanager.com/gtag/js?id=UA-83905982-7"
             strategy="afterInteractive"
           />
