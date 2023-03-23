@@ -136,8 +136,7 @@ export function getGeneralTimings(coordLat, coordLong, method,sehriOffset=0,ifta
           };
     }
     const {sehri, iftar} = getSehriIftar(coordLat, coordLong, method,now,sehriOffset, iftarOffset);
-
-    if(sehri < now < iftar) {
+    if(sehri < now && now < iftar) {
         return {
             timeStart: sehri,
             timeEnd: iftar,
@@ -147,7 +146,7 @@ export function getGeneralTimings(coordLat, coordLong, method,sehriOffset=0,ifta
     }
     else if(now > iftar){
         const nextDay = now.plus({days:1});
-        const {nextSehri = sehri} = getSehriIftar(coordLat, coordLong, method, nextDay,sehriOffset, iftarOffset);
+        const {sehri: nextSehri} = getSehriIftar(coordLat, coordLong, method, nextDay,sehriOffset, iftarOffset);
         return {
             timeStart: iftar,
             timeEnd: nextSehri,
@@ -157,7 +156,7 @@ export function getGeneralTimings(coordLat, coordLong, method,sehriOffset=0,ifta
     }
     else if(now < sehri){
         const prevDay = now.minus({days:1})
-        const {prevIftar = iftar} = getSehriIftar(coordLat, coordLong, method, prevDay,sehriOffset, iftarOffset);
+        const {iftar: prevIftar} = getSehriIftar(coordLat, coordLong, method, prevDay,sehriOffset, iftarOffset);
         return {
             timeStart: prevIftar,
             timeEnd: sehri,
@@ -167,7 +166,7 @@ export function getGeneralTimings(coordLat, coordLong, method,sehriOffset=0,ifta
     }
 }
 
-function getSehriIftar(coordLat, coordLong, method,date, sehriOffset=0,iftarOffset=0) {
+export function getSehriIftar(coordLat, coordLong, method,date, sehriOffset=0,iftarOffset=0) {
     const coords = new Coordinates(coordLat, coordLong);
     const prayerTimes = new PrayerTimes(coords, date.toJSDate(), methods[method].function())
     // const intl = new Intl.DateTimeFormat("en-IN");
