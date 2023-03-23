@@ -3,7 +3,7 @@ export default function Footer() {
     <footer className="footer has-text-primary-light">
       <div className="has-text-centered">
         <a
-          href="https://museumofkashmir.com"
+          href="https://twitter.com/museumofkashmir"
           target="_blank"
           rel="noopener noreferrer"
         >
