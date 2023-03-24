@@ -210,7 +210,7 @@ export default function Settings() {
                           type="number"
                           className="input my-2 has-text-black"
                           placeholder="Sehri Offset"
-                          value={settings.sehriOffset}
+                          value={settings.sehriOffset !== 0 ? settings.sehriOffset : ""}
                         />
                       </p>
                     </div>
@@ -232,7 +232,7 @@ export default function Settings() {
                           type="number"
                           className="input my-2 has-text-black"
                           placeholder="Iftar Offset"
-                          value={settings.iftarOffset}
+                          value={settings.iftarOffset !== 0 ? settings.iftarOffset : ""}
                         />
                       </p>
                     </div>
