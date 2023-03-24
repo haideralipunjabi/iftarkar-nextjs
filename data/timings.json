@@ -3283,5 +3283,445 @@
         }
       }
     ]
+  },
+  {
+    "name": {
+      "en": "Rajouri",
+      "ur": "راجوری",
+      "kmr": "راجوری"
+    },
+    "full_name": {
+      "en": "Rajouri",
+      "ur": "راجوری",
+      "kmr": "راجوری"
+    },
+    "source": {
+      "en": "",
+      "ur": "",
+      "kmr": ""
+    },
+    "offsets": [],
+    "timings": [
+      {
+        "timestamps": {
+          "iftar": 1679577660.0,
+          "sehri": 1679528400.0
+        },
+        "times": {
+          "iftar": "18:51",
+          "sehri": "05:10"
+        },
+        "dates": {
+          "hijri": 1,
+          "gregorian": "23/03"
+        }
+      },
+      {
+        "timestamps": {
+          "iftar": 1679664120.0,
+          "sehri": 1679614740.0
+        },
+        "times": {
+          "iftar": "18:52",
+          "sehri": "05:09"
+        },
+        "dates": {
+          "hijri": 2,
+          "gregorian": "24/03"
+        }
+      },
+      {
+        "timestamps": {
+          "iftar": 1679750580.0,
+          "sehri": 1679701080.0
+        },
+        "times": {
+          "iftar": "18:53",
+          "sehri": "05:08"
+        },
+        "dates": {
+          "hijri": 3,
+          "gregorian": "25/03"
+        }
+      },
+      {
+        "timestamps": {
+          "iftar": 1679837040.0,
+          "sehri": 1679787360.0
+        },
+        "times": {
+          "iftar": "18:54",
+          "sehri": "05:06"
+        },
+        "dates": {
+          "hijri": 4,
+          "gregorian": "26/03"
+        }
+      },
+      {
+        "timestamps": {
+          "iftar": 1679923500.0,
+          "sehri": 1679873700.0
+        },
+        "times": {
+          "iftar": "18:55",
+          "sehri": "05:05"
+        },
+        "dates": {
+          "hijri": 5,
+          "gregorian": "27/03"
+        }
+      },
+      {
+        "timestamps": {
+          "iftar": 1680009960.0,
+          "sehri": 1679959920.0
+        },
+        "times": {
+          "iftar": "18:56",
+          "sehri": "05:02"
+        },
+        "dates": {
+          "hijri": 6,
+          "gregorian": "28/03"
+        }
+      },
+      {
+        "timestamps": {
+          "iftar": 1680096420.0,
+          "sehri": 1680046260.0
+        },
+        "times": {
+          "iftar": "18:57",
+          "sehri": "05:01"
+        },
+        "dates": {
+          "hijri": 7,
+          "gregorian": "29/03"
+        }
+      },
+      {
+        "timestamps": {
+          "iftar": 1680182880.0,
+          "sehri": 1680132540.0
+        },
+        "times": {
+          "iftar": "18:58",
+          "sehri": "04:59"
+        },
+        "dates": {
+          "hijri": 8,
+          "gregorian": "30/03"
+        }
+      },
+      {
+        "timestamps": {
+          "iftar": 1680269340.0,
+          "sehri": 1680218820.0
+        },
+        "times": {
+          "iftar": "18:59",
+          "sehri": "04:57"
+        },
+        "dates": {
+          "hijri": 9,
+          "gregorian": "31/03"
+        }
+      },
+      {
+        "timestamps": {
+          "iftar": 1680355740.0,
+          "sehri": 1680305160.0
+        },
+        "times": {
+          "iftar": "18:59",
+          "sehri": "04:56"
+        },
+        "dates": {
+          "hijri": 10,
+          "gregorian": "01/04"
+        }
+      },
+      {
+        "timestamps": {
+          "iftar": 1680442200.0,
+          "sehri": 1680391500.0
+        },
+        "times": {
+          "iftar": "19:00",
+          "sehri": "04:55"
+        },
+        "dates": {
+          "hijri": 11,
+          "gregorian": "02/04"
+        }
+      },
+      {
+        "timestamps": {
+          "iftar": 1680528600.0,
+          "sehri": 1680477840.0
+        },
+        "times": {
+          "iftar": "19:00",
+          "sehri": "04:54"
+        },
+        "dates": {
+          "hijri": 12,
+          "gregorian": "03/04"
+        }
+      },
+      {
+        "timestamps": {
+          "iftar": 1680615060.0,
+          "sehri": 1680564180.0
+        },
+        "times": {
+          "iftar": "19:01",
+          "sehri": "04:53"
+        },
+        "dates": {
+          "hijri": 13,
+          "gregorian": "04/04"
+        }
+      },
+      {
+        "timestamps": {
+          "iftar": 1680701520.0,
+          "sehri": 1680650520.0
+        },
+        "times": {
+          "iftar": "19:02",
+          "sehri": "04:52"
+        },
+        "dates": {
+          "hijri": 14,
+          "gregorian": "05/04"
+        }
+      },
+      {
+        "timestamps": {
+          "iftar": 1680787980.0,
+          "sehri": 1680736800.0
+        },
+        "times": {
+          "iftar": "19:03",
+          "sehri": "04:50"
+        },
+        "dates": {
+          "hijri": 15,
+          "gregorian": "06/04"
+        }
+      },
+      {
+        "timestamps": {
+          "iftar": 1680874440.0,
+          "sehri": 1680823140.0
+        },
+        "times": {
+          "iftar": "19:04",
+          "sehri": "04:49"
+        },
+        "dates": {
+          "hijri": 16,
+          "gregorian": "07/04"
+        }
+      },
+      {
+        "timestamps": {
+          "iftar": 1680960840.0,
+          "sehri": 1680909480.0
+        },
+        "times": {
+          "iftar": "19:04",
+          "sehri": "04:48"
+        },
+        "dates": {
+          "hijri": 17,
+          "gregorian": "08/04"
+        }
+      },
+      {
+        "timestamps": {
+          "iftar": 1681047300.0,
+          "sehri": 1680995820.0
+        },
+        "times": {
+          "iftar": "19:05",
+          "sehri": "04:47"
+        },
+        "dates": {
+          "hijri": 18,
+          "gregorian": "09/04"
+        }
+      },
+      {
+        "timestamps": {
+          "iftar": 1681133760.0,
+          "sehri": 1681082100.0
+        },
+        "times": {
+          "iftar": "19:06",
+          "sehri": "04:45"
+        },
+        "dates": {
+          "hijri": 19,
+          "gregorian": "10/04"
+        }
+      },
+      {
+        "timestamps": {
+          "iftar": 1681220220.0,
+          "sehri": 1681168380.0
+        },
+        "times": {
+          "iftar": "19:07",
+          "sehri": "04:43"
+        },
+        "dates": {
+          "hijri": 20,
+          "gregorian": "11/04"
+        }
+      },
+      {
+        "timestamps": {
+          "iftar": 1681306620.0,
+          "sehri": 1681254720.0
+        },
+        "times": {
+          "iftar": "19:07",
+          "sehri": "04:42"
+        },
+        "dates": {
+          "hijri": 21,
+          "gregorian": "12/04"
+        }
+      },
+      {
+        "timestamps": {
+          "iftar": 1681393080.0,
+          "sehri": 1681341000.0
+        },
+        "times": {
+          "iftar": "19:08",
+          "sehri": "04:40"
+        },
+        "dates": {
+          "hijri": 22,
+          "gregorian": "13/04"
+        }
+      },
+      {
+        "timestamps": {
+          "iftar": 1681479480.0,
+          "sehri": 1681427280.0
+        },
+        "times": {
+          "iftar": "19:08",
+          "sehri": "04:38"
+        },
+        "dates": {
+          "hijri": 23,
+          "gregorian": "14/04"
+        }
+      },
+      {
+        "timestamps": {
+          "iftar": 1681565940.0,
+          "sehri": 1681513620.0
+        },
+        "times": {
+          "iftar": "19:09",
+          "sehri": "04:37"
+        },
+        "dates": {
+          "hijri": 24,
+          "gregorian": "15/04"
+        }
+      },
+      {
+        "timestamps": {
+          "iftar": 1681652400.0,
+          "sehri": 1681599900.0
+        },
+        "times": {
+          "iftar": "19:10",
+          "sehri": "04:35"
+        },
+        "dates": {
+          "hijri": 25,
+          "gregorian": "16/04"
+        }
+      },
+      {
+        "timestamps": {
+          "iftar": 1681738800.0,
+          "sehri": 1681686240.0
+        },
+        "times": {
+          "iftar": "19:10",
+          "sehri": "04:34"
+        },
+        "dates": {
+          "hijri": 26,
+          "gregorian": "17/04"
+        }
+      },
+      {
+        "timestamps": {
+          "iftar": 1681825260.0,
+          "sehri": 1681772580.0
+        },
+        "times": {
+          "iftar": "19:11",
+          "sehri": "04:33"
+        },
+        "dates": {
+          "hijri": 27,
+          "gregorian": "18/04"
+        }
+      },
+      {
+        "timestamps": {
+          "iftar": 1681911720.0,
+          "sehri": 1681858920.0
+        },
+        "times": {
+          "iftar": "19:12",
+          "sehri": "04:32"
+        },
+        "dates": {
+          "hijri": 28,
+          "gregorian": "19/04"
+        }
+      },
+      {
+        "timestamps": {
+          "iftar": 1681998180.0,
+          "sehri": 1681945260.0
+        },
+        "times": {
+          "iftar": "19:13",
+          "sehri": "04:31"
+        },
+        "dates": {
+          "hijri": 29,
+          "gregorian": "20/04"
+        }
+      },
+      {
+        "timestamps": {
+          "iftar": 1682084580.0,
+          "sehri": 1682031540.0
+        },
+        "times": {
+          "iftar": "19:13",
+          "sehri": "04:29"
+        },
+        "dates": {
+          "hijri": 30,
+          "gregorian": "21/04"
+        }
+      }
+    ]
   }
 ]
