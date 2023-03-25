@@ -166,7 +166,9 @@ export default function Timer() {
       times = getTimes();
     }
     setTimeStart(times.timeStart);
-    setTimeEnd(times.timeEnd);
+    if(times.timeEnd){
+      setTimeEnd(times.timeEnd);
+    }
     setTimeType(times.timeType);
     setHijri(times.hijri);
     updateSettings("hijriDate", times.hijri);
