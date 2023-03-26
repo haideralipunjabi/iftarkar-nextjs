@@ -13,6 +13,7 @@ import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import Settings from "../components/settings";
 import Script from "next/script";
+import ErrorBoundary from "../components/errorBoundary";
 
 function MyApp({ Component, pageProps }) {
   library.add(fab, fas, far);
@@ -85,7 +86,9 @@ function MyApp({ Component, pageProps }) {
           gtag('config', 'UA-83905982-7');
         `}
           </Script>
+          <ErrorBoundary>
           <Component {...pageProps} />
+          </ErrorBoundary>
           <Settings />
           <Footer />
         </div>
