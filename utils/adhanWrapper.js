@@ -1,6 +1,10 @@
-import { Coordinates, CalculationMethod, PrayerTimes } from 'adhan';
+import { Coordinates, CalculationMethod, PrayerTimes, CalculationParameters } from 'adhan';
 import { DateTime } from "luxon";
 
+CalculationMethod["Shia"] = () => {
+    const params = new CalculationParameters('Tehran', 16,14,undefined,4);
+    return params;
+}
 export const methods = [
     {
         name: {
@@ -110,6 +114,15 @@ export const methods = [
         description:"Can be used for North America, but the moonsightingCommittee method is preferable. Gives later Fajr times and early Isha times with angles of 15°.",
         function: CalculationMethod.NorthAmerica
     },
+    {
+        name : {
+            "en": "Shia Ithna Ashari, Leva Research Institute, Qum",
+            "ur": "شیعہ اتھنا اشعری، لیوا ریسرچ انسٹی ٹیوٹ، قم",
+            "kmr": "شیعہ اتھنا اشعری، لیوا ریسرچ انسٹی ٹیوٹ، قم",
+        },
+        description: "Timings from Leva Research Institute, Qum",
+        function: CalculationMethod.Shia
+    }
     
 ]
 // const firstDay = DateTime.fromISO("2023-03-24")
