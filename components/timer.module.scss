@@ -3,6 +3,7 @@
 .timerTitle {
   direction: ltr !important;
 }
+
 .timerSubtitle {
   font-size: var(--title-font);
   font-weight: normal;
@@ -10,6 +11,9 @@
   justify-content: center;
   align-items: stretch;
   margin-bottom: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
+
   div {
     display: block;
     width: 1px;
@@ -20,11 +24,14 @@
 
 .timerDetails {
   font-size: calc(var(--title-font));
+
   svg {
     width: calc(var(--title-font)) !important;
   }
+
   z-index: 2;
 }
+
 .progressValue {
   position: absolute;
   top: 50%;
@@ -35,10 +42,12 @@
   font-weight: bold;
   color: white;
 }
+
 .progress {
   height: var(--progress-height);
   direction: ltr !important;
 }
+
 .progressContainer {
   margin: var(--progress-margin);
 }
@@ -49,6 +58,7 @@
   line-height: 1;
   margin-bottom: 20px;
 }
+
 .timeTitle {
   width: var(--clock-font);
   font-family: var(--clock-font-family);
@@ -61,6 +71,7 @@
   margin-bottom: 20px;
   font-size: var(--clock-font);
 }
+
 .timeSubtitle {
   font-size: var(--size-4);
   position: relative;
