@@ -7,7 +7,7 @@ class ErrorBoundary extends React.Component {
       // Define a state variable to track whether is an error or not
       this.state = { hasError: false }
     }
-    static getDerivedStateFromError(error) {
+    static getDerivedStateFromError() {
       // Update state so the next render will show the fallback UI
   
       return { hasError: true }
@@ -23,7 +23,7 @@ class ErrorBoundary extends React.Component {
         return (
           <div className="is-flex is-flex-direction-column is-justify-content-center container has-text-centered">
             <h2 className="is-size-1">Oops, there is an error!</h2>
-            <p className="is-size-5 mb-3">Try "Refresh". If that doesn't work, Reset your Settings.</p>
+            <p className="is-size-5 mb-3">Try Refresh. If that doesn&apos;t work, Reset your Settings.</p>
             <div>
             <button
               className="button is-primary mx-3"
