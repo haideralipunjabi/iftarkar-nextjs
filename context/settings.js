@@ -47,7 +47,7 @@ export function SettingsWrapper({ children }) {
     }
   }, [settings]);
   const updateSettings = (key, value) => {
-    gtag('event','settings',{
+    window.gtag('event','settings',{
       'key': key,
       'value': value
     });
