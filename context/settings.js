@@ -47,10 +47,10 @@ export function SettingsWrapper({ children }) {
     }
   }, [settings]);
   const updateSettings = (key, value) => {
-    window.gtag('event','settings',{
-      'key': key,
-      'value': value
-    });
+    // window.gtag('event','settings',{
+    //   'key': key,
+    //   'value': value
+    // });
     localStorage.setItem("settings-" + key, value);
     setSettings((settings) => ({
       ...settings,
