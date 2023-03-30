@@ -19,6 +19,8 @@ module.exports = withPlugins([
           /_middleware\.js\.map$/,
           /middleware-runtime\.js$/,
           /middleware-runtime\.js\.map$/,
+          /middleware-build-manifest\.js$/,
+          /middleware-*\.js$/
         ],
       },
     },
