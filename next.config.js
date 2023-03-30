@@ -10,9 +10,16 @@ module.exports = withPlugins([
     withPWA,
     {
       pwa: {
-        disable: process.env.NODE_ENV === 'development',
+        // disable: process.env.NODE_ENV === 'development',
         dest: "public",
-        runtimeCaching: cache
+        runtimeCaching: cache,
+        buildExcludes: [
+          /middleware-manifest\.json$/,
+          /_middleware\.js$/,
+          /_middleware\.js\.map$/,
+          /middleware-runtime\.js$/,
+          /middleware-runtime\.js\.map$/,
+        ],
       },
     },
   ],
