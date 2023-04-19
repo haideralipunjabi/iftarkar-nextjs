@@ -1521,6 +1521,20 @@
           "hijri": 29,
           "gregorian": "20/04"
         }
+      },
+      {
+        "timestamps": {
+          "iftar": 1682084220.0,
+          "sehri": 1682031300.0
+        },
+        "times": {
+          "iftar": "19:07",
+          "sehri": "04:25"
+        },
+        "dates": {
+          "hijri": 30,
+          "gregorian": "21/04"
+        }
       }
     ]
   },
