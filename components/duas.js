@@ -2,16 +2,16 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import classNames from "classnames";
 import styles from "./duas.module.scss";
-import dailyDuas from "../data/duas.json";
-import { useSettingsContext } from "../context/settings";
-import Languages from "../data/languages.json";
+// import dailyDuas from "../data/duas.json";
+// import { useSettingsContext } from "../context/settings";
+// import Languages from "../data/languages.json";
 
 export default function Duas() {
   const [duaIdx, setDuaIdx] = useState();
-  const { settings } = useSettingsContext();
+  // const { settings } = useSettingsContext();
 
   const router = useRouter();
-  const Language = Languages[router.locale];
+  // const Language = Languages[router.locale];
   const Duas = [
     {
       titles: {
@@ -55,7 +55,7 @@ export default function Duas() {
       <div className="container">
         <div className={classNames("tabs is-centered")}>
           <ul>
-            {settings.hijriDate > 0 && (
+            {/* {settings.hijriDate > 0 && (
               <li
                 key={-1}
                 className={classNames({ "is-active": duaIdx === -1 })}
@@ -71,7 +71,7 @@ export default function Duas() {
                   {Language.dailyDua}
                 </a>
               </li>
-            )}
+            )} */}
             {Duas.map((dua, key) => (
               <li
                 key={key}
@@ -91,7 +91,7 @@ export default function Duas() {
             ))}
           </ul>
         </div>
-        {settings.hijriDate > 0 && (
+        {/* {settings.hijriDate > 0 && (
           <div
             key={-1}
             className={classNames("dua", "has-text-centered", "px-3", {
@@ -110,7 +110,7 @@ export default function Duas() {
               {dailyDuas[settings.hijriDate - 1]["en"]}
             </h2>
           </div>
-        )}
+        )} */}
         {Duas.map((dua, key) => (
           <div
             key={key}
