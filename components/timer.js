@@ -240,7 +240,7 @@ export default function Timer() {
               {hijri && (
                 <>
                   <span>
-                    {translate(router.locale, hijri)} {Language.ramadan}{" "}
+                    {translate(router.locale, hijri)} {Language.shawal}{" "}
                     {translate(router.locale, 1444)} {Language.ah}
                   </span>
                   <div></div>
